@@ -11,5 +11,5 @@
 
 .innder {
   background-color: lightcoral;
-  transform: scale(0.57);
+  transform: rotate(40deg);
 }
