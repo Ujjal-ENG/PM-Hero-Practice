@@ -1,16 +1,10 @@
-.container,
-.innder {
+.box{
   width: 200px;
   height: 200px;
-  border: 1px solid red;
-  margin: 3px;
+  border: 2px solid rgb(20, 107, 42);
+  transition: all 1.5s linear;
 }
 
-.container {
-  background-color: lightblue;
-}
-
-.innder {
-  background-color: lightcoral;
-  transform:translate(50%,50%) rotate(45deg) scale(0.50);
+.box:hover{
+  width: 400px;
 }
