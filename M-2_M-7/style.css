@@ -2,7 +2,8 @@
 .innder {
   width: 200px;
   height: 200px;
-  border: 2px solid red;
+  border: 1px solid red;
+  margin: 3px;
 }
 
 .container {
@@ -11,5 +12,5 @@
 
 .innder {
   background-color: lightcoral;
-  transform: rotate(40deg);
+  transform:translate(50%,50%) rotate(45deg) scale(0.50);
 }
