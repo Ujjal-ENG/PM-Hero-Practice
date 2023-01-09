@@ -1,15 +1,21 @@
 .calender {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 30px repeat(5, 75px);
+  grid-template-rows: auto repeat(5, 75px);
   gap: 3rem;
-  justify-content: center;
-  align-items: center;
 }
 
-.date,
-.day {
+.date {
   background-color: skyblue;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.day {
+  background-color: slateblue;
   font-size: 2.5rem;
   display: flex;
   justify-content: center;
