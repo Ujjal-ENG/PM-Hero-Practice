@@ -1,10 +1,27 @@
-.box{
-  width: 200px;
-  height: 200px;
+.box {
+  width: 900px;
+  height: 500px;
   border: 2px solid rgb(20, 107, 42);
-  transition: all 1.5s linear;
+  margin: 10rem auto;
+  position: relative;
 }
 
-.box:hover{
-  width: 400px;
+.bat {
+  width: 300px;
+  height: 450px;
+  transition: all 0.5s;
+}
+
+.bat:hover {
+  transform: rotate(-60deg);
+}
+
+.ball {
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  left: 127px;
+  bottom: 120px;
 }
