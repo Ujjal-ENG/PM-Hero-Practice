@@ -3,8 +3,15 @@
   padding: 0;
 }
 
-.img {
+.container {
+  width: 500px;
   height: 400px;
+  margin: 0 auto;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
   background-image: url("./healthyfood.jpg"),
     linear-gradient(
       90deg,
@@ -16,7 +23,16 @@
       rgba(94, 67, 67, 1) 100%
     );
   background-repeat: no-repeat;
-  background-position: center;
   background-size: contain;
   background-blend-mode: overlay;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
 }
