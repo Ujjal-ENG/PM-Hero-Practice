@@ -1,13 +1,17 @@
 body {
-  max-width: 800px;
-  border: 2px solid red;
-  margin: 0 auto;
+  width: 1280px;
 }
 
 h1 {
   font-size: 100px;
 }
 
-.tiger img {
+.split img{
   width: 100%;
+}
+
+.responsive {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
 }
