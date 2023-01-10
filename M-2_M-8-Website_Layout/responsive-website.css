@@ -1,0 +1,13 @@
+body {
+  max-width: 800px;
+  border: 2px solid red;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+.tiger img {
+  width: 100%;
+}
