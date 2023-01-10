@@ -6,7 +6,7 @@
 .container {
   width: 500px;
   height: 400px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .img {
@@ -16,9 +16,11 @@
     linear-gradient(
       90deg,
       rgba(131, 58, 180, 1) 0%,
-      rgba(115, 106, 113, 1) 0%,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(88, 83, 83, 1) 100%,
+      rgba(115, 114, 106, 1) 0%,
+      rgba(198, 161, 36, 1) 0%,
+      rgba(50, 41, 9, 1) 87%,
+      rgba(0, 0, 0, 1) 100%,
+      rgba(83, 88, 83, 1) 100%,
       rgba(107, 96, 80, 1) 100%,
       rgba(94, 67, 67, 1) 100%
     );
