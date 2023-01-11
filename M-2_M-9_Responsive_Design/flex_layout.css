@@ -18,7 +18,7 @@ img {
 }
 
 .inner-row img {
-  height: 200px;
+  height: 198px;
 }
 
 .row3 {
@@ -26,7 +26,7 @@ img {
   gap: 1rem;
 }
 .row3-grid img {
-  height: 200px;
+  height: 194px;
 }
 .row3-grid {
   display: grid;
