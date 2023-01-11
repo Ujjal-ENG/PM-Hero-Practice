@@ -6,6 +6,8 @@ img {
 .row2 {
   display: flex;
   gap: 1rem;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .row2 > div {
