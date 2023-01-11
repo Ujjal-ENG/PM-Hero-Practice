@@ -54,6 +54,7 @@
     linear-gradient(90deg, rgba(77, 72, 67, 1) 0%, rgba(83, 87, 88, 1) 82%);
   background-repeat: no-repeat;
   background-size: contain;
-  background-blend-mode: darken;
+  background-blend-mode: overlay;
   border-radius: 0px 20px 20px 0px;
+  background-position: center;
 }
