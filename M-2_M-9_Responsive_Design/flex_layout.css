@@ -18,7 +18,7 @@ img {
 }
 
 .inner-row img {
-  height: 198px;
+  height: 200px;
 }
 
 .row3 {
@@ -36,4 +36,25 @@ img {
 
 .row3 > div {
   flex: 1;
+}
+
+@media screen and (max-width: 576px) {
+  .row2,
+  .row3 {
+    flex-direction: column;
+  }
+  .row2 img,
+  .row3 img {
+    height: 400px;
+    margin: 5px;
+  }
+  .row3-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (min-width: 577px) {
+  .flex-container {
+    height: 400px;
+  }
 }
