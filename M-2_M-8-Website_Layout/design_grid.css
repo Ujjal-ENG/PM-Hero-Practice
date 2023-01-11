@@ -27,7 +27,7 @@ body {
 .grid-container {
   border: 2px solid green;
   display: grid;
-  grid-template-columns: repeat(5, 150px) 400px;
+  grid-template-columns: repeat(5, 150px);
   justify-content: center;
   justify-items: center;
   align-items: center;
