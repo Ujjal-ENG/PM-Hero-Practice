@@ -25,9 +25,13 @@
 
 .grid-layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "header" "header" "header" "header";
-  gap: 2rem;
+  gap: 20px;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas:
+    "header header header header"
+    "nav main main aside1"
+    "nav main main aside2"
+    "footer footer footer footer";
 }
 
 .item {
@@ -38,7 +42,13 @@
 
 @media screen and (max-width: 576px) {
   .grid-layout {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: "header" "nav" "main" "aside1" "aside2" "footer";
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside1"
+      "aside2"
+      "footer";
   }
 }
