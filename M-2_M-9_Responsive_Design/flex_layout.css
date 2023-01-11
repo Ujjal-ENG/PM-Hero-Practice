@@ -1,4 +1,3 @@
-
 img {
   width: 100%;
   height: 400px;
@@ -26,7 +25,9 @@ img {
   display: flex;
   gap: 1rem;
 }
-
+.row3-grid img {
+  height: 200px;
+}
 .row3-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
