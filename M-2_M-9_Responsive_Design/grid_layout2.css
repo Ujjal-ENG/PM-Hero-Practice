@@ -1,0 +1,44 @@
+/* Define grid areas */
+.header {
+  grid-area: header;
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.main {
+  grid-area: main;
+}
+
+.aside1 {
+  grid-area: aside1;
+}
+
+.aside2 {
+  grid-area: aside2;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "header" "header" "header" "header";
+  gap: 2rem;
+}
+
+.item {
+  background-color: beige;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .grid-layout {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "header" "nav" "main" "aside1" "aside2" "footer";
+  }
+}
