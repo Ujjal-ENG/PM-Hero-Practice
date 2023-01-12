@@ -33,7 +33,9 @@
     "nav main main aside2"
     "footer footer footer footer";
 }
-
+nav a {
+  display: block;
+}
 .item {
   background-color: beige;
   border-radius: 10px;
@@ -50,5 +52,18 @@
       "aside1"
       "aside2"
       "footer";
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+  .grid-layout {
+    grid-template-areas:
+      "header header header header"
+      "nav nav nav nav"
+      "aside1 main main main"
+      "aside2 footer footer footer";
+  }
+  nav a {
+    display: inline-block;
   }
 }
