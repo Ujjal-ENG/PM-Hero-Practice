@@ -205,10 +205,5 @@ p {
   .blogs {
     grid-template-columns: repeat(2, 1fr);
   }
-  .courses {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-  }
+
 }
