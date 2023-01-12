@@ -1,4 +1,8 @@
 /* Common Styles or Utilities */
+* {
+  margin: 0;
+}
+
 body {
   background: #f3f1ff;
   font-family: "Poppins", sans-serif;
@@ -15,6 +19,30 @@ hr {
   margin-bottom: 30px;
 }
 
+/* Design the Navbar */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #562eff;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin-right: 6rem;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
 /* Top PLayers Style */
 
 .container {
@@ -22,7 +50,7 @@ hr {
   background: #ffffff;
   border-radius: 5px;
   padding: 30px;
-  margin-top: 21px;
+  margin-top: 100px;
 }
 
 .top-players {
@@ -205,5 +233,4 @@ p {
   .blogs {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
