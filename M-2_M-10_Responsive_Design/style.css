@@ -1,8 +1,36 @@
+/* Common Styles or Utilities */
+body {
+  background: #f3f1ff;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  border: 1px solid #d1d1d1;
+}
+
 /* Top PLayers Style */
+
+.container {
+  width: 870px;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.top-players {
+  margin-bottom: 30px;
+}
 
 .players {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 30px;
 }
 
 .player img {
@@ -13,6 +41,23 @@
 .player {
   display: flex;
   gap: 1rem;
-  margin-bottom: 30px;
   align-items: center;
+}
+
+.player-name {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000000;
+}
+
+.section-title {
+  margin-top: 3px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #562eff;
+  margin-bottom: 40px;
 }
