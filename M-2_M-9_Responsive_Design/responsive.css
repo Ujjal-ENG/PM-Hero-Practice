@@ -30,6 +30,7 @@ a {
   margin: 0 30px;
   font-size: 25px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 header {
