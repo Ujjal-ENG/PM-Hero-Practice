@@ -20,7 +20,7 @@ hr {
 }
 
 /* Design the Navbar */
-nav {
+.navlink {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -185,6 +185,16 @@ p {
   color: #aeaeae;
 }
 
+#sidebar {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  cursor: pointer;
+  display: none;
+}
+
 /*---------------
  Media Queries
  ----------------- */
@@ -192,8 +202,35 @@ p {
 /* Mobile Device */
 
 @media only screen and (max-width: 688px) {
+  #sidebar {
+    display: block;
+  }
+  .navlink {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #562eff;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    margin-top: 0px;
+    transition: all 0.5s ease;
+  }
+
+  .menu-btn {
+    margin-top: 10px;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .container {
     width: 100%;
+    margin-top: 0px;
   }
   .players {
     grid-template-columns: repeat(1, 1fr);
