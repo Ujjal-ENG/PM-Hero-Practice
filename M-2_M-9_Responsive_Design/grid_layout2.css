@@ -33,9 +33,7 @@
     "nav main main aside2"
     "footer footer footer footer";
 }
-nav a {
-  display: block;
-}
+
 .item {
   background-color: beige;
   border-radius: 10px;
@@ -63,7 +61,8 @@ nav a {
       "aside1 main main main"
       "aside2 footer footer footer";
   }
-  nav a {
-    display: inline-block;
+  nav.item.nav {
+    display: flex;
+    justify-content: space-around;
   }
 }
