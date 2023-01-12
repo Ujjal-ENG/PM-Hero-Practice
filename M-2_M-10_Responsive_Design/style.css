@@ -98,3 +98,24 @@ hr {
   gap: 1rem;
   max-width: 375px;
 }
+
+/*---------
+ Course Section Design
+ ---------------- */
+
+.course .course-banner img {
+  width: 224px;
+  height: 104px;
+}
+
+.fa-star {
+  font-size: 12px;
+}
+
+.fa-star.filled {
+  color: #ffc014;
+}
+
+.fa-star.empty {
+  color: #aeaeae;
+}
