@@ -23,7 +23,8 @@
         <li><a href="#"></a>About</li>
         <li class="ctn"><a href="#"></a>Contact</li>
       </ul>
-      <i class="fa-sharp fa-solid fa-bars fa-3x menu-btn"></i>
+      <i
+      id="menu-btn" class="fa-sharp fa-solid fa-bars fa-3x"></i>
     </nav>
 
     <div class="header-content">
@@ -35,7 +36,7 @@
   </header>
 
   <script>
-    const menuBtn = document.querySelector(".menu-btn")
+    const menuBtn = document.querySelector("#menu-btn")
     const navLinks = document.querySelector(".nav-links")
 
     menuBtn.addEventListener("click", () => {

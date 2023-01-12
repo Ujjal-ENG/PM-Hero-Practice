@@ -81,10 +81,11 @@ header {
   border-radius: 30px;
   color: whitesmoke;
 }
-.menu-btn {
+#menu-btn {
   position: absolute;
   top: 30px;
   right: 40px;
+  width: 40px;
   cursor: pointer;
   display: none;
 }
@@ -92,6 +93,9 @@ header {
 /* Responsive For Mobile Device */
 
 @media only screen and (max-width: 576px) {
+  #menu-btn {
+    display: block;
+  }
   .navbar {
     padding: 0;
   }
