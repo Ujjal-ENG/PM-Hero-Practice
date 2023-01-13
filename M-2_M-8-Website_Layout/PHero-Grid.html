@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    /*optional part*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* mandatory part */
+    /* এখানে হাইট উইডথ ১০০% করে দেওয়ায় সে যতটুকু জায়গা পাবে ততটুকু জুড়ে থাকবে */
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* এই লাইনটা আমাদের ইমেজের রেশিওটা ঠিক রাখবে ফোলে ইমেজগুলো দেখতে আগের মতো লাগবে। */
+    }
+
+    /* এখানে বাইরের কন্টেইনারকে গ্রিড দেওয়ার পর তার হাইট কতো হবে তা আট রো এর মাধ্যমে বলে দেওয়া হয়েছে */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      /*এটা গ্রিডের রো-গুলোর হাইট ফিক্স করার জন্য। এখানে নর্মাল হাইট দিলে কাজ হবে না। */
+    }
+
+    /* ইমেজের বাইরে থাকা ডিভের মার্জিন প্যাডিং ০ করে দেওয়া হয়েছে কারণ ডিফল্ট ভেলু যেনো কোনো সমস্যা না করে */
+    .container div {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* এটা হচ্ছে ভিটরের কন্টেইনার যার মাঝে ছোট ৪টা ইমেজ আছে। উপড়ে রো এর হাইট ৪০০ বলে দেওয়ায় এখানে আমাকে তার অর্ধেক নিতে হবে কারণ এখনে একটা রো এর মাঝেই ২টা রো হবে। গ্রিড গ্যাপ ব্যবহার করলে এই হিসেবে কিছুটা পরিবর্তন আসবে। সেটা আপনাদের জন্য টাস্ক। */
+    .another-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+    <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+    <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+    <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+    <div class="another-container">
+      <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+      <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+      <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+      <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+    </div>
+    <div><img src="https://source.unsplash.com//KR0WW6bjtt0" alt="" /></div>
+  </div>
+</body>
+
+</html>
