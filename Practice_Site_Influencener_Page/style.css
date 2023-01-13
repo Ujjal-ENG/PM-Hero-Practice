@@ -18,9 +18,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 100px;
-  padding-left: 120px;
-  padding-right: 120px;
+  margin-top: 6.05em;
+  padding-left: 6.1em;
+  padding-right: 6.1em;
   background-color: red;
 }
 
@@ -31,16 +31,17 @@ nav ul {
 
 .nav-title {
   font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 1.8em;
+  line-height: 2.1em;
   font-feature-settings: "liga" off;
   color: #3a3a3a;
 }
 
 .nav-links ul li {
   font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1em;
+  line-height: 1.8em;
   font-feature-settings: "liga" off;
   color: #3a3a3a;
 }
+
