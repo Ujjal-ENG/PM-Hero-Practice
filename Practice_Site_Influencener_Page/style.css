@@ -18,7 +18,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 6.05em;
   padding-left: 6.1em;
   padding-right: 6.1em;
   background-color: red;
@@ -45,3 +44,41 @@ nav ul {
   color: #3a3a3a;
 }
 
+/* Design the banner section */
+
+.btn-primary {
+  background: #e02c6d;
+  border-radius: 2.8em;
+  border: none;
+  padding: 0.8em 4em;
+  color: white;
+  font-size: 1.2em;
+  margin-top: 1em;
+}
+
+.banner-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.banner-left {
+  width: 582px;
+  height: 270px;
+}
+
+.banner-title {
+  font-weight: 700;
+  font-size: 3.2em;
+  line-height: 1.2em;
+  color: #3a3a3a;
+}
+
+.text-desc {
+  margin-top: 1em;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  font-feature-settings: "liga" off;
+  color: #3a3a3a;
+}
