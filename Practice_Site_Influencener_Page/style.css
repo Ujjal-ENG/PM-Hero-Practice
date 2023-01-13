@@ -211,6 +211,68 @@ nav ul {
   padding: 3px;
 }
 
+/* Design the feture products */
+
+.feture-products {
+  width: 1110px;
+  height: 270px;
+  margin: 100px auto;
+}
+
+.fetures {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 404px;
+  height: 270px;
+  border-radius: 7px;
+}
+
+.img > img {
+  width: 100%;
+  height: 100%;
+}
+
+.feture-right {
+  margin-left: 100px;
+}
+
+.feture-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.feture-info h1 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #0a0826;
+}
+
+.feture-info p {
+  width: 501px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #6c6c6c;
+  padding-top: 16px;
+}
+.join {
+  border: none;
+  padding: 10px 24px;
+  background: #e02c6d;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-top: 25px;
+}
+
 /* Now add the Media Query for Mobile Device */
 
 @media screen and (max-width: 688px) {
@@ -273,5 +335,21 @@ nav ul {
 
   .see-more {
     right: 8rem;
+  }
+
+  .feture-products {
+    width: 100%;
+    height: 100%;
+  }
+  .fetures {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .feture-info {
+    justify-content: center;
+    align-items: center;
   }
 }
