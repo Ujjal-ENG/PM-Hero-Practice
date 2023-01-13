@@ -122,3 +122,64 @@ nav ul {
     rgba(192, 204, 218, 0.1) 100%
   );
 }
+.movile {
+  display: none;
+}
+/* Now add the Media Query for Mobile Device */
+
+@media screen and (max-width: 688px) {
+  nav {
+    display: none;
+  }
+  .banner-right img {
+    width: 257px;
+    height: 257px;
+  }
+  .banner-section {
+    flex-direction: column-reverse;
+    justify-self: center;
+    align-items: center;
+  }
+  .banner-left {
+    width: 345px;
+    height: 222px;
+  }
+  .banner-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+    color: #3a3a3a;
+  }
+
+  .text-desc {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    font-feature-settings: "liga" off;
+    color: #3a3a3a;
+  }
+
+  .e-com {
+    width: 275.21px;
+    height: 61.46px;
+  }
+
+  .e-com img {
+    width: 33.38px;
+    height: 18.84px;
+  }
+
+  .e-com ul {
+    flex-wrap: wrap;
+  }
+
+  .e-com ul li {
+    margin-right: 2rem;
+  }
+
+  .e-com .div {
+    display: none;
+  }
+}
