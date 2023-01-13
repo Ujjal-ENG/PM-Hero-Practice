@@ -57,6 +57,7 @@ nav ul {
 }
 
 .banner-section {
+  margin-top: 3.1em;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -81,4 +82,16 @@ nav ul {
   line-height: 24px;
   font-feature-settings: "liga" off;
   color: #3a3a3a;
+}
+
+/* Design the banner right site */
+
+.banner-right {
+  background-image: url("./images/Circle\ design.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.banner-right > img {
+  margin: 1.9em 1.9em;
 }
