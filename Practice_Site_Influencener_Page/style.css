@@ -95,3 +95,20 @@ nav ul {
 .banner-right > img {
   margin: 1.9em 1.9em;
 }
+
+/* Design the Ecommerce Site */
+
+.e-com {
+  width: 1110px;
+  height: 110px;
+  margin: 0 auto;
+  margin-top: 4.3em;
+  
+}
+
+.e-com ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
