@@ -47,5 +47,35 @@ nav > ul > li {
 /* Design the Section */
 
 .section {
+  padding-top: 9rem;
+}
+.section_title_container {
+  display: flex;
+  align-items: center;
+}
 
+.section__title {
+  flex-shrink: 0;
+  color: var(--pink);
+  font-weight: 300;
+}
+
+.line--secondary,
+.line--primary {
+  width: 63%;
+  height: 1px;
+  margin-left: 8px;
+}
+
+.line--primary {
+  background-color: var(--black);
+}
+
+.line--secondary {
+  background-color: var(--pink);
+}
+
+.section__text {
+  font-size: 3rem;
+  font-weight: 300;
 }
