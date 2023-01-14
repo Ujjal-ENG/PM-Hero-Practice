@@ -13,10 +13,23 @@
   text-decoration: none;
 }
 
-nav {
-  display: flex;
+body {
+  background-color: var(--light-gray);
 }
 
-nav ul {
+nav {
+  background-color: red;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1250px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+nav > ul {
+  display: flex;
+  gap: 25px;
 }
