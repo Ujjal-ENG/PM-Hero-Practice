@@ -75,6 +75,10 @@ nav > ul > li {
   background-color: var(--pink);
 }
 
+.line--tertiary {
+  background-color: var(--gray);
+}
+
 .section__text {
   font-size: 3rem;
   font-weight: 300;
