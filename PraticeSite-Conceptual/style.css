@@ -1,0 +1,22 @@
+:root {
+  --black: #1c1c1c;
+  --pink: #ff214f;
+  --gray: #919191;
+  --light-gray: #ebebeb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+}
