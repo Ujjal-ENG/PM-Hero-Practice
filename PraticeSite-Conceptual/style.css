@@ -17,6 +17,14 @@
   font-family: var(--primary-font);
 }
 
+.container {
+  width: 100%;
+  max-width: 1250px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
 body {
   background-color: var(--light-gray);
 }
@@ -25,11 +33,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1250px;
-  height: 80px;
-  margin: 0 auto;
-  padding: 0 25px;
 }
 
 nav > ul {
@@ -39,4 +42,10 @@ nav > ul {
 
 nav > ul > li {
   cursor: pointer;
+}
+
+/* Design the Section */
+
+.section {
+
 }
