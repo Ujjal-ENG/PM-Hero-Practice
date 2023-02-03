@@ -1,9 +1,3 @@
+const calcAge2 = (birthyear) => 2023 - birthyear;
 
-let hasDriversLicenses = false;
-
-const passTest = true;
-
-if (passTest) {
-  hasDriversLicenses = true;
-}
-
+console.log(calcAge2(1998));
