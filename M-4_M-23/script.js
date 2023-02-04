@@ -119,11 +119,9 @@ function cutFruitPices(fruit) {
 
 // console.log(checkWinner());
 
-let i = 1;
+let dice = Math.trunc(Math.random() * 6) + 1;
 
-while (i <= 10) {
-  console.log(i);
-  i++;
+while (dice !== 6) {
+  console.log(dice);
+  dice = Math.trunc(Math.random() * 6) + 1;
 }
-
-console.log("After done the while loop, i = ", i);
