@@ -59,7 +59,7 @@ const ujjal = {
   birthYear: 1998,
   job: "Engineer",
   friends: ["Ador", "Saurav", "Sajal"],
-  hasDriversLincese: false,
+  hasDriversLincese: true,
 
   calcAge: function () {
     this.age = 2023 - this.birthYear;
@@ -67,15 +67,9 @@ const ujjal = {
   },
 
   summaryOb: function () {
-    if (this.hasDriversLincese) {
-      return `${this.firstName} is a ${this.calcAge()} year old ${
-        this.job
-      }, and he has a drivers linces`;
-    } else {
-      return `${this.firstName} is a ${this.calcAge()} year old ${
-        this.job
-      }, and he has not a drivers linces`;
-    }
+    return `${this.firstName} is a ${this.calcAge()} year old ${
+      this.job
+    }, and he has ${this.hasDriversLincese ? "a" : "not"} drivers linces`;
   },
 };
 
