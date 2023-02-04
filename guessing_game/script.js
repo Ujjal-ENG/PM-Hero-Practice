@@ -2,8 +2,6 @@ const secretNumber = Math.trunc(Math.random() * 21);
 
 let score = 20;
 
-document.querySelector(".number").textContent = secretNumber;
-
 document.querySelector(".check").addEventListener("click", () => {
   const guessValue = Number(document.querySelector(".guess").value);
 
@@ -17,6 +15,7 @@ document.querySelector(".check").addEventListener("click", () => {
     document.querySelector(".message").textContent =
       "🏆🏆Hurray!!You won the game...";
 
+    document.querySelector(".number").textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#60b347";
 
     document.querySelector(".number").style.width = "30rem";
