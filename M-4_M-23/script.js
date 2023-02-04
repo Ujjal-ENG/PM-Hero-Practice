@@ -52,3 +52,31 @@ function cutFruitPices(fruit) {
 // const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 
 // console.log(bills, tips);
+
+const ujjal = {
+  firstName: "Ujjal",
+  lastName: "Roy",
+  birthYear: 1998,
+  job: "Engineer",
+  friends: ["Ador", "Saurav", "Sajal"],
+  hasDriversLincese: false,
+
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+
+  summaryOb: function () {
+    if (this.hasDriversLincese) {
+      return `${this.firstName} is a ${this.calcAge()} year old ${
+        this.job
+      }, and he has a drivers linces`;
+    } else {
+      return `${this.firstName} is a ${this.calcAge()} year old ${
+        this.job
+      }, and he has not a drivers linces`;
+    }
+  },
+};
+
+console.log(ujjal.summaryOb());
