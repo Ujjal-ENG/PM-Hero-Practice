@@ -75,14 +75,46 @@ function cutFruitPices(fruit) {
 
 // console.log(ujjal.summaryOb());
 
-function res(a) {
-  return (b) => {
-    return (c) => {
-      return (d) => {
-        return a * b * c * d;
-      };
-    };
-  };
-}
+// function res(a) {
+//   return (b) => {
+//     return (c) => {
+//       return (d) => {
+//         return a * b * c * d;
+//       };
+//     };
+//   };
+// }
 
-console.log(res(2)(3)(4)(1));
+// console.log(res(2)(3)(4)(1));
+
+const markMiller = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = Math.round(this.mass / this.height ** 2);
+    return this.bmi;
+  },
+};
+
+const johnSmith = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = Math.round(this.mass / this.height ** 2);
+    return this.bmi;
+  },
+};
+
+const checkWinner = () => {
+  return johnSmith.calcBMI() > markMiller.calcBMI()
+    ? `${johnSmith.fullName} BMI ${johnSmith.calcBMI()} is higher than ${
+        markMiller.fullName
+      } BMI ${markMiller.calcBMI()}`
+    : `${markMiller.fullName} BMI ${markMiller.calcBMI()} is higher than ${
+        johnSmith.fullName
+      } BMI ${johnSmith.calcBMI()}`;
+};
+
+console.log(checkWinner());
