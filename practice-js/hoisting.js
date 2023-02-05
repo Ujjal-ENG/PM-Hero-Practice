@@ -1,15 +1,16 @@
-console.log(a);
+// console.log(a);
 
-var a = "Bangladesh";
+// var a = "Bangladesh";
 
-var LAN = "JAVA";
-var lan = "JS";
+// var LAN = "JAVA";
+// var lan = "JS";
 
-function getLan() {
-  if (!lan) {
-    lan = LAN;
-  }
-  return lan;
-}
+// function getLan() {
+//   if (!lan) {
+//     lan = LAN;
+//   }
+//   return lan;
+// }
 
-console.log(getLan());
+// console.log(getLan());
+
