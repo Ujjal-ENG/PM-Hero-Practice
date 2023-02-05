@@ -11,13 +11,18 @@
 
 // console.dir(myFunc);
 
-function bankAccount(initialBalance) {
-  var balance = initialBalance;
+(function () {
+  function bankAccount(initialBalance) {
+    var balance = initialBalance;
 
-  return function () {
-    return balance;
-  };
-}
+    return function () {
+      return function () {
+        return balance * 3;
+      };
+    };
+  }
 
-var account = bankAccount(199);
-console.log(account);
+  var account = bankAccount(199);
+
+  console.dir(account);
+})();
