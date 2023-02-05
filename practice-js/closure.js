@@ -7,6 +7,6 @@ var sum = function () {
   };
 };
 
-var myFunc = sum()();
+var myFunc = sum();
 
-console.log(myFunc);
+console.dir(myFunc);
