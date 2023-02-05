@@ -1,8 +1,10 @@
-var x = 23;
-
-function myFunc() {
-  let y = 10;
-  console.log(x);
+if (true) {
+  var varVariable = "This is var";
 }
 
-myFunc();
+console.log(varVariable);
+
+if (true) {
+  let letVariable = "This is let";
+  console.log(letVariable);
+}
