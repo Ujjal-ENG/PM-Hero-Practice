@@ -11,18 +11,36 @@
 
 // console.dir(myFunc);
 
-(function () {
-  function bankAccount(initialBalance) {
-    var balance = initialBalance;
+// (function () {
+//   function bankAccount(initialBalance) {
+//     var balance = initialBalance;
 
-    return function () {
-      return function () {
-        return balance * 3;
-      };
-    };
+//     return function () {
+//       return function () {
+//         return balance * 3;
+//       };
+//     };
+//   }
+
+//   var account = bankAccount(199);
+
+//   console.dir(account);
+// })();
+
+function stopWatch() {
+  var startTime = Date.now();
+
+  function getDelay() {
+    console.log(Date.now() - startTime);
   }
 
-  var account = bankAccount(199);
+  return getDelay;
+}
 
-  console.dir(account);
-})();
+var timer = stopWatch();
+
+for (var i = 0; i < 10000000000; i++) {
+  var a = Math.random() * 1000000;
+}
+
+timer();
