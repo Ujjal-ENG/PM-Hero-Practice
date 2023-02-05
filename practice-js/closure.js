@@ -27,20 +27,26 @@
 //   console.dir(account);
 // })();
 
-function stopWatch() {
-  var startTime = Date.now();
+// function stopWatch() {
+//   var startTime = Date.now();
 
-  function getDelay() {
-    console.log(Date.now() - startTime);
-  }
+//   function getDelay() {
+//     console.log(Date.now() - startTime);
+//   }
 
-  return getDelay;
+//   return getDelay;
+// }
+
+// var timer = stopWatch();
+
+// for (var i = 0; i < 10000000000; i++) {
+//   var a = Math.random() * 1000000;
+// }
+
+// timer();
+
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 3000);
 }
-
-var timer = stopWatch();
-
-for (var i = 0; i < 10000000000; i++) {
-  var a = Math.random() * 1000000;
-}
-
-timer();
