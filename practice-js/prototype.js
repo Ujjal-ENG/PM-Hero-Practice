@@ -1,22 +1,29 @@
-function Person(name, age) {
-  let person = {};
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
 
-  person.name = name;
-  person.age = age;
-
-  return person;
+  eat() {
+    console.log("This is the parent method");
+  }
 }
 
-Person.prototype = {
-  eat() {
-    console.log("Person is Eating");
-  },
+class Child extends Person {
+  constructor(name, age, type, gender) {
+    super(name, age);
+    this.type = type;
+    this.gender = gender;
+  }
 
-  sleep() {
-    console.log("Person is sleeping");
-  },
-};
+  play() {
+    console.log(
+      `${this.name} is play ${this.type} and gender is ${this.gender}`
+    );
+  }
+}
 
-const sakib = Person("Sakib", 32);
+let ujjal = new Child("Ujjal", "23", "Cricket", "Male");
 
-console.dir(Person());
+ujjal.play();
+ujjal.eat();
