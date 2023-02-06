@@ -4,15 +4,19 @@ function Person(name, age) {
   person.name = name;
   person.age = age;
 
-  person.eat = function () {
-    console.log("Person is Eating");
-  };
-
-  person.sleep = function () {
-    console.log("Person is sleeping");
-  };
-
   return person;
 }
 
-console.log(Person());
+Person.prototype = {
+  eat() {
+    console.log("Person is Eating");
+  },
+
+  sleep() {
+    console.log("Person is sleeping");
+  },
+};
+
+const sakib = Person("Sakib", 32);
+
+console.dir(Person());
