@@ -20,3 +20,4 @@ function searchProducts(products, search) {
 }
 
 console.log(searchProducts(products, "phone"));
+
