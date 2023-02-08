@@ -41,7 +41,6 @@
 // promise1.then((res1) => console.log(res1));
 // promise2.then((res2) => console.log(res2));
 
-
 const hasMeeting = false;
 const meeting = new Promise((resolve, reject) => {
   // do stuff
@@ -63,11 +62,19 @@ const addToCalender = (meetingDetails) => {
   return Promise.resolve(calender);
 };
 
-meeting
-  .then(addToCalender)
-  .then((res) => {
-    console.log(JSON.stringify(res));
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
+// meeting
+//   .then(addToCalender)
+//   .then((res) => {
+//     console.log(JSON.stringify(res));
+//   })
+//   .catch((err) => {
+//     console.log(err.message);
+//   });
+
+async function myMeeting() {
+  const meetingDetails = await meeting;
+  const calender = await addToCalender(meetingDetails);
+  console.log(calender);
+}
+
+myMeeting();
