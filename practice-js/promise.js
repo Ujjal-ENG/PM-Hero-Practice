@@ -30,13 +30,19 @@
 
 // console.log("Hello");
 
-const promise1 = Promise.resolve(`Promise 1 resolved`);
+// const promise1 = Promise.resolve(`Promise 1 resolved`);
 
-const promise2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(`Promise 2 resolved`);
-  }, 2000);
-});
+// const promise2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(`Promise 2 resolved`);
+//   }, 2000);
+// });
 
-promise1.then((res1) => console.log(res1));
-promise2.then((res2) => console.log(res2));
+// promise1.then((res1) => console.log(res1));
+// promise2.then((res2) => console.log(res2));
+
+function friendlyFunction() {
+  return `hello`;
+}
+
+console.log(friendlyFunction());
