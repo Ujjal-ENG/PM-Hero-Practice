@@ -5,9 +5,9 @@
 // }
 
 // parent chiled relation
+const grantParent = document.querySelector(".todo-list");
+const parent = grantParent.children;
 
-const parent = document.querySelector(".items");
-
-const children = parent.children;
+const children = parent[1].children;
 
 console.log(children);
