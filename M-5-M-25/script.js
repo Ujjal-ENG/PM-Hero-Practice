@@ -10,4 +10,16 @@ const parent = grantParent.children;
 
 const children = parent[1].children;
 
-console.log(children);
+// creating an element
+
+const divEl = document.createElement("div");
+const h2Element = document.getElementById("title");
+
+divEl.className = "red";
+
+divEl.setAttribute("id", "red");
+divEl.setAttribute("title", "Red div");
+
+grantParent.appendChild(divEl);
+
+
