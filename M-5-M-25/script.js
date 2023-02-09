@@ -22,4 +22,3 @@ divEl.setAttribute("title", "Red div");
 
 grantParent.appendChild(divEl);
 
-
