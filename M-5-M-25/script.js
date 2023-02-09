@@ -1,1 +1,3 @@
-document.title = "Play WIth Dom";
+const newTask = document.getElementById("new-task");
+
+newTask.style.backgroundColor = "red";
