@@ -1,3 +1,5 @@
-const newTask = document.getElementById("new-task");
+const items = document.getElementsByClassName("item");
 
-newTask.style.backgroundColor = "red";
+for (let item of items) {
+  item.style.color = "red";
+}
