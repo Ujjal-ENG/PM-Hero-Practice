@@ -1,24 +1,26 @@
-const withdrawBTN = document.getElementById("btnWithdraw");
+// const withdrawBTN = document.getElementById("btnWithdraw");
 
-withdrawBTN.addEventListener("click", () => {
-  const withdrawINput = document.getElementById("withdrawInput");
+// withdrawBTN.addEventListener("click", () => {
+//   const withdrawINput = document.getElementById("withdrawInput");
 
-  const withdraw = Number(withdrawINput.value);
+//   const withdraw = Number(withdrawINput.value);
 
-  const withdrawAmount = document.getElementById("withdrawAmount");
+//   const withdrawAmount = document.getElementById("withdrawAmount");
 
-  const depositAmount = document.getElementById("depositAmount");
+//   const depositAmount = document.getElementById("depositAmount");
 
-  const balanceToal = document.getElementById("balanceTotal");
+//   const balanceToal = document.getElementById("balanceTotal");
 
-  const balanceTotal = Number(balanceToal.innerText);
+//   const balanceTotal = Number(balanceToal.innerText);
 
-  withdrawAmount.innerText = withdraw;
+//   withdrawAmount.innerText = withdraw;
 
-  const totalBlance = String(balanceTotal - withdraw);
+//   const totalBlance = String(balanceTotal - withdraw);
 
-  balanceToal.innerText = totalBlance;
+//   balanceToal.innerText = totalBlance;
 
-  withdrawINput.value = "";
-  depositAmount.innerText = "0";
-});
+//   withdrawINput.value = "";
+//   depositAmount.innerText = "0";
+// });
+
+console.log("withdraw");

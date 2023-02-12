@@ -1,24 +1,26 @@
-const depositBTN = document.getElementById("btnDeposit");
+// const depositBTN = document.getElementById("btnDeposit");
 
-depositBTN.addEventListener("click", () => {
-  const depositINput = document.getElementById("depositInput");
+// depositBTN.addEventListener("click", () => {
+//   const depositINput = document.getElementById("depositInput");
 
-  const depoIn = Number(depositINput.value);
+//   const depoIn = Number(depositINput.value);
 
-  const depositAmount = document.getElementById("depositAmount");
+//   const depositAmount = document.getElementById("depositAmount");
 
-  const deop = Number(depositAmount.innerText);
+//   const deop = Number(depositAmount.innerText);
 
-  const balanceToal = document.getElementById("balanceTotal");
+//   const balanceToal = document.getElementById("balanceTotal");
 
-  const balanceTotal = Number(balanceToal.innerText);
+//   const balanceTotal = Number(balanceToal.innerText);
 
-  const depositTotal = String(depoIn + deop);
-  const depositNumber = Number(depositTotal)
-  const balanceTotals = String(depositNumber + balanceTotal);
+//   const depositTotal = String(depoIn + deop);
+//   const depositNumber = Number(depositTotal)
+//   const balanceTotals = String(depositNumber + balanceTotal);
 
-  balanceToal.innerText = balanceTotals;
-  depositAmount.innerText = depositTotal;
-  depositINput.value = "";
-  console.log(depositTotal);
-});
+//   balanceToal.innerText = balanceTotals;
+//   depositAmount.innerText = depositTotal;
+//   depositINput.value = "";
+//   console.log(depositTotal);
+// });
+
+console.log("deposit")
