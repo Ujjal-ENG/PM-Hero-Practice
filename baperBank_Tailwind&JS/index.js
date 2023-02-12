@@ -5,9 +5,9 @@ btnSubmit.addEventListener("click", (e) => {
   const passField = document.getElementById("passwordField").value;
 
   if (emailField === "ujjal7862@gmail.com" && passField === "1234") {
-    console.log("Succesfully Logged in");
+    window.location.href = "bankDash.html";
   } else {
-    console.log("Incorrect password or email...");
+    alert("Incorrect password or email...Please provide valid information");
   }
   console.log(emailField, passField);
 });
