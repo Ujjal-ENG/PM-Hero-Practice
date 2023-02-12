@@ -1,0 +1,21 @@
+const withdrawBTN = document.getElementById("btnWithdraw");
+
+withdrawBTN.addEventListener("click", () => {
+  const withdrawINput = document.getElementById("withdrawInput");
+
+  const withdraw = Number(withdrawINput.value);
+
+  const withdrawAmount = document.getElementById("withdrawAmount");
+
+  const balanceToal = document.getElementById("balanceTotal");
+
+  const balanceTotal = Number(balanceToal.innerText);
+
+  withdrawAmount.innerText = withdraw;
+
+  const totalBlance = String(balanceTotal - withdraw);
+
+  balanceToal.innerText = totalBlance;
+
+  console.log(withdraw,totalBlance);
+});
