@@ -17,5 +17,5 @@ withdrawBTN.addEventListener("click", () => {
 
   balanceToal.innerText = totalBlance;
 
-  console.log(withdraw,totalBlance);
+  withdrawINput.value = "";
 });
