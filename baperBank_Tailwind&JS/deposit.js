@@ -14,9 +14,11 @@ depositBTN.addEventListener("click", () => {
   const balanceTotal = Number(balanceToal.innerText);
 
   const depositTotal = String(depoIn + deop);
-  const balanceTotals = String(deop + balanceTotal);
+  const depositNumber = Number(depositTotal)
+  const balanceTotals = String(depositNumber + balanceTotal);
 
   balanceToal.innerText = balanceTotals;
   depositAmount.innerText = depositTotal;
   depositINput.value = "";
+  console.log(depositTotal);
 });
