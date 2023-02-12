@@ -20,28 +20,51 @@
 
   <main>
 
-    <section>
+    <section class="bg-green-200 p-9 mt-10 space-y-12">
 
 
       <!-- money transation part -->
-      <div class="flex justify-center mt-10 gap-10 ">
+      <div class="grid grid-cols-3 w-9/12 mx-auto gap-10 ">
 
         <!-- deposit bank -->
-        <div id="deposit" class="w-1/5 py-5 bg-green-500 rounded-lg px-4 text-white text-3xl space-y-4">
+        <div id="deposit" class=" py-5 bg-green-500 rounded-lg px-4 text-white text-3xl space-y-4">
           <h1>Deposit</h1>
           <p>$5</p>
         </div>
 
         <!-- withdraw bank -->
-        <div id="withdraw" class="w-1/5 py-5 bg-pink-500 rounded-lg px-4 text-white text-3xl space-y-4">
+        <div id="withdraw" class="py-5 bg-pink-500 rounded-lg px-4 text-white text-3xl space-y-4">
           <h1>withdraw</h1>
           <p>$5</p>
         </div>
         <!-- Banlance Bank -->
-        <div id="balance" class="w-1/5 py-5 bg-orange-500 rounded-lg px-4 text-white text-3xl space-y-4">
+        <div id="balance" class=" py-5 bg-orange-500 rounded-lg px-4 text-white text-3xl space-y-4">
           <h1>Balance</h1>
           <p>$5</p>
         </div>
+      </div>
+
+      <!-- Input Field for deposit and withdraw cash purpose -->
+
+      <div class="grid grid-cols-2 gap-4 w-9/12  mx-auto ">
+
+        <div id="depositInput" class=" bg-violet-400 p-10 rounded-lg space-y-4">
+          <h1 class="text-2xl font-semibold text-white">PLease Deposit</h1>
+          <input type="text" placeholder="$ amount you want to deposit" class="ml-8 mr-8 w-full p-2 rounded-lg">
+          <br>
+          <button class="rounded-full py-2 px-4 mx-8 bg-green-400 mt-4 fw-bold text-3xl hover:bg-white 
+          " id="btnSubmit">Deposit</button>
+        </div>
+
+
+        <div id="withdrawInput" class=" bg-blue-400 p-10 rounded-lg space-y-4">
+          <h1 class="text-2xl font-semibold text-white">PLease Withdraw</h1>
+          <input type="text" placeholder="$ amount you want to withdraw" class="ml-8 mr-8 w-full p-2 rounded-lg">
+          <br>
+          <button class="rounded-full py-2 px-4 bg-green-400 mt-4 fw-bold text-3xl mx-8 hover:bg-white 
+          " id="btnSubmit">Withdraw</button>
+        </div>
+
       </div>
     </section>
   </main>
