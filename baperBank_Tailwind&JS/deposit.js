@@ -23,4 +23,33 @@
 //   console.log(depositTotal);
 // });
 
-console.log("deposit")
+function getInputValueById(inputId) {
+  const inputField = document.getElementById(inputId);
+  const inputFileValueString = inputField.value;
+  const inputFileValueNumber = Number(inputFileValueString);
+  inputField.value = "";
+  return inputFileValueNumber;
+}
+
+function getTextValueById(inputId) {
+  const inputField = document.getElementById(inputId);
+  const inputFileValueString = inputField.innerText;
+  const inputFileValueNumber = Number(inputFileValueString);
+  return inputFileValueNumber;
+}
+
+document.getElementById("btnDeposit").addEventListener("click", () => {
+  const inputFieldValue = getInputValueById("depositInput");
+
+  const depositAmount = getTextValueById("depositAmount");
+
+  const balanceAmount = getTextValueById("balanceTotal");
+
+  const totalDeposit = String(inputFieldValue + depositAmount);
+
+  const totalBlance = String(balanceAmount + Number(totalDeposit));
+
+  document.getElementById("depositAmount").innerText = totalDeposit;
+
+  document.getElementById("balanceTotal").innerText = totalBlance;
+});
