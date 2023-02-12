@@ -34,6 +34,10 @@ document.getElementById("btnWithdraw").addEventListener("click", () => {
 
   const totalBlance = String(balanceAmount - inputFieldValue);
 
-  setTheInnerNewValue("withdrawAmount", totalwithdraw);
-  setTheInnerNewValue("balanceTotal", totalBlance);
+  if (inputFieldValue > balanceAmount) {
+    alert("Eto taka nai ...balance shudu ei koitaka ase: " + balanceAmount);
+  } else {
+    setTheInnerNewValue("balanceTotal", totalBlance);
+    setTheInnerNewValue("withdrawAmount", totalwithdraw);
+  }
 });
