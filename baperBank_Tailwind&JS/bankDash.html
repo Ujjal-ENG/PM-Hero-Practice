@@ -48,26 +48,28 @@
 
       <div class="grid grid-cols-2 gap-4 w-9/12  mx-auto ">
 
-        <div id="depositInput" class=" bg-violet-400 p-10 rounded-lg space-y-4">
+        <div  class=" bg-violet-400 p-10 rounded-lg space-y-4">
           <h1 class="text-2xl font-semibold text-white">PLease Deposit</h1>
-          <input type="text" placeholder="$ amount you want to deposit" class="ml-8 mr-8 w-full p-2 rounded-lg">
+          <input type="number" id="depositInput" placeholder="$ amount you want to deposit" class="ml-8 mr-8 w-full p-2 rounded-lg">
           <br>
           <button class="rounded-full py-2 px-4 mx-8 bg-green-400 mt-4 fw-bold text-3xl hover:bg-white 
-          " id="btnSubmit">Deposit</button>
+          " id="btnDeposit">Deposit</button>
         </div>
 
 
-        <div id="withdrawInput" class=" bg-blue-400 p-10 rounded-lg space-y-4">
+        <div  class=" bg-blue-400 p-10 rounded-lg space-y-4">
           <h1 class="text-2xl font-semibold text-white">PLease Withdraw</h1>
-          <input type="text" placeholder="$ amount you want to withdraw" class="ml-8 mr-8 w-full p-2 rounded-lg">
+          <input type="number" id="withdrawInput" placeholder="$ amount you want to withdraw" class="ml-8 mr-8 w-full p-2 rounded-lg">
           <br>
           <button class="rounded-full py-2 px-4 bg-green-400 mt-4 fw-bold text-3xl mx-8 hover:bg-white 
-          " id="btnSubmit">Withdraw</button>
+          " id="btnWithdraw">Withdraw</button>
         </div>
 
       </div>
     </section>
   </main>
+
+  <script src="./deposit.js"></script>
 </body>
 
 </html>
