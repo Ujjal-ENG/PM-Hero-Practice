@@ -6,6 +6,4 @@ const resturant = {
   mainMenu: ["Pizza", "Pasta", "Risotto"],
 };
 
-const [arr] = resturant.categories;
 
-console.log(arr);
