@@ -7,7 +7,7 @@
 
 //   const withdrawAmount = document.getElementById("withdrawAmount");
 
-//   const depositAmount = document.getElementById("depositAmount");
+//   const withdrawAmount = document.getElementById("withdrawAmount");
 
 //   const balanceToal = document.getElementById("balanceTotal");
 
@@ -20,7 +20,20 @@
 //   balanceToal.innerText = totalBlance;
 
 //   withdrawINput.value = "";
-//   depositAmount.innerText = "0";
+//   withdrawAmount.innerText = "0";
 // });
 
+document.getElementById("btnWithdraw").addEventListener("click", () => {
+  const inputFieldValue = getInputValueById("withdrawInput");
 
+  const withdrawAmount = getTextValueById("withdrawAmount");
+
+  const balanceAmount = getTextValueById("balanceTotal");
+
+  const totalwithdraw = String(inputFieldValue + withdrawAmount);
+
+  const totalBlance = String(balanceAmount - inputFieldValue);
+
+  setTheInnerNewValue("withdrawAmount", totalwithdraw);
+  setTheInnerNewValue("balanceTotal", totalBlance);
+});
