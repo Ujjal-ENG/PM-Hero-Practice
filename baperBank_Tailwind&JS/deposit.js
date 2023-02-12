@@ -38,6 +38,11 @@ function getTextValueById(inputId) {
   return inputFileValueNumber;
 }
 
+function setTheInnerNewValue(elID, newValue) {
+  const newId = document.getElementById(elID);
+  return (newId.innerText = newValue);
+}
+
 document.getElementById("btnDeposit").addEventListener("click", () => {
   const inputFieldValue = getInputValueById("depositInput");
 
@@ -47,9 +52,8 @@ document.getElementById("btnDeposit").addEventListener("click", () => {
 
   const totalDeposit = String(inputFieldValue + depositAmount);
 
-  const totalBlance = String(balanceAmount + Number(totalDeposit));
+  const totalBlance = String(balanceAmount + inputFieldValue);
 
-  document.getElementById("depositAmount").innerText = totalDeposit;
-
-  document.getElementById("balanceTotal").innerText = totalBlance;
+  setTheInnerNewValue("depositAmount", totalDeposit);
+  setTheInnerNewValue("balanceTotal", totalBlance);
 });
