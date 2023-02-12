@@ -7,6 +7,8 @@ withdrawBTN.addEventListener("click", () => {
 
   const withdrawAmount = document.getElementById("withdrawAmount");
 
+  const depositAmount = document.getElementById("depositAmount");
+
   const balanceToal = document.getElementById("balanceTotal");
 
   const balanceTotal = Number(balanceToal.innerText);
@@ -18,4 +20,5 @@ withdrawBTN.addEventListener("click", () => {
   balanceToal.innerText = totalBlance;
 
   withdrawINput.value = "";
+  depositAmount.innerText = "0";
 });
