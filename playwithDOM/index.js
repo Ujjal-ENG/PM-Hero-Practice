@@ -14,7 +14,6 @@ getBTNElByID("underlineBTN").addEventListener("click", () => {
 });
 
 // work to align button
-
 getBTNElByID("leftAlignBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textAlign = "left";
 });
