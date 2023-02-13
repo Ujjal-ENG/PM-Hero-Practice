@@ -26,3 +26,18 @@ getBTNElByID("rightAlignBTN").addEventListener("click", () => {
 getBTNElByID("justifyAlignBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textAlign = "justify";
 });
+
+// now word to right section
+const inputUser = document.getElementById("fw-inr-dcr-num");
+
+inputUser.addEventListener("keyup", () => {
+  const inputValue = Number(inputUser.value);
+  console.log(inputValue);
+});
+
+// set the color
+document.getElementById("text-area").addEventListener("click", () => {
+  const colorInput = document.getElementById("colorSet").value;
+  console.log(colorInput);
+  document.getElementById("text-area").style.color = colorInput;
+});
