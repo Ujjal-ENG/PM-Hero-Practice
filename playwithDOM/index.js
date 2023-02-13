@@ -3,10 +3,12 @@ function getBTNElByID(getElByID) {
   return Btn;
 }
 
-const textArea = document.getElementById("text-area");
-const textAreaValue = textArea.value;
-
 getBTNElByID("boldBTN").addEventListener("click", () => {
-  console.log(textAreaValue);
-  console.log("Clicked")
+  document.getElementById("text-area").style.fontWeight = "bold";
+});
+getBTNElByID("italicBTN").addEventListener("click", () => {
+  document.getElementById("text-area").style.fontStyle = "italic";
+});
+getBTNElByID("underlineBTN").addEventListener("click", () => {
+  document.getElementById("text-area").style.textDecoration = "underline";
 });
