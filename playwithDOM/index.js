@@ -12,3 +12,18 @@ getBTNElByID("italicBTN").addEventListener("click", () => {
 getBTNElByID("underlineBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textDecoration = "underline";
 });
+
+// work to align button
+
+getBTNElByID("leftAlignBTN").addEventListener("click", () => {
+  document.getElementById("text-area").style.textAlign = "left";
+});
+getBTNElByID("centerAlignBTN").addEventListener("click", () => {
+  document.getElementById("text-area").style.textAlign = "center";
+});
+getBTNElByID("rightAlignBTN").addEventListener("click", () => {
+  document.getElementById("text-area").style.textAlign = "right";
+});
+getBTNElByID("justifyAlignBTN").addEventListener("click", () => {
+  document.getElementById("text-area").style.textAlign = "justify";
+});
