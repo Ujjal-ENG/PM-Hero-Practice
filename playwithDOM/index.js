@@ -30,14 +30,14 @@ getBTNElByID("justifyAlignBTN").addEventListener("click", () => {
 // now word to right section
 const inputUser = document.getElementById("fw-inr-dcr-num");
 
-inputUser.addEventListener("keyup", () => {
-  const inputValue = Number(inputUser.value);
-  console.log(inputValue);
+document.getElementById("text-area").addEventListener("click", () => {
+  const value = inputUser.value;
+  console.log(value);
+  document.getElementById("text-area").style.fontSize = value + "px";
 });
 
 // set the color
 document.getElementById("text-area").addEventListener("click", () => {
   const colorInput = document.getElementById("colorSet").value;
-  console.log(colorInput);
   document.getElementById("text-area").style.color = colorInput;
 });
