@@ -34,6 +34,17 @@ getID("calculator").addEventListener("click", (e) => {
       const digits = previTypeNUmber.split("");
       digits.pop();
       getID("typed-numbers").value = digits.join("");
+    } else if (number === "Submit") {
+      const pinValue = getID("display-pin").value;
+      const PinMatch = getID("typed-numbers").value;
+      console.log(pinValue, PinMatch);
+      if (PinMatch === pinValue) {
+        getID("pin-success").style.display = "block";
+        getID("pin-failure").style.display = "none";
+      } else {
+        getID("pin-failure").style.display = "block";
+        getID("pin-success").style.display = "none";
+      }
     }
   } else {
     const currentTypeNumber = previTypeNUmber + number;
