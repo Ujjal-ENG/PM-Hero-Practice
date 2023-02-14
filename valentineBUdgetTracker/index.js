@@ -28,7 +28,7 @@ getID("promoBTN").addEventListener("click", () => {
     if (values === "LOVE!10") {
       getID("promo-msg").style.display = "block";
       const disApp = getPrice * 0.1;
-      console.log( getPrice, disApp);
+      console.log(getPrice, disApp);
       const res = getPrice - disApp;
       getID("toPrice").innerText = res;
       console.log(res);
