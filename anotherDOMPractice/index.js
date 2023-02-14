@@ -20,8 +20,15 @@ document.getElementById("add-taskBTN").addEventListener("click", () => {
   }
 });
 
-document.getElementById("p-1").innerText = "Hello Ujjal";
-
 document.getElementById("chnageText").addEventListener("click", () => {
-  
-})
+  setInnerText("p-1", getValueFromInput("text-input"));
+});
+
+function getValueFromInput(id) {
+  const value = document.getElementById(id).value;
+  return value;
+}
+
+function setInnerText(id, value) {
+  document.getElementById(id).innerText = value;
+}
