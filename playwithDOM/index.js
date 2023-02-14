@@ -27,7 +27,7 @@ getBTNElByID("justifyAlignBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textAlign = "justify";
 });
 
-// now word to right section
+// increase decrease the font size section
 const inputUser = document.getElementById("fw-inr-dcr-num");
 
 document.getElementById("text-area").addEventListener("click", () => {
@@ -43,4 +43,16 @@ document.getElementById("text-area").addEventListener("click", () => {
 document.getElementById("text-area").addEventListener("click", () => {
   const colorInput = document.getElementById("colorSet").value;
   document.getElementById("text-area").style.color = colorInput;
+});
+
+let isUpperCase = true;
+// full text convert to the upper case
+getBTNElByID("uper-lowerBTN").addEventListener("click", () => {
+  if (isUpperCase) {
+    document.getElementById("text-area").style.textTransform = "uppercase";
+    isUpperCase = false;
+  } else {
+    document.getElementById("text-area").style.textTransform = "lowercase";
+    isUpperCase = true;
+  }
 });
