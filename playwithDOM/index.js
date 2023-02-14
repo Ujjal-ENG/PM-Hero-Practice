@@ -3,9 +3,8 @@ function getBTNElByID(getElByID) {
   return Btn;
 }
 
-let isActive = true;
-
 function setToggle(id, style, type) {
+  let isActive = true;
   if (isActive) {
     getBTNElByID(id).classList.add("active");
     isActive = false;
