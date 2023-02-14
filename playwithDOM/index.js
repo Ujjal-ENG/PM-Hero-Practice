@@ -15,6 +15,11 @@ function setToggle(id, style, type) {
   }
 }
 
+function setChangeAlignment(alignType) {
+  document.getElementById("text-area").style.textAlign = alignType;
+}
+
+// add the lister in bold,italic and underline btn
 getBTNElByID("boldBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.fontWeight = "bold";
   setToggle("boldBTN", "fontWeight", "normal");
@@ -32,17 +37,19 @@ getBTNElByID("underlineBTN").addEventListener("click", () => {
 
 // work to align button
 getBTNElByID("leftAlignBTN").addEventListener("click", () => {
-  document.getElementById("text-area").style.textAlign = "left";
+  setChangeAlignment("left");
 });
 
 getBTNElByID("centerAlignBTN").addEventListener("click", () => {
-  document.getElementById("text-area").style.textAlign = "center";
+  setChangeAlignment("center");
 });
+
 getBTNElByID("rightAlignBTN").addEventListener("click", () => {
-  document.getElementById("text-area").style.textAlign = "right";
+  setChangeAlignment("right");
 });
+
 getBTNElByID("justifyAlignBTN").addEventListener("click", () => {
-  document.getElementById("text-area").style.textAlign = "justify";
+  setChangeAlignment("justify");
 });
 
 // increase decrease the font size section
@@ -75,4 +82,5 @@ getBTNElByID("uper-lowerBTN").addEventListener("click", () => {
 
 getBTNElByID("resetBTN").addEventListener("click", () => {
   document.getElementById("text-area").value = "";
+  window.location.reload();
 });
