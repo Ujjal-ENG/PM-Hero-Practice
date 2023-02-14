@@ -3,20 +3,48 @@ function getBTNElByID(getElByID) {
   return Btn;
 }
 
+let isActive = true;
 getBTNElByID("boldBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.fontWeight = "bold";
+  if (isActive) {
+    getBTNElByID("boldBTN").classList.add("active");
+    isActive = false;
+  } else {
+    getBTNElByID("boldBTN").classList.remove("active");
+    document.getElementById("text-area").style.fontWeight = "normal";
+    isActive = true;
+  }
 });
+
 getBTNElByID("italicBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.fontStyle = "italic";
+  if (isActive) {
+    getBTNElByID("italicBTN").classList.add("active");
+    isActive = false;
+  } else {
+    getBTNElByID("italicBTN").classList.remove("active");
+    document.getElementById("text-area").style.fontStyle = "normal";
+    isActive = true;
+  }
 });
+
 getBTNElByID("underlineBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textDecoration = "underline";
+  if (isActive) {
+    getBTNElByID("underlineBTN").classList.add("active");
+    isActive = false;
+  } else {
+    getBTNElByID("underlineBTN").classList.remove("active");
+    document.getElementById("text-area").style.textDecoration = "none";
+    isActive = true;
+  }
 });
 
 // work to align button
 getBTNElByID("leftAlignBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textAlign = "left";
 });
+
 getBTNElByID("centerAlignBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textAlign = "center";
 });
