@@ -14,8 +14,8 @@ document.getElementById("add-taskBTN").addEventListener("click", () => {
   const allli = document.getElementsByClassName("new-li");
 
   for (let li of allli) {
-    li.addEventListener("dblclick", () => {
-      li.style.textDecoration = "line-through";
+    li.addEventListener("click", (e) => {
+      e.target.parentNode.removeChild(e.target);
     });
   }
 });
