@@ -10,4 +10,12 @@ document.getElementById("add-taskBTN").addEventListener("click", () => {
   taskContainer.appendChild(liItem);
 
   document.getElementById("text-input").value = "";
+
+  const allli = document.getElementsByClassName("new-li");
+
+  for (let li of allli) {
+    li.addEventListener("dblclick", () => {
+      li.style.textDecoration = "line-through";
+    });
+  }
 });
