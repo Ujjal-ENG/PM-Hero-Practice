@@ -80,3 +80,9 @@ getBTNElByID("uper-lowerBTN").addEventListener("click", () => {
     isUpperCase = true;
   }
 });
+
+// set the reset button
+
+getBTNElByID("resetBTN").addEventListener("click", () => {
+  document.getElementById("text-area").value = "";
+});
