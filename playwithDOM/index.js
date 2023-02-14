@@ -4,13 +4,13 @@ function getBTNElByID(getElByID) {
 }
 
 let isActive = true;
-function setToggle(id, className, style, type) {
-  console.log(style);
+
+function setToggle(id, style, type) {
   if (isActive) {
-    getBTNElByID(id).classList.add(className);
+    getBTNElByID(id).classList.add("active");
     isActive = false;
   } else {
-    getBTNElByID("italicBTN").classList.remove(className);
+    getBTNElByID(id).classList.remove("active");
     document.getElementById("text-area").style[style] = type;
     isActive = true;
   }
@@ -18,31 +18,17 @@ function setToggle(id, className, style, type) {
 
 getBTNElByID("boldBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.fontWeight = "bold";
-  if (isActive) {
-    getBTNElByID("boldBTN").classList.add("active");
-    isActive = false;
-  } else {
-    getBTNElByID("boldBTN").classList.remove("active");
-    document.getElementById("text-area").style.fontWeight = "normal";
-    isActive = true;
-  }
+  setToggle("boldBTN", "fontWeight", "normal");
 });
 
 getBTNElByID("italicBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.fontStyle = "italic";
-  setToggle("italicBTN", "active", "fontStyle", "normal");
+  setToggle("italicBTN", "fontStyle", "normal");
 });
 
 getBTNElByID("underlineBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.textDecoration = "underline";
-  if (isActive) {
-    getBTNElByID("underlineBTN").classList.add("active");
-    isActive = false;
-  } else {
-    getBTNElByID("underlineBTN").classList.remove("active");
-    document.getElementById("text-area").style.textDecoration = "none";
-    isActive = true;
-  }
+  setToggle("underlineBTN", "textDecoration", "none");
 });
 
 // work to align button
