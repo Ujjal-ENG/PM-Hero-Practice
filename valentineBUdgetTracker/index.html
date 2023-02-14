@@ -22,11 +22,10 @@
 
   <h1 class="text-5xl font-semibold text-center">Valentine Budget Tracker</h1>
 
+
+  <h3 class="text-xl font-extrabold">How Much your Valentine Budget?</h3>
   <!-- section for input budget -->
-  <section class="container-lg m-10">
-
-    <h3 class="text-xl font-extrabold">How Much your Valentine Budget?</h3>
-
+  <section class="container-lg m-10 flex justify-between">
     <div class="my-6 mx-8" id="parent-input-div">
       <label for="success" class="block mb-2 text-sm font-medium text-green-700 dark:text-green-500">Enter your Budget
         please..</label>
@@ -39,6 +38,13 @@
       <p class="mt-2 text-sm text-green-600 dark:text-green-500" id="success-msg"><span class="font-medium">Well
           done!</span> We get your
         budget.</p>
+    </div>
+
+    <div class="flex gap-10 mt-20 pr-8">
+      <h1 class="text-2xl font-semibold">Chocolate Price: <span id="chPrice">0</span></h1>
+      <h1 class="text-2xl font-semibold">Rose Price: <span id="roPrice">0</span></h1>
+      <h1 class="text-2xl font-semibold">Diary Price: <span id="daPrice">0</span></h1>
+      <h1 class="text-2xl font-semibold">Total Price: <span id="toPrice">0</span></h1>
     </div>
   </section>
 
