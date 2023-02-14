@@ -45,8 +45,8 @@ document.getElementById("text-area").addEventListener("click", () => {
   document.getElementById("text-area").style.color = colorInput;
 });
 
-let isUpperCase = true;
 // full text convert to the upper case
+let isUpperCase = true;
 getBTNElByID("uper-lowerBTN").addEventListener("click", () => {
   if (isUpperCase) {
     document.getElementById("text-area").style.textTransform = "uppercase";
