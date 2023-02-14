@@ -6,12 +6,12 @@ function getID(id) {
 function getTotal(qnID, pID, pIDS) {
   const qunatityIn = getID(qnID);
   const qunatityInValue = Number(qunatityIn.value);
-  const cholatePrice = getID(pID).innerText;
+  const cholatePrice = Number(getID(pID).innerText);
   const totalChPrice = getID(pIDS);
-  const totalPrice = eval(qunatityInValue * cholatePrice);
-  console.log(totalPrice);
+  const totalPrice = parseInt(qunatityInValue * cholatePrice);
   totalChPrice.innerText = totalPrice;
-  const totalget = getID("toPrice").innerText;
+  const getPrice = Number(getID("toPrice").innerText) + totalPrice;
+  getID("toPrice").innerText = getPrice;
 }
 
 const budgetInput = document.getElementById("success");
