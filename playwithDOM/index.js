@@ -4,6 +4,18 @@ function getBTNElByID(getElByID) {
 }
 
 let isActive = true;
+function setToggle(id, className, style, type) {
+  console.log(style);
+  if (isActive) {
+    getBTNElByID(id).classList.add(className);
+    isActive = false;
+  } else {
+    getBTNElByID("italicBTN").classList.remove(className);
+    document.getElementById("text-area").style[style] = type;
+    isActive = true;
+  }
+}
+
 getBTNElByID("boldBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.fontWeight = "bold";
   if (isActive) {
@@ -18,14 +30,7 @@ getBTNElByID("boldBTN").addEventListener("click", () => {
 
 getBTNElByID("italicBTN").addEventListener("click", () => {
   document.getElementById("text-area").style.fontStyle = "italic";
-  if (isActive) {
-    getBTNElByID("italicBTN").classList.add("active");
-    isActive = false;
-  } else {
-    getBTNElByID("italicBTN").classList.remove("active");
-    document.getElementById("text-area").style.fontStyle = "normal";
-    isActive = true;
-  }
+  setToggle("italicBTN", "active", "fontStyle", "normal");
 });
 
 getBTNElByID("underlineBTN").addEventListener("click", () => {

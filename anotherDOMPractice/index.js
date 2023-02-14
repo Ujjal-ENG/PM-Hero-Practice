@@ -19,3 +19,9 @@ document.getElementById("add-taskBTN").addEventListener("click", () => {
     });
   }
 });
+
+document.getElementById("p-1").innerText = "Hello Ujjal";
+
+document.getElementById("chnageText").addEventListener("click", () => {
+  
+})
