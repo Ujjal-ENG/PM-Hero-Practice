@@ -9,7 +9,17 @@ function getPin() {
   if (pinString.length === 4) {
     return pin;
   } else {
-    console.log("Pin not 3 digit found"+pin);
+    console.log("Pin not 3 digit found" + pin);
     return getPin();
   }
 }
+
+function getID(id) {
+  const ID = document.getElementById(id);
+  return ID;
+}
+
+getID("generate-pin").addEventListener("click", () => {
+  const getValue = getID("display-pin");
+  getValue.value = getPin();
+});
