@@ -47,6 +47,7 @@ getID("calculator").addEventListener("click", (e) => {
         --actionLeft;
         getID("action-left").innerText = actionLeft;
         tryLefft(actionLeft);
+        actionLeft = 3;
       }
     }
   } else {
@@ -62,10 +63,11 @@ function tryLefft(value) {
     setTimeout(() => {
       getID("verify-pin").disabled = false;
       getID("msg-action").innerText = "3 try left";
-      getID("typed-numbers").value = "";
       getID("pin-failure").style.display = "none";
+      window.location.reload();
     }, 5000);
   } else {
     getID("verify-pin").disabled = false;
+    console.log("Herllo");
   }
 }
