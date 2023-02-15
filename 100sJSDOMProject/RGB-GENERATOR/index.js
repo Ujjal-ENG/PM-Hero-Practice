@@ -1,18 +1,12 @@
 document.getElementById("change-btn").addEventListener("click", () => {
-  const getRandome = Math.round(Math.random() * 1000000);
-  document.getElementById("root").style.backgroundColor = "#" + getRandome;
+  document.getElementById("root").style.backgroundColor = getRandome();
 });
 
-// step 1: create onload handler
-
-window.onload = () => {
-  main();
-};
-
-function main() {}
 
 // step 2: random color generator function
 function getRandome() {
-  const getRandome = Math.round(Math.random() * 1000000);
-  return getRandome;
+  const red = Math.round(Math.random() * 255);
+  const green = Math.round(Math.random() * 255);
+  const blue = Math.round(Math.random() * 255);
+  return `rgb(${red},${green},${blue})`;
 }
