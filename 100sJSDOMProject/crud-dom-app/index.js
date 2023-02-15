@@ -19,5 +19,9 @@ getId("#addBook").addEventListener("click", (e) => {
     <th>${year.value}</th>
     `;
     getId("#bookList").appendChild(newRow);
+
+    title.value = "";
+    author.value = "";
+    year.value = "";
   }
 });
