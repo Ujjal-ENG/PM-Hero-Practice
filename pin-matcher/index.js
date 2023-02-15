@@ -58,14 +58,14 @@ getID("calculator").addEventListener("click", (e) => {
 function tryLefft(value) {
   if (value === 0) {
     getID("msg-action").innerText = "PLease Try Again after 5s!!!";
+    getID("verify-pin").disabled = true;
     setTimeout(() => {
-      getID("verify-pin").style.disabled = true;
+      getID("verify-pin").disabled = false;
       getID("msg-action").innerText = "3 try left";
       getID("typed-numbers").value = "";
       getID("pin-failure").style.display = "none";
-      window.location.reload();
     }, 5000);
   } else {
-    getID("verify-pin").style.disabled = false;
+    getID("verify-pin").disabled = false;
   }
 }
