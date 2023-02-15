@@ -3,9 +3,16 @@
 ///////////////////////////////////////
 // Modal window
 
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.btn--close-modal');
+// querySecltion common function
+
+function getSelector(selector) {
+  const SL = document.querySelector(selector);
+  return SL;
+}
+
+const modal = getSelector('.modal');
+const overlay = getSelector('.overlay');
+const btnCloseModal = getSelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
 const openModal = function () {
@@ -52,3 +59,10 @@ document.querySelector('.btn--close-cookie').addEventListener('click', () => {
 message.style.backgroundColor = '#37383d';
 message.style.height = '55px';
 message.style.fontSize = '20px';
+
+// Design the scrolling button
+const btnScrollTo = getSelector('.btn--scroll-to');
+const section1 = getSelector('#section--1');
+btnScrollTo.addEventListener('click', () => {
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
