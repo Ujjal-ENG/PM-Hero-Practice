@@ -48,9 +48,6 @@ getSelector('.nav__links').addEventListener('click', e => {
   if (e.target.classList.contains('nav__link')) {
     const id = e.target.getAttribute('href');
     getSelector(id).scrollIntoView({ behavior: 'smooth' });
-    console.log('Kopa');
-  } else {
-    console.log('Nothing Happened');
   }
 });
 
