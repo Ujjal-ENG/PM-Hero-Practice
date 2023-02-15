@@ -3,14 +3,14 @@ function getId(id) {
   return ID;
 }
 
+const title = getId("#title");
+const author = getId("#author");
+const year = getId("#year");
+
 getId("#addBook").addEventListener("click", (e) => {
   e.preventDefault();
-  if (
-    getId("#title").value === "" &&
-    getId("#author").value === "" &&
-    getId("#year") === ""
-  ) {
+  if (title.value === "" && author.value === "" && year.value === "") {
     alert("Please fill up the all input field");
   }
-  console.log("Hello");
+
 });
