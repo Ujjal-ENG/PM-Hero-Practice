@@ -20,7 +20,6 @@ const closeModal = function () {
 
 btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
 
-
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
@@ -28,4 +27,23 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
   }
+});
+
+// selecting the element
+
+const header = document.querySelector('.header');
+
+// creating and inserting elements
+
+const message = document.createElement('div');
+
+message.classList.add('cookie-message');
+
+message.innerHTML = `we use cookied for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!!</button>`;
+header.appendChild(message);
+
+// delete elements
+
+document.querySelector('.btn--close-cookie').addEventListener('click', () => {
+  message.remove();
 });
