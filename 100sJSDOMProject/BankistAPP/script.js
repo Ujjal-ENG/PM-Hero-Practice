@@ -47,3 +47,8 @@ header.appendChild(message);
 document.querySelector('.btn--close-cookie').addEventListener('click', () => {
   message.remove();
 });
+
+// style the message
+message.style.backgroundColor = '#37383d';
+message.style.height = '55px';
+message.style.fontSize = '20px';
