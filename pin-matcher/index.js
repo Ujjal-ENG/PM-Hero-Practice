@@ -9,7 +9,6 @@ function getPin() {
   if (pinString.length === 4) {
     return pin;
   } else {
-    console.log("Pin not 3 digit found" + pin);
     return getPin();
   }
 }
@@ -44,7 +43,6 @@ getID("calculator").addEventListener("click", (e) => {
       } else {
         getID("pin-failure").style.display = "block";
         getID("pin-success").style.display = "none";
-        console.log(--actionLeft);
         getID("action-left").innerText = actionLeft;
         tryLefft(actionLeft);
       }
