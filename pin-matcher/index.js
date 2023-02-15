@@ -27,6 +27,7 @@ getID("generate-pin").addEventListener("click", () => {
 getID("calculator").addEventListener("click", (e) => {
   const number = e.target.innerText;
   const previTypeNUmber = getID("typed-numbers").value;
+  let actionLeft = getID("action-left").innerText;
   if (isNaN(number)) {
     if (number === "C") {
       getID("typed-numbers").value = "";
@@ -37,13 +38,15 @@ getID("calculator").addEventListener("click", (e) => {
     } else if (number === "Submit") {
       const pinValue = getID("display-pin").value;
       const PinMatch = getID("typed-numbers").value;
-      console.log(pinValue, PinMatch);
       if (PinMatch === pinValue) {
         getID("pin-success").style.display = "block";
         getID("pin-failure").style.display = "none";
       } else {
         getID("pin-failure").style.display = "block";
         getID("pin-success").style.display = "none";
+        console.log(--actionLeft);
+        getID("action-left").innerText = actionLeft;
+        tryLefft(actionLeft);
       }
     }
   } else {
@@ -51,3 +54,17 @@ getID("calculator").addEventListener("click", (e) => {
     getID("typed-numbers").value = currentTypeNumber;
   }
 });
+
+function tryLefft(value) {
+  if (value === 0) {
+    getID("msg-action").innerText = "PLease Try Again after 5s!!!";
+    setTimeout(() => {
+      getID("verify-pin").style.disabled = true;
+      getID("msg-action").innerText = "3 try left";
+      getID("typed-numbers").value= ""
+    }, 5000);
+  } else {
+    getID("verify-pin").style.disabled = false;
+  }
+}
+
