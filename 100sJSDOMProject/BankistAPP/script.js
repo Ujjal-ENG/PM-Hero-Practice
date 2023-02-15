@@ -66,3 +66,25 @@ const section1 = getSelector('#section--1');
 btnScrollTo.addEventListener('click', () => {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
+
+// random color generator
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+getSelector('.nav__link').addEventListener('click', () => {
+  getSelector('.nav__link').style.backgroundColor = randomColor();
+  console.log('click');
+});
+
+getSelector('.nav__links').addEventListener('click', () => {
+  getSelector('.nav__links').style.backgroundColor = randomColor();
+  console.log('click');
+});
+getSelector('.nav').addEventListener('click', () => {
+  getSelector('.nav').style.backgroundColor = randomColor();
+  console.log('click');
+});
