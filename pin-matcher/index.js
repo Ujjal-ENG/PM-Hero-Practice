@@ -9,6 +9,7 @@ function getPin() {
   if (pinString.length === 4) {
     return pin;
   } else {
+    console.log("Pin not 3 digit found" + pin);
     return getPin();
   }
 }
@@ -43,6 +44,7 @@ getID("calculator").addEventListener("click", (e) => {
       } else {
         getID("pin-failure").style.display = "block";
         getID("pin-success").style.display = "none";
+        --actionLeft;
         getID("action-left").innerText = actionLeft;
         tryLefft(actionLeft);
       }
@@ -59,10 +61,11 @@ function tryLefft(value) {
     setTimeout(() => {
       getID("verify-pin").style.disabled = true;
       getID("msg-action").innerText = "3 try left";
-      getID("typed-numbers").value= ""
+      getID("typed-numbers").value = "";
+      getID("pin-failure").style.display = "none";
+      window.location.reload();
     }, 5000);
   } else {
     getID("verify-pin").style.disabled = false;
   }
 }
-
