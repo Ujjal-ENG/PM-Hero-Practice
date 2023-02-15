@@ -14,6 +14,8 @@ const modal = getSelector('.modal');
 const overlay = getSelector('.overlay');
 const btnCloseModal = getSelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnScrollTo = getSelector('.btn--scroll-to');
+const section1 = getSelector('#section--1');
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -36,21 +38,33 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+btnScrollTo.addEventListener('click', () => {
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Page Navigation
+getSelector('.nav__links').addEventListener('click', e => {
+  e.preventDefault();
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    getSelector(id).scrollIntoView({ behavior: 'smooth' });
+    console.log('Kopa');
+  } else {
+    console.log('Nothing Happened');
+  }
+});
+
 // selecting the element
 
 const header = document.querySelector('.header');
 
 // creating and inserting elements
-
 const message = document.createElement('div');
-
 message.classList.add('cookie-message');
-
 message.innerHTML = `we use cookied for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!!</button>`;
 header.appendChild(message);
 
 // delete elements
-
 document.querySelector('.btn--close-cookie').addEventListener('click', () => {
   message.remove();
 });
@@ -59,34 +73,3 @@ document.querySelector('.btn--close-cookie').addEventListener('click', () => {
 message.style.backgroundColor = '#37383d';
 message.style.height = '55px';
 message.style.fontSize = '20px';
-
-// Design the scrolling button
-const btnScrollTo = getSelector('.btn--scroll-to');
-const section1 = getSelector('#section--1');
-btnScrollTo.addEventListener('click', () => {
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
-
-// random color generator
-
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
-
-getSelector('.nav__link').addEventListener('click', e => {
-  e.target.style.backgroundColor = randomColor();
-  console.log('click', e.target, e.currentTarget);
-
-
-});
-
-getSelector('.nav__links').addEventListener('click', e => {
-  e.currentTarget.style.backgroundColor = randomColor();
-  console.log('container', e.target, e.currentTarget);
-});
-getSelector('.nav').addEventListener('click', e => {
-  getSelector('.nav').style.backgroundColor = randomColor();
-  console.log('Nav', e.target, e.currentTarget);
-});
