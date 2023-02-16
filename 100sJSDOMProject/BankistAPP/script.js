@@ -123,7 +123,7 @@ const stickyNav = (entries, overserve) => {
   const [entry] = entries;
   if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
-  overserve.unobserve(entry.target);
+  // overserve.unobserve(entry.target);
 };
 
 const headerObserver = new IntersectionObserver(stickyNav, {
@@ -177,3 +177,41 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 
 imgTargets.forEach(img => imgObserver.observe(img));
+
+// makeing the slide functionality
+
+const slides = document.querySelectorAll('.slide');
+
+const slider = getSelector('.slider');
+const btnLeft = getSelector('.slider__btn--left');
+const btnright = getSelector('.slider__btn--right');
+
+
+slider.style.overflow = 'visible';
+
+let currentSlide = 0;
+const maxSlide = slides.length;
+
+slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));
+
+btnright.addEventListener('click', () => {
+  if (currentSlide === maxSlide - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - currentSlide)}%)`)
+  );
+});
+
+btnLeft.addEventListener('click', () => {
+  if (currentSlide === 0) {
+    currentSlide = maxSlide - 1;
+  } else {
+    currentSlide--;
+  }
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - currentSlide)}%)`)
+  );
+});
