@@ -110,10 +110,14 @@ const handleHover = opacity => {
   }
 };
 
-nav.addEventListener('mouseover', e => {
+nav.addEventListener('mouseover', () => {
   handleHover(0.5);
 });
 
-nav.addEventListener('mouseout', e => {
+nav.addEventListener('mouseout', () => {
   handleHover(1);
 });
+
+
+
+// sticky navigation
