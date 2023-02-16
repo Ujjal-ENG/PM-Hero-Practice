@@ -12,7 +12,7 @@ document.getElementById("card-container").addEventListener("click", (e) => {
     const name = cardInfo[0].innerText;
     const price = cardInfo[1].value;
     const quantity = cardInfo[2].value;
-    if (price == "" && quantity == "") {
+    if (price == "" || quantity == "") {
       alert("PLease provide a number");
       cardInfo[1].value = "";
       cardInfo[2].value = "";
@@ -45,7 +45,7 @@ function display(name, price, quantity) {
   for (let i of totalArr) {
     sum += i;
   }
-document.getElementById("finalToal").innerHTML = sum;
+  document.getElementById("finalToal").innerHTML = sum;
   document.getElementById("subTotal").innerHTML = sum;
 }
 
