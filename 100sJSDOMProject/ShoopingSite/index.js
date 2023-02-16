@@ -25,9 +25,9 @@ document.getElementById("card-container").addEventListener("click", (e) => {
   }
 });
 
+let totalArr = [];
 function display(name, price, quantity) {
   count++;
-
   const tableData = document.getElementById("tableData");
   let tr = document.createElement("tr");
   const total = Number(price * quantity);
@@ -39,8 +39,14 @@ function display(name, price, quantity) {
   <td>${quantity}</td>
   <td>${total}</td>
   `;
+  let sum = 0;
   tableData.appendChild(tr);
-  getTotal(total);
+  totalArr.push(total);
+  for (let i of totalArr) {
+    sum += i;
+  }
+document.getElementById("finalToal").innerHTML = sum;
+  document.getElementById("subTotal").innerHTML = sum;
 }
 
 function cartItem(quantity) {
@@ -50,12 +56,4 @@ function cartItem(quantity) {
   const res = items + Number(quantity);
   cartItem.innerHTML = res;
   cartItem2.innerHTML = res;
-}
-
-function getTotal(total) {
-  const showToal = document.getElementById("finalToal");
-  const showToalNum = Number(showToal.innerHTML);
-  showToal.innerHTML = total + showToalNum;
-  const subTotal = document.getElementById("subTotal");
-  subTotal.innerHTML = total + showToalNum;
 }
