@@ -17,7 +17,7 @@
 <body>
 
   <!-- Create the structure to the Header section -->
-  <header class="container mx-auto">
+  <header class="container-xxl mx-auto">
     <div class="navbar bg-base-100 shadow-lg px-8">
       <div class="flex-1">
         <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
@@ -67,9 +67,9 @@
 
   <!-- start to design the main section -->
   <main>
-    <section>
+    <section class="flex flex-col justify-center items-center md:flex-row md:justify-start md:items-start">
 
-      <div class="left-site pl-4 mt-10 w-4/6 grid sm:grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="left-site p-4 sm:pl-4 mt-10 sm:w-4/6 grid sm:grid-cols-1 w-full md:grid-cols-3 gap-4">
 
         <div class="card w-full bg-base-100 shadow-xl">
           <figure class="w-full h-60"><img src="./img/coffee.jpg" alt="Shoes" class="h-full" /></figure>
@@ -130,8 +130,10 @@
             <h2 class="card-title">Vue JS!</h2>
             <!-- <p class="font-extrabold">Price: $<span>480</span></p>
             <p class="font-extrabold">Quantity: <span>2</span></p> -->
-            <input type="number" placeholder="TYpe Price here" class="input rounded-lg input-bordered input-sm w-full max-w-xs" required/>
-            <input type="number" placeholder="Quantity" class="input rounded-lg input-bordered input-sm w-full max-w-xs" required/>
+            <input type="number" placeholder="TYpe Price here"
+              class="input rounded-lg input-bordered input-sm w-full max-w-xs" required />
+            <input type="number" placeholder="Quantity" class="input rounded-lg input-bordered input-sm w-full max-w-xs"
+              required />
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div class="card-actions justify-end">
               <button class="btn btn-primary">Add To Cart</button>
@@ -140,8 +142,34 @@
         </div>
       </div>
 
-      <div class="right-site">
+      <div class="right-site w-full sm:w-1/3">
+        <h1 class="text-3xl text-center font-bold">Total Products: <span id="total-products">0</span></h1>
 
+        <!-- Table -->
+        <div class="overflow-x-auto lg: p-4">
+          <table class="table w-full">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- row 1 -->
+              <!-- <tr>
+                <th>1</th>
+                <td>Cy Ganderton</td>
+                <td>Quality Control Specialist</td>
+                <td>Blue</td>
+              </tr> -->
+
+
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>
