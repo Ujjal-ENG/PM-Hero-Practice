@@ -16,6 +16,12 @@ const btnCloseModal = getSelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = getSelector('.btn--scroll-to');
 const section1 = getSelector('#section--1');
+const nav = getSelector('.nav');
+const tabs = document.querySelectorAll('.operations__tab');
+
+const tabContainer = getSelector('.operations__tab-container');
+
+const tabsContent = document.querySelectorAll('.operations__content');
 
 const openModal = function () {
   modal.classList.remove('hidden');
@@ -62,7 +68,7 @@ message.innerHTML = `we use cookied for improved functionality and analytics. <b
 header.appendChild(message);
 
 // delete elements
-document.querySelector('.btn--close-cookie').addEventListener('click', () => {
+getSelector('.btn--close-cookie').addEventListener('click', () => {
   message.remove();
 });
 
@@ -72,12 +78,6 @@ message.style.height = '55px';
 message.style.fontSize = '20px';
 
 // design the operations tabs
-const tabs = document.querySelectorAll('.operations__tab');
-
-const tabContainer = getSelector('.operations__tab-container');
-
-const tabsContent = document.querySelectorAll('.operations__content');
-
 tabContainer.addEventListener('click', e => {
   const clicked = e.target.closest('.operations__tab');
 
@@ -89,8 +89,31 @@ tabContainer.addEventListener('click', e => {
   tabsContent.forEach(e => e.classList.remove('operations__content--active'));
 
   // Active the content area
-
   getSelector(`.operations__content--${clicked.dataset.tab}`).classList.add(
     'operations__content--active'
   );
+});
+
+// Menu fade animation activate
+const handleHover = opacity => {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const sibilings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    sibilings.forEach(el => {
+      if (el !== link) {
+        el.style.opacity = opacity;
+      }
+    });
+    logo.style.opacity = opacity;
+  }
+};
+
+nav.addEventListener('mouseover', e => {
+  handleHover(0.5);
+});
+
+nav.addEventListener('mouseout', e => {
+  handleHover(1);
 });
