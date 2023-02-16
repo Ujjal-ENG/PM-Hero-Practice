@@ -25,6 +25,11 @@ document.getElementById("card-container").addEventListener("click", (e) => {
   }
 });
 
+document.getElementById("viewCart").addEventListener("click", () => {
+  console.log("clicked");
+  window.location.assign("cartItems.html");
+});
+
 let totalArr = [];
 function display(name, price, quantity) {
   count++;
