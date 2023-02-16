@@ -13,11 +13,18 @@ document.getElementById("calculateCost").addEventListener("click", (e) => {
 
   if (
     getID("income") == "" ||
+    getID("income") < 0 ||
     getID("food") == "" ||
+    getID("food") > getID("income") ||
+    getID("food") < 0 ||
     getID("rent") == "" ||
-    getID("clothes") == ""
+    getID("rent") > getID("income") ||
+    getID("rent") < 0 ||
+    getID("clothes") == "" ||
+    getID("clothes") > getID("income") ||
+    getID("clothes") < 0
   ) {
-    alert("Please provide a number");
+    alert("Please provide a valid Cost");
   } else {
     const income = getID("income");
     const foodCost = getID("food");
