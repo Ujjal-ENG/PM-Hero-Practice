@@ -70,3 +70,21 @@ document.querySelector('.btn--close-cookie').addEventListener('click', () => {
 message.style.backgroundColor = '#37383d';
 message.style.height = '55px';
 message.style.fontSize = '20px';
+
+// design the operations tabs
+const tabs = document.querySelectorAll('.operations__tab');
+
+const tabContainer = getSelector('.operations__tab-container');
+
+const tabsContent = document.querySelectorAll('.operations__content');
+
+tabContainer.addEventListener('click', e => {
+  const clicked = e.target.closest('.operations__tab');
+
+  if (!clicked) return;
+
+  // remove first all of the listener classes
+  tabs.forEach(e => e.classList.remove("operations__tab--active"));
+
+  clicked.classList.add('operations__tab--active');
+});
