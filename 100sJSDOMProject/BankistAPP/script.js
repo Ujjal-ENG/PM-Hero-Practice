@@ -95,7 +95,7 @@ tabContainer.addEventListener('click', e => {
 });
 
 // Menu fade animation activate
-const handleHover = opacity => {
+const handleHover = (e, opacity) => {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const sibilings = link.closest('.nav').querySelectorAll('.nav__link');
@@ -110,14 +110,24 @@ const handleHover = opacity => {
   }
 };
 
-nav.addEventListener('mouseover', () => {
-  handleHover(0.5);
+nav.addEventListener('mouseover', e => {
+  handleHover(e, 0.5);
 });
 
-nav.addEventListener('mouseout', () => {
-  handleHover(1);
+nav.addEventListener('mouseout', e => {
+  handleHover(e, 1);
 });
-
-
 
 // sticky navigation
+const stickyNav = entries => {
+  const [entry] = entries;
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: '-90px',
+});
+headerObserver.observe(header);
