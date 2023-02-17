@@ -38,7 +38,6 @@ function display(name, price, quantity) {
   const tableData = document.getElementById("tableData");
   let tr = document.createElement("tr");
   const total = Number(price * quantity);
-
   tr.innerHTML = `
   <th>${count}</th>
   <td>${name}</td>
@@ -59,6 +58,9 @@ function display(name, price, quantity) {
   }
   document.getElementById("finalToal").innerHTML = sum;
   document.getElementById("subTotal").innerHTML = sum;
+  document.getElementById("icr").addEventListener("click", (e) => {
+    console.log(e.target.parentNode.innerText - 1);
+  });
 }
 
 function cartItem(quantity) {
