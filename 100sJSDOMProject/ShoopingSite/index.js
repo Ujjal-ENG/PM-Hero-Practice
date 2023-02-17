@@ -12,8 +12,9 @@ document.getElementById("card-container").addEventListener("click", (e) => {
     const name = cardInfo[0].innerText;
     const price = cardInfo[1].value;
     const quantity = cardInfo[2].value;
-    if (price == "" || quantity == "") {
-      alert("PLease provide a number");
+    // price == "" || quantity == ""
+    if (price < 0 || quantity <= 0 || price == "" || quantity == "") {
+      alert("PLease provide a valid number");
       cardInfo[1].value = "";
       cardInfo[2].value = "";
     } else {
@@ -31,6 +32,7 @@ document.getElementById("viewCart").addEventListener("click", () => {
 });
 
 let totalArr = [];
+
 function display(name, price, quantity) {
   count++;
   const tableData = document.getElementById("tableData");
@@ -41,7 +43,12 @@ function display(name, price, quantity) {
   <th>${count}</th>
   <td>${name}</td>
   <td>${price}</td>
-  <td>${quantity}</td>
+  
+  <td class="text-center font-bold text-xl" id="qty">
+  <i class="fa-solid fa-plus cursor-pointer" id="icr"></i>
+  ${quantity}
+  <i class="fa-solid fa-minus cursor-pointer" id"dcr"></i>
+  </td>
   <td>${total}</td>
   `;
   let sum = 0;
