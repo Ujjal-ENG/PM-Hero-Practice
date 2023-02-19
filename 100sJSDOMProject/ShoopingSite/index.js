@@ -49,6 +49,9 @@ function display(name, price, quantity) {
   <i class="fa-solid fa-minus cursor-pointer" id"dcr"></i>
   </td>
   <td>${total}</td>
+  <td>
+                  <i class="fa-sharp fa-solid fa-trash text-center cursor-pointer text-red-600 actionDEL text-xl"></i>
+                </td>
   `;
   let sum = 0;
   tableData.appendChild(tr);
@@ -58,9 +61,15 @@ function display(name, price, quantity) {
   }
   document.getElementById("finalToal").innerHTML = sum;
   document.getElementById("subTotal").innerHTML = sum;
-  document.getElementById("icr").addEventListener("click", (e) => {
-    console.log(e.target.parentNode.innerText - 1);
-  });
+  
+  const btns = document.querySelectorAll(".actionDEL");
+  for (const btn of btns) {
+    btn.addEventListener("click", (e) => {
+      // console.log(e.target.parentNode.parentNode.remove());
+      console.log(e.target.parentNode.parentNode.children[1]);
+      e.stopPropagation();
+    });
+  }
 }
 
 function cartItem(quantity) {
