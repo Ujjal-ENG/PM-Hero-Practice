@@ -27,6 +27,17 @@
 
 // Now start to learn the date
 
-const date = new Date();
-console.log(date.toUTCString());
-console.log(date.toDateString());
+// const date = new Date();
+// console.log(date.toUTCString());
+// console.log(date.toDateString());
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + 1);
+}
+
+// console.log(randomInt(1, 7));
+
+while (randomInt(1, 7) !== 6) {
+  console.log(randomInt(1, 7));
+}
+console.log("paisi");
