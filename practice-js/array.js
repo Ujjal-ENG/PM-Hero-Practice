@@ -31,13 +31,28 @@
 // console.log(date.toUTCString());
 // console.log(date.toDateString());
 
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min) + 1);
+// function randomInt(min, max) {
+//   return Math.floor(Math.random() * (max - min) + 1);
+// }
+
+// // console.log(randomInt(1, 7));
+
+// while (randomInt(1, 7) !== 6) {
+//   console.log(randomInt(1, 7));
+// }
+// console.log("paisi");
+
+function isVowel(word) {
+  let count = 0;
+  const vowel = ["a", "e", "i", "o", "u"];
+  const sentence = Array.from(word.toLowerCase());
+
+  sentence.forEach((w) => {
+    if (vowel.includes(w)) {
+      count++;
+    }
+  });
+  return count;
 }
 
-// console.log(randomInt(1, 7));
-
-while (randomInt(1, 7) !== 6) {
-  console.log(randomInt(1, 7));
-}
-console.log("paisi");
+console.log(isVowel("Hello ujjal Roy"));
