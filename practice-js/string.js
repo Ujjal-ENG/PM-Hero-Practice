@@ -9,3 +9,4 @@ const a = {
 let str = "Apple, Banana, Kiwi";
 
 console.log(str.split(",").join(""));
+console.log(str.indexOf("Apple", 0));
