@@ -61,13 +61,13 @@ function display(name, price, quantity) {
   }
   document.getElementById("finalToal").innerHTML = sum;
   document.getElementById("subTotal").innerHTML = sum;
-  
+
   const btns = document.querySelectorAll(".actionDEL");
   for (const btn of btns) {
     btn.addEventListener("click", (e) => {
-      // console.log(e.target.parentNode.parentNode.remove());
-      console.log(e.target.parentNode.parentNode.children[1]);
-      e.stopPropagation();
+      // e.target.parentNode.parentNode.remove();
+      e.stopImmediatePropagation();
+      console.log(e.target.parentNode.parentNode.remove());
     });
   }
 }
