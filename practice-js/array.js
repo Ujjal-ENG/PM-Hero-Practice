@@ -25,5 +25,8 @@
 
 // console.log(funcAvg(numbers));
 
-
 // Now start to learn the date
+
+const date = new Date();
+console.log(date.toUTCString());
+console.log(date.toDateString());
