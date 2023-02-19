@@ -42,17 +42,27 @@
 // }
 // console.log("paisi");
 
-function isVowel(word) {
-  let count = 0;
-  const vowel = ["a", "e", "i", "o", "u"];
-  const sentence = Array.from(word.toLowerCase());
+// function isVowel(word) {
+//   let count = 0;
+//   const vowel = ["a", "e", "i", "o", "u"];
+//   const sentence = Array.from(word.toLowerCase());
 
-  sentence.forEach((w) => {
-    if (vowel.includes(w)) {
-      count++;
-    }
-  });
-  return count;
-}
+//   sentence.forEach((w) => {
+//     if (vowel.includes(w)) {
+//       count++;
+//     }
+//   });
+//   return count;
+// }
 
-console.log(isVowel("Hello ujjal Roy"));
+// console.log(isVowel("Hello ujjal Roy"));
+
+// remove duplicate numbers
+
+const arrs = [1, 2, 32, 43, 12, 1, 3, 2, 43, 4, 32, 56, 32, 43];
+
+const removeDup = arrs.filter((v, i, a) => {
+  return a.indexOf(v) === i;
+});
+
+console.log(removeDup);
