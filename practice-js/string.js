@@ -5,3 +5,7 @@ const a = {
     console.log("Khali ghumai");
   },
 };
+
+let str = "Apple, Banana, Kiwi";
+
+console.log(str.split(",").join(""));
