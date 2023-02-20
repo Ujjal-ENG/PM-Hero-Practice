@@ -82,3 +82,26 @@
 // } catch (error) {
 //   console.log(error);
 // }
+
+let x = "";
+
+try {
+  if (x == "")
+    throw {
+      name: "EmptyError",
+      message: "Please Provide a value",
+    };
+  if (isNaN(x))
+    throw {
+      name: "NumberChecking",
+      message: "Please Provide a Number",
+    };
+  if (x < 5) throw "too low";
+  if (x > 10)
+    throw {
+      name: "HighError",
+      message: "Please Provide a Kop Kop",
+    };
+} catch (error) {
+  console.log(error);
+}
