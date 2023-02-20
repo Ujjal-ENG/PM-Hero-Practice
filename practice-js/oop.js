@@ -2,6 +2,9 @@ class Vehical {
   constructor(name, type, year) {
     (this.name = name), (this.type = type), (this.year = year);
   }
+  static hello() {
+    return "I am From Vehical";
+  }
 
   display() {
     return `${this.name} is the type of ${this.type} vehical which is lunched by ${this.year}`;
