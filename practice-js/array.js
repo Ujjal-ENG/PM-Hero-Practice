@@ -195,5 +195,9 @@ const products = [
 
 // console.log(newName);
 
-const fillNum = products.filter((el) => el.price > 40000);
-console.log(fillNum);
+// const fillNum = products.filter((el) => el.price > 40000);
+// console.log(fillNum);
+
+const findValue = products.find((el) => el.price % 15 === 0);
+
+console.log(findValue);
