@@ -21,5 +21,5 @@ function add(num1, num2, cb) {
 }
 
 const res = add(4, 5);
-add(5, 4, disPlay);
+add(5, 4, (res) => console.log(res));
 console.log(res);
