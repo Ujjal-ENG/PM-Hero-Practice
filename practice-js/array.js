@@ -69,7 +69,16 @@
 
 // regular expression
 
-let text = "I want be software developer in Microsoft Microsoft";
-let result = text.replace(/microsoft/gi, "Google");
-let searchText = text.match(/mic/gi);
-console.log(searchText);
+// let text = "I want be software developer in Microsoft Microsoft";
+// let result = text.replace(/microsoft/gi, "Google");
+// let searchText = text.match(/mic/gi);
+// console.log(searchText);
+
+// try {
+//   console.log("Heeloo");
+//   const number = 4 / 0;
+//   number = 3 / 4;
+//   console.log(number);
+// } catch (error) {
+//   console.log(error);
+// }
