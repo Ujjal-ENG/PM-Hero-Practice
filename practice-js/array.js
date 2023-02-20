@@ -202,18 +202,31 @@ const products = [
 
 // console.log(findValue);
 
-const People = [
-  { name: "m", age: 20 },
-  { name: "r", age: 15 },
-  { name: "s", age: 22 },
-];
-let sum = 0;
-for (let i of People) {
-  sum += i.age;
-}
-console.log(sum);
+// const People = [
+//   { name: "m", age: 20 },
+//   { name: "r", age: 15 },
+//   { name: "s", age: 22 },
+// ];
+// let sum = 0;
+// for (let i of People) {
+//   sum += i.age;
+// }
+// console.log(sum);
 
-const newAge = People.reduce((pV, { age }) => {
-  return pV + age;
-}, 0);
-console.log(newAge);
+// const newAge = People.reduce((pV, { age }) => {
+//   return pV + age;
+// }, 0);
+// console.log(newAge);
+
+let data = {
+  location: [
+    {
+      latitude: "34.4",
+      longitude: "54.23",
+      city: "Heydrabad",
+      country: "India",
+    },
+  ],
+};
+
+console.log(data.location[0].city);
