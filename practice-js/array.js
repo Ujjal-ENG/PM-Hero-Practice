@@ -144,16 +144,37 @@
 
 // object constructor
 
-class Person {
-  constructor(fN, lN, age) {
-    this.fN = fN;
-    this.lN = lN;
-    this.age = age;
-  }
-  display() {
-    return `The Person Name is ${this.fN} ${this.lN} and age is ${this.age}`;
-  }
-}
+// class Person {
+//   constructor(fN, lN, age) {
+//     this.fN = fN;
+//     this.lN = lN;
+//     this.age = age;
+//   }
+//   display() {
+//     return `The Person Name is ${this.fN} ${this.lN} and age is ${this.age}`;
+//   }
+// }
 
-const ujjal = new Person("Ujjal", "Roy", 23);
-console.log(ujjal.display());
+// const ujjal = new Person("Ujjal", "Roy", 23);
+// console.log(ujjal.display());
+
+// Optional chaining
+
+const user = {
+  name: "Thomas ALba",
+  age: 55,
+  address: {
+    presentAd: "35/a Shewrapara",
+    PermanentAd: "Bauphal",
+  },
+  contact: {
+    phone: 893478957,
+    email: "333@gmail.com",
+    whatsApp: 34523534,
+    Facebook: "th@facebook",
+  },
+  postOffice: "Cantonment",
+  city: "Dhaka",
+};
+
+console.log(user?.address?.PermanentAd);
