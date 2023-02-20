@@ -10,16 +10,18 @@
 
 // processOrder("")
 
-function disPlay(res) {
-  console.log(`The result is ${res}`);
-}
+// function disPlay(res) {
+//   console.log(`The result is ${res}`);
+// }
 
-function add(num1, num2, cb) {
-  let sum = num1 + num2;
-  if (!cb) return sum;
-  return cb(sum);
-}
+// function add(num1, num2, cb) {
+//   let sum = num1 + num2;
+//   if (!cb) return sum;
+//   return cb(sum);
+// }
 
-const res = add(4, 5);
-add(5, 4, (res) => console.log(res));
-console.log(res);
+// const res = add(4, 5);
+// add(5, 4, (res) => console.log(res));
+// console.log(res);
+
+
