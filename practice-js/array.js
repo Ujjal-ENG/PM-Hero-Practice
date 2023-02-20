@@ -59,10 +59,17 @@
 
 // remove duplicate numbers
 
-const arrs = [1, 2, 32, 43, 12, 1, 3, 2, 43, 4, 32, 56, 32, 43];
+// const arrs = [1, 2, 32, 43, 12, 1, 3, 2, 43, 4, 32, 56, 32, 43];
 
-const removeDup = arrs.filter((v, i, a) => {
-  return a.indexOf(v) === i;
-});
+// const removeDup = arrs.filter((v, i, a) => {
+//   return a.indexOf(v) === i;
+// });
 
-console.log(removeDup);
+// console.log(removeDup);
+
+// regular expression
+
+let text = "I want be software developer in Microsoft";
+let result = text.replace(/microsoft/i, "Google");
+let searchText = text.search(/mic/i);
+console.log(searchText);
