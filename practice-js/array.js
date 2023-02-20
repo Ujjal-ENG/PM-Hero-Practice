@@ -136,4 +136,8 @@
 // const car1 = new Car("BMW", 2012);
 // console.log(car1.print());
 
+function linerarSearch(arr, tar) {
+  return arr.indexOf(tar);
+}
 
+console.log(linerarSearch(["a", "b", "c", "d", "e", "f", "g", "h"], "c"));
