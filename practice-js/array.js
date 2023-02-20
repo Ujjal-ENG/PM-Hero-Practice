@@ -107,3 +107,13 @@
 // }
 
 // Now learn the Scooping In JS
+function a() {
+  let c = "kopa";
+  console.log(a);
+}
+if (true) {
+  let c = "mui";
+}
+
+console.log(c);
+a();
