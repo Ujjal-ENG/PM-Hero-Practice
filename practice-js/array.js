@@ -194,3 +194,6 @@ const products = [
 // });
 
 // console.log(newName);
+
+const fillNum = products.filter((el) => el.price > 40000);
+console.log(fillNum);
