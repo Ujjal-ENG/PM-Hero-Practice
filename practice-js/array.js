@@ -198,6 +198,22 @@ const products = [
 // const fillNum = products.filter((el) => el.price > 40000);
 // console.log(fillNum);
 
-const findValue = products.find((el) => el.price % 15 === 0);
+// const findValue = products.find((el) => el.price % 15 === 0);
 
-console.log(findValue);
+// console.log(findValue);
+
+const People = [
+  { name: "m", age: 20 },
+  { name: "r", age: 15 },
+  { name: "s", age: 22 },
+];
+let sum = 0;
+for (let i of People) {
+  sum += i.age;
+}
+console.log(sum);
+
+const newAge = People.reduce((pV, { age }) => {
+  return pV + age;
+}, 0);
+console.log(newAge);
