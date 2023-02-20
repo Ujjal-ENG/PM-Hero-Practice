@@ -105,15 +105,14 @@
 // } catch (error) {
 //   console.log(error);
 // }
-
 // Now learn the Scooping In JS
-function a() {
-  let c = "kopa";
-  console.log(a);
-}
-if (true) {
-  let c = "mui";
-}
+// a();
+// function a() {
+//   c = "kopa";
+//   // console.log(a);
+// }
+// // if (true) {
+// //    c = "mui";
+// // }
 
-console.log(c);
-a();
+// console.log(c);
