@@ -144,13 +144,15 @@
 
 // object constructor
 
-function Person(fN, lN, age) {
-  (this.fN = fN),
-    (this.lN = lN),
-    (this.age = age),
-    (this.display = function () {
-      return `The Person Name is ${this.fN} ${this.lN} and age is ${this.age}`;
-    });
+class Person {
+  constructor(fN, lN, age) {
+    this.fN = fN;
+    this.lN = lN;
+    this.age = age;
+  }
+  display() {
+    return `The Person Name is ${this.fN} ${this.lN} and age is ${this.age}`;
+  }
 }
 
 const ujjal = new Person("Ujjal", "Roy", 23);
