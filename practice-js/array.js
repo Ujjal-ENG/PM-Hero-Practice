@@ -124,3 +124,16 @@
 
 // x;
 
+class Car {
+  constructor(name, year) {
+    (this.name = name), (this.year = year);
+  }
+  print() {
+    console.log(`The Car Name is ${this.name} and the release year is ${this.year}`)
+  }
+}
+
+
+
+const car1 = new Car("BMW", 2012);
+console.log(car1.print());
