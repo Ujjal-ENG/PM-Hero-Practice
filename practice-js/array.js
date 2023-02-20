@@ -260,3 +260,25 @@ console.log(user.address.street);
 console.log(user.address.zipcode);
 console.log(user.address.geo.lng);
 console.log(user.company.catchPhrase);
+function min(nums) {
+  return Math.min(nums);
+}
+console.log(min([1, 3, 2]));
+const obj = { foo: 1 };
+obj.bar = 2;
+
+const nums = [1, 2, 3, 4, 5];
+let output = nums.filter((n) => n % 2);
+console.log(output);
+const product = {
+  name: "Laptop",
+  model: "Yoga 3",
+  price: 49000,
+  dusk: "512SSD",
+  processor: {
+    intel: "cOreI7",
+  },
+};
+
+const { intel } = product;
+console.log(intel);
