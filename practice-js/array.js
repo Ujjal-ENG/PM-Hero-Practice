@@ -283,4 +283,14 @@ const products = [
 // const { intel } = product;
 // console.log(intel);
 
+// function tempPorary() {
+//   let counter = 0;
+//   return function () {
+//     counter += 1;
+//   };
+// }
 
+// const add = tempPorary();
+// console.log(add());
+// console.log(add());
+// console.log(add());
