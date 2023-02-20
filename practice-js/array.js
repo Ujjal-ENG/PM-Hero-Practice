@@ -160,21 +160,37 @@
 
 // Optional chaining
 
-const user = {
-  name: "Thomas ALba",
-  age: 55,
-  address: {
-    presentAd: "35/a Shewrapara",
-    PermanentAd: "Bauphal",
-  },
-  contact: {
-    phone: 893478957,
-    email: "333@gmail.com",
-    whatsApp: 34523534,
-    Facebook: "th@facebook",
-  },
-  postOffice: "Cantonment",
-  city: "Dhaka",
-};
+// const user = {
+//   name: "Thomas ALba",
+//   age: 55,
+//   address: {
+//     presentAd: "35/a Shewrapara",
+//     PermanentAd: "Bauphal",
+//   },
+//   contact: {
+//     phone: 893478957,
+//     email: "333@gmail.com",
+//     whatsApp: 34523534,
+//     Facebook: "th@facebook",
+//   },
+//   postOffice: "Cantonment",
+//   city: "Dhaka",
+// };
 
-console.log(user?.address?.PermanentAd);
+// console.log(user?.address?.PermanentAd);
+
+const products = [
+  { id: 1, name: "laptop", price: 65000 },
+  { id: 2, name: "desktop", price: 45000 },
+  { id: 3, name: "Iphone13", price: 79700 },
+  { id: 4, name: "Realme 7 Pro", price: 26500 },
+  { id: 5, name: "Realme c11", price: 15000 },
+];
+
+// const newName = products.map((el) => {
+//   if (el.price > 40000) {
+//     return el.name;
+//   }
+// });
+
+// console.log(newName);
