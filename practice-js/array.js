@@ -136,8 +136,22 @@
 // const car1 = new Car("BMW", 2012);
 // console.log(car1.print());
 
-function linerarSearch(arr, tar) {
-  return arr.indexOf(tar);
+// function linerarSearch(arr, tar) {
+//   return arr.indexOf(tar);
+// }
+
+// console.log(linerarSearch(["a", "b", "c", "d", "e", "f", "g", "h"], "c"));
+
+// object constructor
+
+function Person(fN, lN, age) {
+  (this.fN = fN),
+    (this.lN = lN),
+    (this.age = age),
+    (this.display = function () {
+      return `The Person Name is ${this.fN} ${this.lN} and age is ${this.age}`;
+    });
 }
 
-console.log(linerarSearch(["a", "b", "c", "d", "e", "f", "g", "h"], "c"));
+const ujjal = new Person("Ujjal", "Roy", 23);
+console.log(ujjal.display());
