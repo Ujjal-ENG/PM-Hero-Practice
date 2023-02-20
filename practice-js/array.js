@@ -1,3 +1,5 @@
+"use strict";
+
 // const fruits = ["Banana", "Apple", "Orange", "Mango", "Lichi"];
 
 // fruits.forEach((el) => console.log(el));
@@ -116,7 +118,8 @@
 // // }
 
 // console.log(c);
-// x = 5;
+
+x = 5;
 console.log(x);
 
-var x = 5;
+x;
