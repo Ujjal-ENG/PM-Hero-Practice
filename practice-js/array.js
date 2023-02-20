@@ -69,7 +69,7 @@
 
 // regular expression
 
-let text = "I want be software developer in Microsoft";
-let result = text.replace(/microsoft/i, "Google");
+let text = "I want be software developer in Microsoft Microsoft";
+let result = text.replace(/microsoft/ig, "Google");
 let searchText = text.search(/mic/i);
-console.log(searchText);
+console.log(result);
