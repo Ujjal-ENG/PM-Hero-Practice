@@ -65,6 +65,7 @@ function display(name, price, quantity) {
   const icr = document.querySelectorAll(".icr");
   const dcr = document.querySelectorAll(".dcr");
 
+  let counter = 1;
   icr.forEach((el) =>
     el.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
