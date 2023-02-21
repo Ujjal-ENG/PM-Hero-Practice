@@ -49,55 +49,57 @@
 
 // console.log("Task 3");
 
-const paymentSuccess = true;
-const marks = 98;
+// const paymentSuccess = true;
+// const marks = 98;
 
-function enroll() {
-  console.log("Course enrollments is in progress");
+// function enroll() {
+//   console.log("Course enrollments is in progress");
 
-  const promise = new Promise((res, rej) => {
-    setTimeout(() => {
-      if (paymentSuccess) {
-        res();
-      } else {
-        rej("Payment Failed");
-      }
-    }, 2000);
-  });
+//   const promise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//       if (paymentSuccess) {
+//         res();
+//       } else {
+//         rej("Payment Failed");
+//       }
+//     }, 2000);
+//   });
 
-  return promise;
-}
+//   return promise;
+// }
 
-function progress() {
-  console.log("Course on Progress...");
+// function progress() {
+//   console.log("Course on Progress...");
 
-  const promise = new Promise((res, rej) => {
-    setTimeout(() => {
-      if (marks >= 80) {
-        res();
-      } else {
-        rej("You could not get enough marks to get the certificate");
-      }
-    }, 3000);
-  });
+//   const promise = new Promise((res, rej) => {
+//     setTimeout(() => {
+//       if (marks >= 80) {
+//         res();
+//       } else {
+//         rej("You could not get enough marks to get the certificate");
+//       }
+//     }, 3000);
+//   });
 
-  return promise;
-}
+//   return promise;
+// }
 
-function getCertificate() {
-  console.log("Preparing your certificate!!");
+// function getCertificate() {
+//   console.log("Preparing your certificate!!");
 
-  const promise = new Promise(() => {
-    setTimeout(() => {
-      console.log("Congrats!!! You got the certificate");
-    }, 1000);
-  });
-  return promise;
-}
+//   const promise = new Promise(() => {
+//     setTimeout(() => {
+//       console.log("Congrats!!! You got the certificate");
+//     }, 1000);
+//   });
+//   return promise;
+// }
 
-enroll()
-  .then(progress)
-  .then(getCertificate)
-  .catch((err) => {
-    console.log(err);
-  });
+// enroll()
+//   .then(progress)
+//   .then(getCertificate)
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+
