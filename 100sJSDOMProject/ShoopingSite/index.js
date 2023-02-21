@@ -76,14 +76,14 @@ function display(name, price, quantity) {
       if (qty >= 11) {
         alert("You Can order Maximum 10 items for each product");
       } else {
-        document.querySelector(".dcr").style.color = "black";
+        e.target.parentNode.children[2].style.color = "black";
         e.target.parentNode.children["qty-set"].innerText = qty;
         let newTotal = qty * price;
         e.target.parentNode.parentNode.children["total"].innerText = newTotal;
-        let totalValue = Number(document.getElementById("finalToal").innerText);
-        const totals = price * count + totalValue;
-        console.log(totals, newTotal, count, total);
-        document.getElementById("finalToal").innerText = newTotal;
+        // let totalValue = Number(document.getElementById("finalToal").innerText);
+        // const totals = price * count + totalValue;
+        // console.log(totals, newTotal, count, total);
+        // document.getElementById("finalToal").innerText = newTotal;
       }
     })
   );
@@ -101,8 +101,8 @@ function display(name, price, quantity) {
         let newTotal = qty * price;
         e.target.parentNode.parentNode.children["total"].innerText = newTotal;
       } else {
-        document.querySelector(".dcr").disabled = "true";
-        document.querySelector(".dcr").style.color = "red";
+        e.target.disabled = "true";
+        e.target.style.color = "red";
       }
     })
   );
