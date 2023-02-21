@@ -65,7 +65,6 @@ function display(name, price, quantity) {
   const icr = document.querySelectorAll(".icr");
   const dcr = document.querySelectorAll(".dcr");
 
-  let counter = 1;
   icr.forEach((el) =>
     el.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
@@ -86,6 +85,7 @@ function display(name, price, quantity) {
         );
         const fullTotal = totalValue + price;
         document.getElementById("finalToal").innerText = fullTotal;
+        document.getElementById("subTotal").innerHTML = fullTotal;
       }
     })
   );
@@ -107,6 +107,7 @@ function display(name, price, quantity) {
         );
         const fullTotal = totalValue - price;
         document.getElementById("finalToal").innerText = fullTotal;
+        document.getElementById("subTotal").innerHTML = fullTotal;
       } else {
         e.target.disabled = "true";
         e.target.style.color = "red";
@@ -127,6 +128,10 @@ function display(name, price, quantity) {
       const totalValue = Number(document.getElementById("finalToal").innerText);
       const newTotal = totalValue - value;
       document.getElementById("finalToal").innerHTML = newTotal;
+      count--;
+      document.getElementById("cartitem").innerText = count;
+      document.getElementById("cartitem2").innerText = count;
+      document.getElementById("subTotal").innerHTML = newTotal;
     });
   }
 }
