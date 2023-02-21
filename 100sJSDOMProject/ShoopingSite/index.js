@@ -74,7 +74,7 @@ function display(name, price, quantity) {
 
       const totalValue = Number(document.getElementById("finalToal").innerText);
       const newTotal = totalValue - value;
-document.getElementById("finalToal").innerHTML = newTotal;
+      document.getElementById("finalToal").innerHTML = newTotal;
     });
   }
 }
