@@ -44,9 +44,9 @@ function display(name, price, quantity) {
   <td>${price}</td>
   
   <td class="text-center font-bold text-xl" id="qty">
-  <i class="fa-solid fa-plus cursor-pointer" id="icr"></i>
+  <i class="fa-solid fa-plus cursor-pointer icr"></i>
   <span id="qty-set">${quantity} </span>
-  <i class="fa-solid fa-minus cursor-pointer" id"dcr"></i>
+  <i class="fa-solid fa-minus cursor-pointer dcr"></i>
   </td>
   <td id="total">${total}</td>
   <td>
@@ -61,6 +61,47 @@ function display(name, price, quantity) {
   }
   document.getElementById("finalToal").innerHTML = sum;
   document.getElementById("subTotal").innerHTML = sum;
+
+  const icr = document.querySelectorAll(".icr");
+  const dcr = document.querySelectorAll(".dcr");
+
+  icr.forEach((el) =>
+    el.addEventListener("click", (e) => {
+      e.stopImmediatePropagation();
+      const value = Number(e.target.parentNode.children["qty-set"].innerText);
+      const price = Number(
+        e.target.parentNode.parentNode.children[2].innerText
+      );
+      let qty = value + 1;
+      if (qty >= 11) {
+        alert("You Can order Maximum 10 items for each product");
+      } else {
+        document.querySelector(".dcr").style.color = "black";
+        e.target.parentNode.children["qty-set"].innerText = qty;
+        let newTotal = qty * price;
+        e.target.parentNode.parentNode.children["total"].innerText = newTotal;
+      }
+    })
+  );
+
+  dcr.forEach((el) =>
+    el.addEventListener("click", (e) => {
+      e.stopImmediatePropagation();
+      const value = Number(e.target.parentNode.children["qty-set"].innerText);
+      const price = Number(
+        e.target.parentNode.parentNode.children[2].innerText
+      );
+      let qty = value - 1;
+      if (qty >= 0) {
+        e.target.parentNode.children["qty-set"].innerText = qty;
+        let newTotal = qty * price;
+        e.target.parentNode.parentNode.children["total"].innerText = newTotal;
+      } else {
+        document.querySelector(".dcr").disabled = "true";
+        document.querySelector(".dcr").style.color = "red";
+      }
+    })
+  );
 
   const btns = document.querySelectorAll(".actionDEL");
   for (const btn of btns) {
