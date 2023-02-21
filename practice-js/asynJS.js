@@ -24,26 +24,29 @@
 // add(5, 4, (res) => console.log(res));
 // console.log(res);
 
-const status = true;
+// let status = true;
 
-console.log("Task 1");
+// console.log("Task 1");
 
-const taskPromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (status) {
-      resolve("Task 2");
-    } else {
-      reject("Task Failed");
-    }
-  }, 2000);
-});
+// const taskPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (status) {
+//       resolve("Task 2");
+//       status = false;
+//     } else {
+//       reject("Task Failed");
+//     }
+//   }, 2000);
+// });
 
-taskPromise
-  .then((value) => {
-    console.log(value);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// taskPromise
+//   .then((value) => {
+//     console.log(value);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-console.log("Task 3");
+// console.log("Task 3");
+
+
