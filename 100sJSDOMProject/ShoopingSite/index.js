@@ -81,10 +81,11 @@ function display(name, price, quantity) {
         e.target.parentNode.children["qty-set"].innerText = qty;
         let newTotal = qty * price;
         e.target.parentNode.parentNode.children["total"].innerText = newTotal;
-        // let totalValue = Number(document.getElementById("finalToal").innerText);
-        // const totals = price * count + totalValue;
-        // console.log(totals, newTotal, count, total);
-        // document.getElementById("finalToal").innerText = newTotal;
+        const totalValue = Number(
+          document.getElementById("finalToal").innerText
+        );
+        const fullTotal = totalValue + price;
+        document.getElementById("finalToal").innerText = fullTotal;
       }
     })
   );
@@ -101,6 +102,11 @@ function display(name, price, quantity) {
         e.target.parentNode.children["qty-set"].innerText = qty;
         let newTotal = qty * price;
         e.target.parentNode.parentNode.children["total"].innerText = newTotal;
+        const totalValue = Number(
+          document.getElementById("finalToal").innerText
+        );
+        const fullTotal = totalValue - price;
+        document.getElementById("finalToal").innerText = fullTotal;
       } else {
         e.target.disabled = "true";
         e.target.style.color = "red";
