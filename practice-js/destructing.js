@@ -61,28 +61,56 @@
 // console.log(data[3].pHeroCourses["course-xyz"]);
 // console.log(data[3].locationField["en-US"]["lon"]);
 
-let activities = {
-  activity1: [
-    {
-      name: "listen on spotify",
+// let activities = {
+//   activity1: [
+//     {
+//       name: "listen on spotify",
 
-      song_list: {
-        song_1: "abc",
-        song_2: "bcd",
-      },
-      id: 1,
-    },
-    {
-      name: "listen music through bot",
+//       song_list: {
+//         song_1: "abc",
+//         song_2: "bcd",
+//       },
+//       id: 1,
+//     },
+//     {
+//       name: "listen music through bot",
 
-      song_list: {
-        song_1: "wxy",
-        song_2: "xyz",
-      },
-      id: 2,
+//       song_list: {
+//         song_1: "wxy",
+//         song_2: "xyz",
+//       },
+//       id: 2,
+//     },
+//   ],
+// };
+
+// console.log(activities.activity1[0]["song_list"]["song_1"]);
+// console.log(activities.activity1[1]["song_list"]["song_2"]);
+
+let students = {
+  2222: {
+    name: "Jack",
+    section: "C",
+    class: "IX",
+    address: {
+      "building no": 12,
+      street: "St. Jonson",
+      city: "Petersburg",
+      country: "UK",
     },
-  ],
+  },
+  3333: {
+    name: "Herry",
+    section: "D",
+    class: "X",
+    address: {
+      "building no": 85,
+      street: "DC road",
+      city: "Kachukhet",
+      country: "Bangladesh",
+    },
+  },
 };
 
-console.log(activities.activity1[0]["song_list"]["song_1"]);
-console.log(activities.activity1[1]["song_list"]["song_2"]);
+console.log(students[2222].address["city"]);
+console.log(students[3333].name);
