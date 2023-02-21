@@ -37,7 +37,7 @@ function display(name, price, quantity) {
   count++;
   const tableData = document.getElementById("tableData");
   let tr = document.createElement("tr");
-  const total = Number(price * quantity);
+  let total = Number(price * quantity);
   tr.innerHTML = `
   <th>${count}</th>
   <td>${name}</td>
@@ -45,10 +45,10 @@ function display(name, price, quantity) {
   
   <td class="text-center font-bold text-xl" id="qty">
   <i class="fa-solid fa-plus cursor-pointer" id="icr"></i>
-  ${quantity}
+  <span id="qty-set">${quantity} </span>
   <i class="fa-solid fa-minus cursor-pointer" id"dcr"></i>
   </td>
-  <td>${total}</td>
+  <td id="total">${total}</td>
   <td>
                   <i class="fa-sharp fa-solid fa-trash text-center cursor-pointer text-red-600 actionDEL text-xl"></i>
                 </td>
@@ -67,7 +67,14 @@ function display(name, price, quantity) {
     btn.addEventListener("click", (e) => {
       // e.target.parentNode.parentNode.remove();
       e.stopImmediatePropagation();
-      console.log(e.target.parentNode.parentNode.remove());
+      e.target.parentNode.parentNode.remove();
+      const value = Number(
+        e.target.parentNode.parentNode.children["total"].innerText
+      );
+
+      const totalValue = Number(document.getElementById("finalToal").innerText);
+      const newTotal = totalValue - value;
+document.getElementById("finalToal").innerHTML = newTotal;
     });
   }
 }
