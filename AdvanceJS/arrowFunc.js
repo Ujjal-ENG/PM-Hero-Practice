@@ -4,6 +4,13 @@ let js = {
   printLib: () => {
     js.libraries.forEach((el) => console.log(js.name + " lover " + el));
   },
+  education: {
+    degree: "Bsc",
+    sub: ["CSE", "EEE", "TEX"],
+  },
 };
 
-js.printLib();
+const {
+  education: { sub },
+} = js;
+console.log(sub);
