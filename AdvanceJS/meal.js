@@ -52,3 +52,8 @@ document.getElementById("searchBTN").addEventListener("click", (e) => {
 });
 
 // loadMeals();
+document.getElementById("search-input").addEventListener("keyup", () => {
+  const searchInput = document.getElementById("search-input").value;
+
+  searchInput == "" ? "fish" : loadMeals(searchInput);
+});
