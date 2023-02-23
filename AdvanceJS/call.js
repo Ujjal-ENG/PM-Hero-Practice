@@ -29,6 +29,12 @@ const friendlyPerson = {
 // const friendlyPersonBill = normalPerson.chargeBill.bind(friendlyPerson);
 // friendlyPersonBill(4000);
 
-const heroBillCharge = normalPerson.chargeBill.call(heroPerson, 5300, 300, 400);
+// const heroBillCharge = normalPerson.chargeBill.call(heroPerson, 5300, 300, 400);
+
+// console.log(heroPerson.Salary);
+const heroBillCharge = normalPerson.chargeBill.apply(
+  heroPerson,
+  [5300, 300, 76]
+);
 
 console.log(heroPerson.Salary);
