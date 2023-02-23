@@ -34,12 +34,33 @@ const showData = (data) => {
       <h5 class="card-title">Category: ${strCategory}</h5>
       <h5 class="card-title">Area: ${strArea}</h5>
      <a href="${strYoutube}" target="_blank">See the Cooking Process</a>
-     
+
+     <button onclick="loadMealsDetails('${el.idMeal}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cooking Details</button>
     </div>
   </div>
     `;
     container.appendChild(createDiv);
   });
+};
+
+// load meal deatils
+const loadMealsDetails = async (idMeal) => {
+  const apiData = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
+  );
+  const data = await apiData.json();
+  showmodalDetails(data.meals[0].strInstructions);
+};
+
+const showmodalDetails = (data) => {
+  const container = document.getElementById("modal-body");
+
+  const createH3 = document.createElement("h3");
+
+  createH3.innerText = `
+  ${data}
+  `;
+  container.appendChild(createH3);
 };
 
 // search ITerms
@@ -56,4 +77,9 @@ document.getElementById("search-input").addEventListener("keyup", () => {
   const searchInput = document.getElementById("search-input").value;
 
   searchInput == "" ? "fish" : loadMeals(searchInput);
+});
+
+document.getElementById("closeBTN").addEventListener("click", (e) => {
+  const container = document.getElementById("modal-body").childNodes[1];
+  container.remove();
 });
