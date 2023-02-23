@@ -7,4 +7,4 @@ async function quotesCalling() {
 
 setInterval(() => {
   quotesCalling();
-}, 1000);
+}, 3000);
