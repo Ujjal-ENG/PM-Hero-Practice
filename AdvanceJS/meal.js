@@ -1,6 +1,6 @@
-const loadMeals = async () => {
+const loadMeals = async (search) => {
   const apiCall = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/search.php?s=fish"
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`
   );
   const data = await apiCall.json();
   showData(data.meals);
@@ -8,6 +8,7 @@ const loadMeals = async () => {
 
 const showData = (data) => {
   const container = document.getElementById("meal-info");
+  container.innerHTML = "";
   data.map((el) => {
     const { strMeal, strCategory, strArea, strYoutube, strMealThumb, strTags } =
       el;
@@ -24,6 +25,7 @@ const showData = (data) => {
     // `;
 
     createDiv.classList.add("col");
+
     createDiv.innerHTML = `
     <div class="card">
     <img src="${strMealThumb}" class="card-img-top" alt="${strTags}">
@@ -40,4 +42,13 @@ const showData = (data) => {
   });
 };
 
-loadMeals();
+// search ITerms
+
+document.getElementById("searchBTN").addEventListener("click", (e) => {
+  e.preventDefault();
+  const searchInput = document.getElementById("search-input").value;
+
+  searchInput == "" ? "fish" : loadMeals(searchInput);
+});
+
+// loadMeals();
