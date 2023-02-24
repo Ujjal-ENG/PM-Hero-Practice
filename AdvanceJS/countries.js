@@ -4,10 +4,10 @@ const loadData = async () => {
   displayCountries(jsonData);
 };
 
-const loadFilterRegionData = async (data) => {
+const loadFilterRegionData = async (type, data) => {
   const container = document.getElementById("country-info");
   container.innerHTML = "";
-  const api = await fetch(`https://restcountries.com/v3.1/region/${data}`);
+  const api = await fetch(`https://restcountries.com/v3.1/${type}/${data}`);
   const jsonData = await api.json();
   fillterCountryDisplay(jsonData);
 };
@@ -84,8 +84,13 @@ const countryDetail = (data) => {
 
 document.getElementById("option").addEventListener("change", () => {
   const selectValue = document.getElementById("option").value;
-  loadFilterRegionData(selectValue);
+  loadFilterRegionData("region", selectValue);
   console.log(selectValue);
+});
+
+document.getElementById("searchBTN").addEventListener("click", () => {
+  const inputValue = document.getElementById("inputValue").value;
+  loadFilterRegionData("capital", inputValue);
 });
 
 loadData();
