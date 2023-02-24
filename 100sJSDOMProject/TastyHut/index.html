@@ -43,7 +43,7 @@
   <header>
 
     <!-- design our navbar -->
-    <nav class="pt-7 px-40">
+    <nav class="sm:pt-7 pt-5 px-0 sm:px-40 w-full">
       <div class="navbar">
         <div class="navbar-start">
           <!-- <h1 class="normal-case text-xl font-bold text-textPrimary">Tasty HUT</h1> -->
@@ -60,9 +60,9 @@
     <!-- banner section -->
     <section class="bg-image flex justify-center items-center">
 
-      <div class="information w-1/2">
-        <h1 class="text-6xl font-bold text-white text-center">Taste Our Delicious<br> Best Foods</h1>
-        <p class="text-lg text-center font-normal text-white">There are many variations of passages of Lorem Ipsum
+      <div class="information sm:w-1/2 w-full">
+        <h1 class="sm:text-6xl text-3xl font-bold text-white text-center">Taste Our Delicious<br> Best Foods</h1>
+        <p class="sm:text-lg text-center font-normal text-white">There are many variations of passages of Lorem Ipsum
           available, but the majority have suffered alteration in some form, by injected humou.</p>
 
         <div class="form-control mt-8">
@@ -86,10 +86,11 @@
   <!-- Design the Main section -->
   <main>
     <!-- Favourite Food Section -->
-    <section class="pt-7 px-40">
+    <section class="sm:pt-7 pt-4 px-2 sm:px-40">
       <h1 class="text-4xl font-semibold text-center text-textSecondary">Your Favourite Food</h1>
 
-      <div class="cards grid grid-cols-2 justify-content-center gap-6 pt-14" id="card-container">
+      <div class="cards grid grid-cols-1 sm:grid-cols-2 justify-items-center justify-content-center gap-6 pt-14"
+        id="card-container">
 
         <!-- <div>
 
@@ -191,7 +192,8 @@
 
       <!-- show All Button -->
       <div class="my-20 flex justify-center">
-        <button class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold hover:text-white" id="showBTN">Show
+        <button class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold hover:text-white"
+          id="showBTN">Show
           All</button>
       </div>
     </section>
@@ -231,12 +233,13 @@
   <!-- Design the Footer Section -->
   <footer class="bg-background">
 
-    <section class="pt-7 px-32 grid grid-cols-4 justify-content-center">
+    <section
+      class="sm:pt-7 pt-5 px-2 sm:px-32 grid grid-cols-1 sm:grid-cols-4 justify-content-center justify-items-center">
 
       <!-- first section -->
-      <div>
+      <div class="mb-5 sm:mb-0">
         <h3 class="text-textSecondary text-2xl font-bold  mb-8">Section</h3>
-        <div class="flex flex-col justify-start items-start space-y-4">
+        <div class="flex flex-col justify-center sm:justify-start sm:items-start items-center space-y-4">
           <p class="text-xl font-medium text-textPrimary">Home</p>
           <p class="text-xl font-medium text-textPrimary">Fetaures</p>
           <p class="text-xl font-medium text-textPrimary">Pricing</p>
@@ -247,9 +250,9 @@
 
 
       <!-- second section -->
-      <div>
+      <div class="mb-5 sm:mb-0">
         <h3 class="text-textSecondary text-2xl font-bold  mb-8">Services</h3>
-        <div class="flex flex-col justify-start items-start space-y-4">
+        <div class="flex flex-col justify-center sm:justify-start sm:items-start items-center space-y-4">
           <p class="text-xl font-medium text-textPrimary">UI-UX Design</p>
           <p class="text-xl font-medium text-textPrimary">Product Design</p>
           <p class="text-xl font-medium text-textPrimary">Back End Developer</p>
@@ -259,9 +262,9 @@
 
 
       <!-- third section -->
-      <div>
+      <div class="mb-5 sm:mb-0">
         <h3 class="text-textSecondary text-2xl font-bold  mb-8">Resources</h3>
-        <div class="flex flex-col justify-start items-start space-y-4">
+        <div class="flex flex-col justify-center sm:justify-start sm:items-start items-center space-y-4">
           <p class="text-xl font-medium text-textPrimary">FAQ</p>
           <p class="text-xl font-medium text-textPrimary">Support</p>
           <p class="text-xl font-medium text-textPrimary">Privacy Policy</p>
@@ -270,11 +273,11 @@
       </div>
 
       <!-- fourth section -->
-      <div>
+      <div class="mb-5 sm:mb-0">
         <h3 class="text-textSecondary text-2xl font-bold  mb-8">Subscribe to our newsletter</h3>
-        <div class="flex flex-col justify-start items-start space-y-4">
+        <div class="flex flex-col justify-center sm:justify-start sm:items-start items-center space-y-4">
           <p class="text-xl font-medium text-textPrimary">Subscribe to our newsletter</p>
-          <div class="flex justify-between gap-5">
+          <div class="flex justify-between flex-col sm:flex-row gap-5">
             <input type="email" placeholder="email address" class="input input-bordered input-md rounded-md" />
             <button
               class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold hover:text-white">Subscribe</button>

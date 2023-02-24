@@ -23,16 +23,16 @@ document.getElementById("inputValue").addEventListener("keyup", (e) => {
   loadDataAPI(input);
 });
 
+let startIndex = 0;
+let endIndex = 6;
 const showData = (data) => {
-  let startIndex = 0;
-  let endIndex = 6;
   const container = document.getElementById("card-container");
   container.innerHTML = "";
   data.slice(startIndex, endIndex).map((el) => {
     const createDiv = document.createElement("div");
     createDiv.innerHTML = `
-    <div class="card card-side bg-base-100 shadow-xl border-2 h-[300px]">
-            <figure class="w-full"><img src="${el.strMealThumb}" alt="${el.strTags}" /></figure>
+    <div class="card card-side bg-base-100 shadow-xl border-2 sm:h-[300px] flex flex-col sm:flex-row h-full">
+            <figure class="w-full rounded-lg"><img src="${el.strMealThumb}" alt="${el.strTags}" /></figure>
             <div class="py-9 px-5 space-y-5">
               <h2 class="card-title text-2xl font-bold">${el.strMeal}</h2>
               <p class="text-lg text-textPrimary font-normal w-[250px] h-20 overflow-hidden text-ellipsis">
@@ -56,8 +56,8 @@ const showRestData = (data) => {
     data.slice(startIndex, endIndex).map((el) => {
       const createDiv = document.createElement("div");
       createDiv.innerHTML = `
-    <div class="card card-side bg-base-100 shadow-xl border-2 h-[300px]">
-            <figure class="w-full"><img src="${el.strMealThumb}" alt="${el.strTags}" /></figure>
+    <div class="card card-side bg-base-100 shadow-xl border-2 sm:h-[300px] flex flex-col sm:flex-row h-full">
+            <figure class="w-full rounded-lg"><img src="${el.strMealThumb}" alt="${el.strTags}" /></figure>
             <div class="py-9 px-5 space-y-5">
               <h2 class="card-title text-2xl font-bold">${el.strMeal}</h2>
               <p class="text-lg text-textPrimary font-normal w-[250px] h-20 overflow-hidden text-ellipsis">
