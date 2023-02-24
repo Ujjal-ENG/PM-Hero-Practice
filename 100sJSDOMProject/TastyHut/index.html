@@ -28,7 +28,8 @@
           colors: {
             btnPrimary: '#FFC107',
             textPrimary: "#403F3F",
-            textSecondary: "#100F0F"
+            textSecondary: "#100F0F",
+            background: "rgba(255, 193, 7, 0.05)"
           }
         }
       }
@@ -45,11 +46,13 @@
     <nav class="pt-7 px-40">
       <div class="navbar">
         <div class="navbar-start">
-          <h1 class="normal-case text-xl font-bold text-textPrimary">Tasty HUT</h1>
+          <!-- <h1 class="normal-case text-xl font-bold text-textPrimary">Tasty HUT</h1> -->
+          <img src="./images/Tasty_HUT.png" alt="logo">
         </div>
 
         <div class="navbar-end">
-          <button class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold">Sign Up</button>
+          <button class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold hover:text-white">Sign
+            Up</button>
         </div>
       </div>
     </nav>
@@ -71,7 +74,7 @@
             </span>
             </input>
             <button
-              class="bg-btnPrimary text-textSecondary border-none -ml-3 px-10 font-bold rounded-lg">Search</button>
+              class="bg-btnPrimary text-textSecondary border-none -ml-3  px-10 font-bold rounded-lg hover:bg-blue-900 hover:text-white transition-all">Search</button>
           </div>
         </div>
       </div>
@@ -81,9 +84,8 @@
 
   <!-- Design the Main section -->
   <main>
-
     <!-- Favourite Food Section -->
-    <section class="pt-7 px-40 h-screen">
+    <section class="pt-7 px-40">
       <h1 class="text-4xl font-semibold text-center text-textSecondary">Your Favourite Food</h1>
 
       <div class="cards grid grid-cols-2 justify-content-center gap-6 pt-14">
@@ -179,11 +181,73 @@
       </div>
 
       <!-- show All Button -->
-      <div class="mt-20 flex justify-center">
-        <button class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold hover:text-white">Show All</button>
+      <div class="my-20 flex justify-center">
+        <button class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold hover:text-white">Show
+          All</button>
       </div>
     </section>
   </main>
+
+
+
+  <!-- Design the Footer Section -->
+  <footer class="bg-background">
+
+    <section class="pt-7 px-32 grid grid-cols-4 justify-content-center">
+
+      <!-- first section -->
+      <div>
+        <h3 class="text-textSecondary text-2xl font-bold  mb-8">Section</h3>
+        <div class="flex flex-col justify-start items-start space-y-4">
+          <p class="text-xl font-medium text-textPrimary">Home</p>
+          <p class="text-xl font-medium text-textPrimary">Fetaures</p>
+          <p class="text-xl font-medium text-textPrimary">Pricing</p>
+          <p class="text-xl font-medium text-textPrimary">FAQs</p>
+          <p class="text-xl font-medium text-textPrimary">About</p>
+        </div>
+      </div>
+
+
+      <!-- second section -->
+      <div>
+        <h3 class="text-textSecondary text-2xl font-bold  mb-8">Services</h3>
+        <div class="flex flex-col justify-start items-start space-y-4">
+          <p class="text-xl font-medium text-textPrimary">UI-UX Design</p>
+          <p class="text-xl font-medium text-textPrimary">Product Design</p>
+          <p class="text-xl font-medium text-textPrimary">Back End Developer</p>
+          <p class="text-xl font-medium text-textPrimary">Front End Developer</p>
+        </div>
+      </div>
+
+
+      <!-- third section -->
+      <div>
+        <h3 class="text-textSecondary text-2xl font-bold  mb-8">Resources</h3>
+        <div class="flex flex-col justify-start items-start space-y-4">
+          <p class="text-xl font-medium text-textPrimary">FAQ</p>
+          <p class="text-xl font-medium text-textPrimary">Support</p>
+          <p class="text-xl font-medium text-textPrimary">Privacy Policy</p>
+          <p class="text-xl font-medium text-textPrimary">Terms of Services</p>
+        </div>
+      </div>
+
+      <!-- fourth section -->
+      <div>
+        <h3 class="text-textSecondary text-2xl font-bold  mb-8">Subscribe to our newsletter</h3>
+        <div class="flex flex-col justify-start items-start space-y-4">
+          <p class="text-xl font-medium text-textPrimary">Subscribe to our newsletter</p>
+          <div class="flex justify-between gap-5">
+            <input type="email" placeholder="email address" class="input input-bordered input-md rounded-md" />
+            <button
+              class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold hover:text-white">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+
+
   <!-- DaisyUI script -->
   <script src="https://cdn.tailwindcss.com"></script>
 
