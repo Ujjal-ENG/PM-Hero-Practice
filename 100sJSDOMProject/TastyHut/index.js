@@ -1,7 +1,8 @@
-const loadDataAPI = async () => {
+const loadDataAPI = async (data) => {
+  const datas = data;
   try {
     const fetchData = await fetch(
-      "https://www.themealdb.com/api/json/v1/1/search.php?s=fish"
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${datas}`
     );
     const data = await fetchData.json();
     showData(data.meals);
@@ -10,9 +11,21 @@ const loadDataAPI = async () => {
   }
 };
 
+document.getElementById("searchBTN").addEventListener("click", (e) => {
+  e.preventDefault();
+  const input = document.getElementById("inputValue").value;
+  loadDataAPI(input);
+});
+
+document.getElementById("inputValue").addEventListener("change", (e) => {
+  e.preventDefault();
+  const input = document.getElementById("inputValue").value;
+  loadDataAPI(input);
+});
+
 const showData = (data) => {
   const container = document.getElementById("card-container");
-  isLoad = true;
+  container.innerHTML = "";
   data.map((el) => {
     const createDiv = document.createElement("div");
     createDiv.innerHTML = `
@@ -84,4 +97,4 @@ const showModalDetails = (data) => {
   });
 };
 
-loadDataAPI();
+// loadDataAPI();
