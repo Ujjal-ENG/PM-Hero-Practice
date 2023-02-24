@@ -24,9 +24,11 @@ document.getElementById("inputValue").addEventListener("keyup", (e) => {
 });
 
 const showData = (data) => {
+  let startIndex = 0;
+  let endIndex = 6;
   const container = document.getElementById("card-container");
   container.innerHTML = "";
-  data.map((el) => {
+  data.slice(startIndex, endIndex).map((el) => {
     const createDiv = document.createElement("div");
     createDiv.innerHTML = `
     <div class="card card-side bg-base-100 shadow-xl border-2 h-[300px]">
@@ -43,6 +45,32 @@ const showData = (data) => {
           </div>
     `;
     container.appendChild(createDiv);
+  });
+  showRestData(data.slice(endIndex, data.length));
+};
+
+const showRestData = (data) => {
+  document.getElementById("showBTN").addEventListener("click", () => {
+    const container = document.getElementById("card-container");
+    container.innerHTML = "";
+    data.slice(startIndex, endIndex).map((el) => {
+      const createDiv = document.createElement("div");
+      createDiv.innerHTML = `
+    <div class="card card-side bg-base-100 shadow-xl border-2 h-[300px]">
+            <figure class="w-full"><img src="${el.strMealThumb}" alt="${el.strTags}" /></figure>
+            <div class="py-9 px-5 space-y-5">
+              <h2 class="card-title text-2xl font-bold">${el.strMeal}</h2>
+              <p class="text-lg text-textPrimary font-normal w-[250px] h-20 overflow-hidden text-ellipsis">
+              ${el.strInstructions}
+              </p>
+              <div class="card-actions justify-start">
+                  <label for="my-modal-6" class="text-btnPrimary text-lg font-semibold cursor-pointer border-b-2 border-b-btnPrimary"onclick="loadModalData('${el.idMeal}')">open modal</label>
+              </div>
+            </div>
+          </div>
+    `;
+      container.appendChild(createDiv);
+    });
   });
 };
 
