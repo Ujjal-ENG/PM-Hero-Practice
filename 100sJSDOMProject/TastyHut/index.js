@@ -17,10 +17,12 @@ document.getElementById("searchBTN").addEventListener("click", (e) => {
   loadDataAPI(input);
 });
 
-document.getElementById("inputValue").addEventListener("change", (e) => {
+document.getElementById("inputValue").addEventListener("keyup", (e) => {
   e.preventDefault();
   const input = document.getElementById("inputValue").value;
   loadDataAPI(input);
+  console.log(input);
+  console.log("hhh");
 });
 
 const showData = (data) => {
