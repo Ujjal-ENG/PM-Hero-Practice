@@ -92,5 +92,13 @@ document.getElementById("searchBTN").addEventListener("click", () => {
   const inputValue = document.getElementById("inputValue").value;
   loadFilterRegionData("capital", inputValue);
 });
+document.getElementById("inputValue").addEventListener("keyup", () => {
+  const inputValue = document.getElementById("inputValue").value;
+  loadFilterRegionData("capital", inputValue);
+});
+document.getElementById("searchBTN2").addEventListener("click", () => {
+  const inputValue = document.getElementById("inputValue2").value;
+  loadFilterRegionData("lang", inputValue);
+});
 
 loadData();
