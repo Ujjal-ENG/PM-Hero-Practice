@@ -97,4 +97,4 @@ const showModalDetails = (data) => {
   });
 };
 
-// loadDataAPI();
+loadDataAPI("fish");
