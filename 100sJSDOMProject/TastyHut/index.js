@@ -21,8 +21,6 @@ document.getElementById("inputValue").addEventListener("keyup", (e) => {
   e.preventDefault();
   const input = document.getElementById("inputValue").value;
   loadDataAPI(input);
-  console.log(input);
-  console.log("hhh");
 });
 
 const showData = (data) => {
