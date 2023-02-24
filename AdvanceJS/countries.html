@@ -45,6 +45,19 @@
 <body>
 
   <h1>Country Name</h1>
+
+  <!-- Fillter by Region -->
+  <select class="select w-full p-8 ml-3" id="option">
+    <option value="Asia" selected>Asia</option>
+    <option value="Europe">Europe</option>
+    <option value="Africa">Africa</option>
+    <option value="Oceania">Oceania</option>
+    <option value="Americas">Americas</option>
+    <option value="Polar">Polar</option>
+    <option value="Antarctic Ocean">Antarctic Ocean</option>
+    <option value="Antarctic">Antarctic</option>
+  </select>
+
   <section>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -55,7 +68,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div id="modal-body">
-            
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="closeBTN">Close</button>
