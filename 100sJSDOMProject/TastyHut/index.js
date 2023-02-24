@@ -49,6 +49,7 @@ const showModalDetails = (data) => {
   const modalContainer = document.getElementById("modal-details");
 
   const newDiv = document.createElement("div");
+  newDiv.classList.add("delete");
 
   newDiv.innerHTML = `
   <input type="checkbox" id="my-modal-6" class="modal-toggle" />
@@ -78,6 +79,9 @@ const showModalDetails = (data) => {
 
   modalContainer.appendChild(newDiv);
   // modalContainer.innerHTML = "";
+  document.getElementById("closeModal").addEventListener("click", () => {
+    document.querySelector(".delete").remove();
+  });
 };
 
 loadDataAPI();
