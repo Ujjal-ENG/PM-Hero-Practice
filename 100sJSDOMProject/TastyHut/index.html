@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="bumblebee">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TastyHut</title>
+
+  <!-- DaisyUi CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
+
+  <!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- our styleFile -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            btnPrimary: '#FFC107',
+            textPrimary: "#403F3F",
+            textSecondary: "#100F0F"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- header section -->
+  <header>
+
+    <!-- design our navbar -->
+    <nav class="pt-7 px-40">
+      <div class="navbar">
+        <div class="navbar-start">
+          <h1 class="normal-case text-xl font-bold text-textPrimary">Tasty HUT</h1>
+        </div>
+
+        <div class="navbar-end">
+          <button class="btn bg-btnPrimary border-none text-textSecondary px-8 font-bold">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- banner section -->
+    <section class="bg-image flex justify-center items-center">
+
+      <div class="information w-1/2">
+        <h1 class="text-6xl font-bold text-white text-center">Taste Our Delicious<br> Best Foods</h1>
+        <p class="text-lg text-center font-normal text-white">There are many variations of passages of Lorem Ipsum
+          available, but the majority have suffered alteration in some form, by injected humou.</p>
+
+        <div class="form-control mt-8">
+          <div class="flex">
+            <input class="w-full pl-9 py-4 rounded-lg" placeholder="    Search and food" value="">
+            <!-- <i class="fa-solid fa-magnifying-glass  py-3"></i> -->
+            <span class="absolute">
+              <i class="fa-solid fa-magnifying-glass  py-5 px-5"></i>
+            </span>
+            </input>
+            <button
+              class="bg-btnPrimary text-textSecondary border-none -ml-3 px-10 font-bold rounded-lg">Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <!-- DaisyUI script -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- our script -->
+  <script src="./index.js"></script>
+</body>
+
+</html>
