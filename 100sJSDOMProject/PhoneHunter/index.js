@@ -1,1 +1,32 @@
 // document.getElementById("progressBar").classList.remove("invisible");
+
+const fetchData = async (query) => {
+  const dataAPI = await fetch(
+    `https://openapi.programming-hero.com/api/phones?search=samsung`
+  );
+  const data = await dataAPI.json();
+  showData(data.data);
+};
+
+const showData = (data) => {
+  const container = document.getElementById("card-items");
+
+  data.slice(0, 10).forEach((el) => {
+    const createDiv = document.createElement("div");
+    const { brand, phone_name, image, slug } = el;
+
+    createDiv.innerHTML = `
+    <div class="card w-78 bg-base-100 shadow-xl ">
+    <figure><img src="${image}" alt="${phone_name}" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">${brand + " " + phone_name}</h2>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary "onclick="showDeatils('${slug}')">Details</button>
+      </div>
+    </div>
+  </div>
+    `;
+    container.appendChild(createDiv);
+  });
+};
+fetchData();
