@@ -46,6 +46,18 @@
         </div>
         <div class="p-5 grid grid-cols-4 gap-4" id="card-items">
 
+
+        </div>
+        <div class="invisible" id="alertMessage">
+          <div class="alert alert-error shadow-lg w-1/2 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+
+            <p class="font-bold w-full">Error! Could not get what you search.</p>
+          </div>
+        </div>
         </div>
         <div class="flex justify-center p-5">
           <button class="btn btn-success btn-wide font-bold invisible" id="showMoreBTN">Show More</button>
@@ -58,9 +70,31 @@
         <div class="modal">
           <div class="modal-box relative">
             <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-            <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
-            <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!
-            </p>
+            <div class="overflow-x-auto">
+              <table class="table w-[94%]">
+                <!-- head -->
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Main Features</th>
+                    <th>Others Features</th>
+                    <th>Others</th>
+                  </tr>
+                </thead>
+                <tbody id="tablebody">
+                  <!-- row 1 -->
+
+                  <tr>
+                    <td>1</td>
+                    <td>Register</td>
+                    <td>Choose plan</td>
+                    <td>Purchase</td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

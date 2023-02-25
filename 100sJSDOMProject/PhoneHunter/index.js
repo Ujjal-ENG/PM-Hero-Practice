@@ -1,22 +1,35 @@
 // document.getElementById("progressBar").classList.remove("invisible");
 
 const fetchData = async (query) => {
-  const dataAPI = await fetch(
-    `https://openapi.programming-hero.com/api/phones?search=${query}`
-  );
-  const data = await dataAPI.json();
-  showData(data.data);
+  try {
+    const dataAPI = await fetch(
+      `https://openapi.programming-hero.com/api/phones?search=${query}`
+    );
+    const data = await dataAPI.json();
+    showData(data.data);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const showData = (data) => {
   const container = document.getElementById("card-items");
-  document.getElementById("progressBar").classList.add("invisible");
+  console.log(data.length);
+  if (data.length === 0) {
+    container.innerHTML = "";
+    document.getElementById("alertMessage").classList.remove("invisible");
+    document.getElementById("showMoreBTN").classList.add("invisible");
+  } else {
+    document.getElementById("progressBar").classList.add("invisible");
+    document.getElementById("alertMessage").classList.add("invisible");
 
-  container.innerHTML = "";
-  data.slice(0, 10).forEach((el) => {
-    const createDiv = document.createElement("div");
-    const { brand, phone_name, image, slug } = el;
-    createDiv.innerHTML = `
+    container.innerHTML = "";
+
+    // display only 10 phones
+    data.slice(0, 10).forEach((el) => {
+      const createDiv = document.createElement("div");
+      const { brand, phone_name, image, slug } = el;
+      createDiv.innerHTML = `
     <div class="card w-78 bg-base-100 shadow-xl ">
     <figure><img src="${image}" alt="${phone_name}" /></figure>
     <div class="card-body">
@@ -27,8 +40,9 @@ const showData = (data) => {
     </div>
   </div>
     `;
-    container.appendChild(createDiv);
-  });
+      container.appendChild(createDiv);
+    });
+  }
 };
 
 document.getElementById("searchBTN").addEventListener("click", () => {
@@ -38,3 +52,18 @@ document.getElementById("searchBTN").addEventListener("click", () => {
   document.getElementById("progressBar").classList.remove("invisible");
   document.getElementById("showMoreBTN").classList.remove("invisible");
 });
+
+const showDeatils = async (data) => {
+  const dataAPI = await fetch(
+    `https://openapi.programming-hero.com/api/phone/${data}`
+  );
+  const datas = await dataAPI.json();
+  showModalData(datas.data);
+};
+
+const showModalData = (data) => {
+  const containerMOdal = document.getElementById("tablebody");
+  data.mainFeatures.forEach((el) => {
+    console.log(el);
+  });
+};
