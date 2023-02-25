@@ -1,22 +1,20 @@
 // document.getElementById("progressBar").classList.remove("invisible");
 
-const fetchData = async (query) => {
+const fetchData = async (query, length) => {
   try {
     const dataAPI = await fetch(
       `https://openapi.programming-hero.com/api/phones?search=${query}`
     );
     const data = await dataAPI.json();
-    showData(data.data);
-    restData(data.data);
+    showData(data.data, length);
   } catch (error) {
     console.log(error);
   }
 };
 
-let sIdx = 0;
-let eidx = 10;
-const showData = (data) => {
+const showData = (data, length) => {
   const container = document.getElementById("card-items");
+  console.log(length);
   if (data.length === 0) {
     container.innerHTML = "";
     document.getElementById("alertMessage").classList.remove("invisible");
@@ -28,7 +26,7 @@ const showData = (data) => {
     container.innerHTML = "";
 
     // display only 10 phones
-    data.slice(sIdx, eidx).forEach((el) => {
+    data.slice(0, 10).forEach((el) => {
       const createDiv = document.createElement("div");
       const { brand, phone_name, image, slug } = el;
       createDiv.innerHTML = `
@@ -46,11 +44,15 @@ const showData = (data) => {
     });
   }
 };
+const processSearch = (length) => {
+  const inputValue = document.getElementById("searchInput").value;
+  fetchData(inputValue, length);
+};
 
 const restData = (data) => {
   document.getElementById("showMoreBTN").addEventListener("click", () => {
-    sIdx = eidx;
-    eidx = data.length;
+    processSearch(data.length);
+    console.log("hello");
   });
 };
 
@@ -105,8 +107,7 @@ const showModalData = (data) => {
 };
 
 const toggleFunction = () => {
-  const inputValue = document.getElementById("searchInput").value;
-  fetchData(inputValue);
+  processSearch(10);
   document.getElementById("searchInput").value = "";
   document.getElementById("progressBar").classList.remove("invisible");
   document.getElementById("showMoreBTN").classList.remove("invisible");
