@@ -20,7 +20,7 @@ const displayDataByCard = (data) => {
     const createDIv = document.createElement("div");
 
     if (el.strGender === "Male") {
-document.getElementById("maleFootballer").classList.remove("hidden");
+      document.getElementById("maleFootballer").classList.remove("hidden");
       document.getElementById("maleFootballer").classList.add("block");
       document.getElementById("femaleFootballer").classList.add("hidden");
     } else {
@@ -52,12 +52,19 @@ document.getElementById("maleFootballer").classList.remove("hidden");
             <div class="btn bg-warning border-none text-white badge badge-outline"onclick="showDetails('${
               el.idPlayer
             }','${el}')">Details</div>
-            <div class="btn bg-red-600 text-white badge badge-outline">Delete</div>
+            <div class="btn bg-red-600 text-white badge badge-outline deleteCard">Delete</div>
           </div>
         </div>
       </div>
     `;
     cardContainer.appendChild(createDIv);
+  });
+
+  const delteItem = document.querySelectorAll(".deleteCard");
+  delteItem.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.target.parentNode.parentNode.parentNode.parentNode.remove();
+    });
   });
 };
 
