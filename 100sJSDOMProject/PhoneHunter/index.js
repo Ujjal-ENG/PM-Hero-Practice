@@ -2,7 +2,7 @@
 
 const fetchData = async (query) => {
   const dataAPI = await fetch(
-    `https://openapi.programming-hero.com/api/phones?search=samsung`
+    `https://openapi.programming-hero.com/api/phones?search=${query}`
   );
   const data = await dataAPI.json();
   showData(data.data);
@@ -10,11 +10,12 @@ const fetchData = async (query) => {
 
 const showData = (data) => {
   const container = document.getElementById("card-items");
+  document.getElementById("progressBar").classList.add("invisible");
 
+  container.innerHTML = "";
   data.slice(0, 10).forEach((el) => {
     const createDiv = document.createElement("div");
     const { brand, phone_name, image, slug } = el;
-
     createDiv.innerHTML = `
     <div class="card w-78 bg-base-100 shadow-xl ">
     <figure><img src="${image}" alt="${phone_name}" /></figure>
@@ -29,4 +30,11 @@ const showData = (data) => {
     container.appendChild(createDiv);
   });
 };
-fetchData();
+
+document.getElementById("searchBTN").addEventListener("click", () => {
+  const inputValue = document.getElementById("searchInput").value;
+  fetchData(inputValue);
+  document.getElementById("searchInput").value = "";
+  document.getElementById("progressBar").classList.remove("invisible");
+  document.getElementById("showMoreBTN").classList.remove("invisible");
+});
