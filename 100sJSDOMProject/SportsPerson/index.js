@@ -45,7 +45,7 @@ const displayDataByCard = (data) => {
         <div class="card-body">
           <h2 class="card-title">
             ${strPlayer}
-            <div class="badge badge-secondary">${strBirthLocation}</div>
+            <div class="badge w-full badge-secondary">${strBirthLocation}</div>
           </h2>
           <p>Sponser: ${strKit} and Gender: ${strGender}</p>
           <div class="card-actions justify-end">
