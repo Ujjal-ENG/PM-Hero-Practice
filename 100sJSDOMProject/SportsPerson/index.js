@@ -45,8 +45,8 @@ const displayDataByCard = (data) => {
         <div class="card-body">
           <h2 class="card-title">
             ${strPlayer}
+            </h2>
             <div class="badge w-full badge-secondary">${strBirthLocation}</div>
-          </h2>
           <p>Sponser: ${strKit} and Gender: ${strGender}</p>
           <div class="card-actions justify-end">
             <div class="btn bg-warning border-none text-white badge badge-outline"onclick="showDetails('${
