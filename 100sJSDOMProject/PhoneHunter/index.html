@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -15,7 +15,54 @@
 
 <body>
 
+  <header>
+    <h1 class="text-7xl text-center p-5">welcome to the Phone Hunter World!!</h1>
+  </header>
 
+  <main>
+
+    <!-- show the phone search result -->
+    <section>
+      <h3 class="text-3xl text-green-400 font-semibold">Search your Phone Here!!!</h3>
+
+      <!-- input field -->
+      <div class="form-control p-5">
+        <div class="input-group">
+          <input type="text" placeholder="Search…" class="input input-bordered" id="searchInput" />
+          <button class="btn btn-square" id="searchBTN">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- search item show -->
+      <section>
+        <div class="flex justify-center">
+          <progress class="progress w-56 invisible" id="progressBar"></progress>
+        </div>
+        <div class="p-5 grid grid-cols-4 gap-4" id="card-items">
+          <div class="card w-96 bg-base-100 shadow-xl ">
+            <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            <div class="card-body">
+              <h2 class="card-title">Shoes!</h2>
+              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary ">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center p-5">
+          <button class="btn btn-success btn-wide font-bold" id="showMoreBTN">Show More</button>
+
+        </div>
+      </section>
+    </section>
+  </main>
   <!-- Script -->
   <script src="./index.js"></script>
 </body>
