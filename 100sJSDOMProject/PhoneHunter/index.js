@@ -84,21 +84,21 @@ const showModalData = (data) => {
   <li>${data.mainFeatures.chipSet}</li>
   <li>${data.mainFeatures.memory}</li>
   <li>${data.mainFeatures.sensors.forEach((el) => {
-    el;
-  })}</li>
+    `<li>${el}</li>`;
+  })}
   </td>
   <td>
   <li>${data.others.WLAN ? data.others.WLAN : "No Data Found!!!"}</li>
-  <li>${data.others.Bluetooth}</li>
-  <li>${data.others.GPS}</li>
-  <li>${data.others.NFC}</li>
-  <li>${data.others.Radio}</li>
-  <li>${data.others.USB}</li>
+  <li>${data.others.Bluetooth ? data.others.Bluetooth : "No Data Found"}</li>
+  <li>${data.others.GPS ? data.others.GPS : "No Data FOund"}</li>
+  <li>${data.others.NFC ? data.others.NFC : "No Data Found"}</li>
+  <li>${data.others.Radio ? data.others.Radio : "No Data Found"}</li>
+  <li>${data.others.USB ? data.others.USB : "No Data FOund"}</li>
   </td>
   <td>
   <li>${data.brand}</li>
   <li>${data.name}</li>
-  <li>${data.releaseDate}</li>
+  <li>${data.releaseDate ? data.releaseDate : "NO data found"}</li>
   </td>
   `;
   containerMOdal.appendChild(createTr);
