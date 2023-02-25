@@ -17,7 +17,6 @@ let sIdx = 0;
 let eidx = 10;
 const showData = (data) => {
   const container = document.getElementById("card-items");
-  console.log(data.length);
   if (data.length === 0) {
     container.innerHTML = "";
     document.getElementById("alertMessage").classList.remove("invisible");
@@ -75,9 +74,34 @@ const showDeatils = async (data) => {
 
 const showModalData = (data) => {
   const containerMOdal = document.getElementById("tablebody");
-  data.mainFeatures.forEach((el) => {
-    console.log(el);
-  });
+  const createTr = document.createElement("tr");
+  containerMOdal.innerHTML = "";
+  createTr.innerHTML = `
+  <td>1</td>
+  <td>
+  <li>${data.mainFeatures.storage}</li>
+  <li>${data.mainFeatures.displaySize}</li>
+  <li>${data.mainFeatures.chipSet}</li>
+  <li>${data.mainFeatures.memory}</li>
+  <li>${data.mainFeatures.sensors.forEach((el) => {
+    el;
+  })}</li>
+  </td>
+  <td>
+  <li>${data.others.WLAN ? data.others.WLAN : "No Data Found!!!"}</li>
+  <li>${data.others.Bluetooth}</li>
+  <li>${data.others.GPS}</li>
+  <li>${data.others.NFC}</li>
+  <li>${data.others.Radio}</li>
+  <li>${data.others.USB}</li>
+  </td>
+  <td>
+  <li>${data.brand}</li>
+  <li>${data.name}</li>
+  <li>${data.releaseDate}</li>
+  </td>
+  `;
+  containerMOdal.appendChild(createTr);
 };
 
 const toggleFunction = () => {
