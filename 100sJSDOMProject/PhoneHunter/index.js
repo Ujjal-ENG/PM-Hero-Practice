@@ -22,7 +22,7 @@ const showData = (data) => {
     <div class="card-body">
       <h2 class="card-title">${brand + " " + phone_name}</h2>
       <div class="card-actions justify-end">
-        <button class="btn btn-primary "onclick="showDeatils('${slug}')">Details</button>
+        <label for="my-modal-3" class="btn btn-primary "onclick="showDeatils('${slug}')">Details</label>
       </div>
     </div>
   </div>
