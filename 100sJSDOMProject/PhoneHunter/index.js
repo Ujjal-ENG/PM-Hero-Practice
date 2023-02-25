@@ -7,11 +7,14 @@ const fetchData = async (query) => {
     );
     const data = await dataAPI.json();
     showData(data.data);
+    restData(data.data);
   } catch (error) {
     console.log(error);
   }
 };
 
+let sIdx = 0;
+let eidx = 10;
 const showData = (data) => {
   const container = document.getElementById("card-items");
   console.log(data.length);
@@ -26,7 +29,7 @@ const showData = (data) => {
     container.innerHTML = "";
 
     // display only 10 phones
-    data.slice(0, 10).forEach((el) => {
+    data.slice(sIdx, eidx).forEach((el) => {
       const createDiv = document.createElement("div");
       const { brand, phone_name, image, slug } = el;
       createDiv.innerHTML = `
@@ -45,12 +48,21 @@ const showData = (data) => {
   }
 };
 
+const restData = (data) => {
+  document.getElementById("showMoreBTN").addEventListener("click", () => {
+    sIdx = eidx;
+    eidx = data.length;
+  });
+};
+
 document.getElementById("searchBTN").addEventListener("click", () => {
-  const inputValue = document.getElementById("searchInput").value;
-  fetchData(inputValue);
-  document.getElementById("searchInput").value = "";
-  document.getElementById("progressBar").classList.remove("invisible");
-  document.getElementById("showMoreBTN").classList.remove("invisible");
+  toggleFunction();
+});
+
+document.getElementById("searchInput").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    toggleFunction();
+  }
 });
 
 const showDeatils = async (data) => {
@@ -66,4 +78,12 @@ const showModalData = (data) => {
   data.mainFeatures.forEach((el) => {
     console.log(el);
   });
+};
+
+const toggleFunction = () => {
+  const inputValue = document.getElementById("searchInput").value;
+  fetchData(inputValue);
+  document.getElementById("searchInput").value = "";
+  document.getElementById("progressBar").classList.remove("invisible");
+  document.getElementById("showMoreBTN").classList.remove("invisible");
 };
