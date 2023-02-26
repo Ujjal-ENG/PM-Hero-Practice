@@ -28,6 +28,10 @@ const restData = (data) => {
   document.getElementById("showMoreBTN").addEventListener("click", () => {
     // display only rest of the phones
     displayData(data, 11);
+
+    // scroll top
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   });
 };
 
