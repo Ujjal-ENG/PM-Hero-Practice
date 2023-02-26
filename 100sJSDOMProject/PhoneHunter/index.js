@@ -6,8 +6,8 @@ const fetchData = async (query) => {
       `https://openapi.programming-hero.com/api/phones?search=${query}`
     );
     const data = await dataAPI.json();
-    showData(data.data, length);
-    restData(data.data, length);
+    showData(data.data);
+    restData(data.data);
   } catch (error) {
     console.log(error);
   }
@@ -101,7 +101,6 @@ const displayData = (data, length) => {
   } else {
     phone = data.slice(10, data.length);
   }
-  console.log(phone);
 
   phone.forEach((el) => {
     const createDiv = document.createElement("div");
