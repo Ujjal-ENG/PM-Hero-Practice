@@ -1,0 +1,11 @@
+response.cloud_pct
+response.feels_like
+response.humidity
+response.max_temp
+response.min_temp
+response.sunrise
+response.sunset
+response.temp
+response.wind_degrees
+response.wind_speed
+

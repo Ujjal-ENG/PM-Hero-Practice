@@ -33,14 +33,14 @@
 
           </ul>
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="inputCity">
+            <button class="btn btn-outline-success" type="submit" id="searchBTN">Search</button>
           </form>
         </div>
       </div>
     </nav>
   </header>
-
+  <h1 class="text-center p-3">Weather for <span id="city">Dhaka</span></h1>
   <main class="container-sm my-5">
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
@@ -49,11 +49,13 @@
             <h4 class="my-0 fw-normal">Temperatures</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title" id="temperaturs">0<small class="text-muted fw-light">°C</small></h1>
+            <h1 class="card-title pricing-card-title temperaturs" id="temp"><span id="temperaturs">0</span><small
+                class="text-muted fw-light">°C</small>
+            </h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>Temperatures is <span id="temperaturs"></span></li>
-              <li>Max Temperatures is <span id="max-temperaturs"></span></li>
-              <li>Min Temperatures is <span id="min-temperaturs"></span></li>
+              <li>Temperatures is <span id="temperaturs1"></span></li>
+              <li>Max Temperatures is <span id="maxtemperaturs"></span></li>
+              <li>Min Temperatures is <span id="mintemperaturs"></span></li>
 
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
@@ -66,10 +68,11 @@
             <h4 class="my-0 fw-normal">Humidity Info</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title" id="humidity">15<small class="text-muted fw-light" >%</small>
+            <h1 class="card-title pricing-card-title"><span id="humidity"></span><small
+                class="text-muted fw-light">%</small>
             </h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>Wind Degrees is <span id="wind-deg"></span></li>
+              <li>Wind Degrees is <span id="winddeg"></span></li>
               <li>Feels like <span id="feels"></span></li>
               <li>Humidity is <span id="feelhumidity"></span></li>
             </ul>
@@ -83,12 +86,12 @@
             <h4 class="my-0 fw-normal">Wind Info</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title" id="wind-info">$29<small class="text-muted fw-light">km/hr</small>
+            <h1 class="card-title pricing-card-title" ><span id="windinfo"></span><small class="text-muted fw-light">km/hr</small>
             </h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>Wind Speed is: <span id="wind-speed"></span></li>
+              <li>Wind Speed is: <span id="windinfo1"></span></li>
               <li>Sunrise Time is: <span id="sunrise"></span></li>
-              <li>Phone and email support</li>
+          
               <li>Sunset time is: <span id="sunset"></span></li>
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
