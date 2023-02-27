@@ -21,10 +21,12 @@ const errorHandle = (data) => {
     document.getElementById("error").removeAttribute("hidden");
     document.getElementById("orginal").setAttribute("hidden", true);
     document.getElementById("short").classList.add("invisible");
+    document.querySelector(".spainer").classList.remove("invisible");
   } else {
     document.getElementById("error").setAttribute("hidden", true);
     document.getElementById("orginal").removeAttribute("hidden");
     document.getElementById("short").classList.remove("invisible");
+    document.querySelector(".spainer").classList.add("invisible");
   }
 };
 
