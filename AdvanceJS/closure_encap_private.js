@@ -42,20 +42,39 @@
 //   console.log("Mama tik ase!!");
 // }
 
-const multyValue = (num1, num2, type) => {
-  switch (type) {
-    case "add":
-      return num1 + num2;
-    case "subtract":
-      return num1 - num2;
-    case "multiply":
-      return num1 * num2;
-    case "divide":
-      return num1 / num2;
-    default:
-      return "Invalid Operation";
-  }
-};
+// const multyValue = (num1, num2, type) => {
+//   switch (type) {
+//     case "add":
+//       return num1 + num2;
+//     case "subtract":
+//       return num1 - num2;
+//     case "multiply":
+//       return num1 * num2;
+//     case "divide":
+//       return num1 / num2;
+//     default:
+//       return "Invalid Operation";
+//   }
+// };
 
-console.log(multyValue(4, 2, "divide"));
+// console.log(multyValue(4, 2, "divide"));
 
+function add() {
+  let count = 0;
+  return function () {
+    count += 1;
+    console.log(count);
+  };
+}
+
+const counter = add();
+counter();
+counter();
+counter();
+counter();
+const counter2 = add();
+counter2();
+counter2();
+counter2();
+
+console.dir(counter2);
