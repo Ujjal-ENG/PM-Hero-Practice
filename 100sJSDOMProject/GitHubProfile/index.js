@@ -1,16 +1,16 @@
 const fetchData = async () => {
   const fetchAPi = await fetch(`https://api.github.com/users?per_page=10`);
   const data = await fetchAPi.json();
-  console.log(data);
+  showData(data);
 };
 
-// const showData = (data) => {
-//   data.forEach(async (url) => {
-//     const fetchAPi = await fetch(url.url);
-//     const data = await fetchAPi.json();
-//     console.log(data);
-//   });
-// };
+const showData = (data) => {
+  data.forEach(async (url) => {
+    const fetchAPi = await fetch(url.url);
+    const data = await fetchAPi.json();
+    showDetails(data);
+  });
+};
 
 const showDetails = (data) => {
   const container = document.getElementById("container");
@@ -20,18 +20,29 @@ const showDetails = (data) => {
           <!-- profile photo and bio section -->
           <div class="flex gap-2">
             <div class="flex-none">
-              <img src="./person-1.jpeg" class="w-[100px] h-[100px] rounded-full" alt="profile" id="img">
+              <img src=${
+                data.avatar_url ? data.avatar_url : "./person-1.jpeg"
+              }" class="w-[100px] h-[100px] rounded-full" alt="profile" id="img">
             </div>
 
             <div class="flex-grow pl-4">
 
               <div class="flex justify-between">
                 <div class="">
-                  <h1 class="text-white text-2xl font-bold">The Octotat</h1>
-                  <h5 class="text-blue-700 font-bold text-lg pb-4">aoctocat</h5>
-                  <p class="text-gray-400 text-xl font-bold">This profile has no bio</p>
+                  <h1 class="text-white text-2xl font-bold">${data.name}</h1>
+                  <h5 class="text-blue-700 font-bold text-lg pb-4">${
+                    data.login
+                  }</h5>
+                  <p class="text-gray-400 text-xl font-bold">${
+                    data.bio
+                      ? data.bio
+                      : `This profile has no bio
+`
+                  }</p>
                 </div>
-                <p class="text-white font-semibold text-xl">Joined 25 Jan 2011</p>
+                <p class="text-white font-semibold text-xl">${
+                  data.created_at
+                }</p>
               </div>
 
               <!-- flower,flowing,repo section -->
@@ -40,15 +51,18 @@ const showDetails = (data) => {
                 <div class="grid grid-cols-3 justify-items-center text-center">
                   <div>
                     <h1 class="text-xl font-bold text-gray-400">Repos</h1>
-                    <p class="text-xl font-bold text-white">8</p>
+                    <p class="text-xl font-bold text-white">${
+                      data.public_repos
+                    }</p>
                   </div>
 
                   <div>
                     <h1 class="text-xl font-bold text-gray-400">Followers</h1>
-                    <p class="text-xl font-bold text-white">23443</p>
+                    <p class="text-xl font-bold text-white">${
+                      data.followers
+                    }</p>
 
                     <div class="grid grid-rows-2 gap-5 mt-5">
-
                       <div class="flex justify-center ml-8 gap-4 items-center">
                         <img src="./person-1.jpeg" class="rounded-full w-[50px] h-[50px]" alt="">
                         <h5 class="text-white">Kopa</h5>
@@ -62,10 +76,12 @@ const showDetails = (data) => {
                       </div>
                     </div>
                   </div>
-
+                    
                   <div>
                     <h1 class="text-xl font-bold text-gray-400">Following</h1>
-                    <p class="text-xl font-bold text-white">9</p>
+                    <p class="text-xl font-bold text-white">${
+                      data.following
+                    }</p>
                   </div>
                 </div>
               </div>
@@ -77,12 +93,16 @@ const showDetails = (data) => {
 
                   <div class="flex items-center gap-4">
                     <i class="fa-solid fa-location-dot text-white"></i>
-                    <p class="text-gray-400 text-xl font-bold">San Fransico</p>
+                    <p class="text-gray-400 text-xl font-bold">${
+                      data.location ? data.location : "Not Available"
+                    }</p>
                   </div>
 
                   <div class="flex items-center gap-4">
                     <i class="fa-sharp fa-solid fa-link text-white"></i>
-                    <p class="text-gray-400">https://github.com.Ujjal-ENG</p>
+                    <p class="text-gray-400">${
+                      data.blog ? data.blog : "Not Available"
+                    }</p>
                   </div>
                 </div>
 
@@ -90,12 +110,16 @@ const showDetails = (data) => {
 
                   <div class="flex items-center gap-4">
                     <i class="fa-brands fa-twitter text-white"></i>
-                    <p class="text-gray-400 text-xl font-bold">Not Available</p>
+                    <p class="text-gray-400 text-xl font-bold">${
+                      data.twitter_username
+                        ? data.twitter_username
+                        : "Not Available"
+                    }</p>
                   </div>
 
                   <div class="flex items-center gap-4">
                     <i class="fa-solid fa-house text-white"></i>
-                    <p class="text-gray-400  ">https://github.com.Ujjal-ENG</p>
+                    <p class="text-gray-400  ">${data.company}</p>
                   </div>
 
                 </div>
@@ -108,7 +132,6 @@ const showDetails = (data) => {
         </div>
   `;
   container.appendChild(createDic);
-  console.log(data.login);
 };
 
 fetchData();
