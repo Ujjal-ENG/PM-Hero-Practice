@@ -24,12 +24,20 @@
 
 // greetSomeOne(greetingHandler);
 
-const checkNum = (num) => {
-  if (typeof num === "number") {
-    return true;
-  } else {
-    return false;
-  }
-};
+// const checkNum = (num) => {
+//   if (typeof num === "number") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-console.log(checkNum(1));
+// console.log(checkNum(1));
+
+let storeFalsyValue = true;
+
+if (!storeFalsyValue) {
+  console.log("Nothing to show");
+} else {
+  console.log("Mama tik ase!!");
+}
