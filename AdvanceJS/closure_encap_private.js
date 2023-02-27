@@ -79,7 +79,32 @@
 
 // console.dir(counter2);
 
-const kopa = () => {
-  console.log("hello");
-};
-kopa();
+// const kopa = () => {
+//   console.log("hello");
+// };
+// kopa();
+
+// function bankAccount(initialBanlance) {
+//   let balance = initialBanlance;
+//   return function () {
+//     return balance;
+//   };
+// }
+
+// const account = bankAccount(1000);
+// co
+function stopWatch() {
+  let startTime = Date.now();
+
+  return function () {
+    console.log(Date.now() - startTime);
+  };
+}
+
+const times = stopWatch();
+// console.dir(times());
+
+for (let i = 0; i <= 100000000; i++) {
+  let a = Math.random() * i;
+}
+times();
