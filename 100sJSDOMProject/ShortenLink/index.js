@@ -12,14 +12,19 @@ const fetchData = async (link) => {
 
 const showResult = (data) => {
   errorHandle(data);
-  
+  document.getElementById("orginalLink").innerText = data.original_link;
+  document.getElementById("shortLink").innerText = data.full_short_link;
 };
 
 const errorHandle = (data) => {
   if (data === undefined) {
     document.getElementById("error").removeAttribute("hidden");
+    document.getElementById("orginal").setAttribute("hidden", true);
+    document.getElementById("short").classList.add("invisible");
   } else {
     document.getElementById("error").setAttribute("hidden", true);
+    document.getElementById("orginal").removeAttribute("hidden");
+    document.getElementById("short").classList.remove("invisible");
   }
 };
 
@@ -31,15 +36,10 @@ document.getElementById("shortenBTN").addEventListener("click", (e) => {
 
 function myFunction() {
   // Get the text field
-  var copyText = document.getElementById("shortLink");
+  let copyText = document.getElementById("shortLink").innerText;
 
-  // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
-
+  console.log(copyText);
   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
+  navigator.clipboard.writeText(copyText);
+  alert("Copied the text: " + copyText);
 }
