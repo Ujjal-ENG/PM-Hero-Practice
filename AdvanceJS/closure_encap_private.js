@@ -59,22 +59,27 @@
 
 // console.log(multyValue(4, 2, "divide"));
 
-function add() {
-  let count = 0;
-  return function () {
-    count += 1;
-    console.log(count);
-  };
-}
+// function add() {
+//   let count = 0;
+//   return function () {
+//     count += 1;
+//     console.log(count);
+//   };
+// }
 
-const counter = add();
-counter();
-counter();
-counter();
-counter();
-const counter2 = add();
-counter2();
-counter2();
-counter2();
+// const counter = add();
+// counter();
+// counter();
+// counter();
+// counter();
+// const counter2 = add();
+// counter2();
+// counter2();
+// counter2();
 
-console.dir(counter2);
+// console.dir(counter2);
+
+const kopa = () => {
+  console.log("hello");
+};
+kopa();
