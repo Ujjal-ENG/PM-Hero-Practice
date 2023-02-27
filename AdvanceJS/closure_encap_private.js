@@ -34,10 +34,28 @@
 
 // console.log(checkNum(1));
 
-let storeFalsyValue = true;
+// let storeFalsyValue = true;
 
-if (!storeFalsyValue) {
-  console.log("Nothing to show");
-} else {
-  console.log("Mama tik ase!!");
-}
+// if (!storeFalsyValue) {
+//   console.log("Nothing to show");
+// } else {
+//   console.log("Mama tik ase!!");
+// }
+
+const multyValue = (num1, num2, type) => {
+  switch (type) {
+    case "add":
+      return num1 + num2;
+    case "subtract":
+      return num1 - num2;
+    case "multiply":
+      return num1 * num2;
+    case "divide":
+      return num1 / num2;
+    default:
+      return "Invalid Operation";
+  }
+};
+
+console.log(multyValue(4, 2, "divide"));
+
