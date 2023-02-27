@@ -8,11 +8,13 @@ const showData = (data) => {
   data.forEach(async (url) => {
     const fetchAPi = await fetch(url.url);
     const data = await fetchAPi.json();
-    showDetails(data);
+    const fetchAPiDlowers = await fetch(url.followers_url);
+    const data2 = await fetchAPiDlowers.json();
+    showDetails(data, data2);
   });
 };
 
-const showDetails = (data) => {
+const showDetails = (data, data2) => {
   const container = document.getElementById("container");
   const createDic = document.createElement("div");
   createDic.innerHTML = `
@@ -64,14 +66,22 @@ const showDetails = (data) => {
 
                     <div class="grid grid-rows-2 gap-5 mt-5">
                       <div class="flex justify-center ml-8 gap-4 items-center">
-                        <img src="./person-1.jpeg" class="rounded-full w-[50px] h-[50px]" alt="">
-                        <h5 class="text-white">Kopa</h5>
+                        <img src="${
+                          // data2[0].avatar_url
+                          // ? data[0].avatar_url
+                          "./person-1.jpeg"
+                        }" class="rounded-full w-[50px] h-[50px]" alt="">
+                        <h5 class="text-white"></h5>
                         <a class="text-blue-600 cursor-pointer underline " href="">Details</a>
                       </div>
 
                       <div class="flex justify-center ml-8 gap-4 items-center">
-                        <img src="./person-1.jpeg" class="rounded-full w-[50px] h-[50px]" alt="">
-                        <h5 class="text-white">Kopa</h5>
+                        <img src="${
+                          // data2[1].avatar_url
+                          // ? data[1].avatar_url
+                          "./person-1.jpeg"
+                        }" class="rounded-full w-[50px] h-[50px]" alt="">
+                        <h5 class="text-white"></h5>
                         <a class="text-blue-600 cursor-pointer underline " href="">Details</a>
                       </div>
                     </div>
