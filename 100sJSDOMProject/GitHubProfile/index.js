@@ -67,22 +67,26 @@ const showDetails = (data, data2) => {
                     <div class="grid grid-rows-2 gap-5 mt-5">
                       <div class="flex justify-center ml-8 gap-4 items-center">
                         <img src="${
-                          // data2[0].avatar_url
-                          // ? data[0].avatar_url
-                          "./person-1.jpeg"
+                          data2[0].avatar_url
+                            ? data2[0].avatar_url
+                            : "./person-1.jpeg"
                         }" class="rounded-full w-[50px] h-[50px]" alt="">
-                        <h5 class="text-white"></h5>
-                        <a class="text-blue-600 cursor-pointer underline " href="">Details</a>
+                        <h5 class="text-white">${data2[0].login}</h5>
+                        <a class="text-blue-600 cursor-pointer underline " href="${
+                          data2[0].html_url
+                        }">Details</a>
                       </div>
 
                       <div class="flex justify-center ml-8 gap-4 items-center">
                         <img src="${
-                          // data2[1].avatar_url
-                          // ? data[1].avatar_url
-                          "./person-1.jpeg"
+                          data2[1].avatar_url
+                            ? data2[1].avatar_url
+                            : "./person-1.jpeg"
                         }" class="rounded-full w-[50px] h-[50px]" alt="">
-                        <h5 class="text-white"></h5>
-                        <a class="text-blue-600 cursor-pointer underline " href="">Details</a>
+                        <h5 class="text-white">${data2[1].login}</h5>
+                        <a class="text-blue-600 cursor-pointer underline " href="${
+                          data2[1].html_url
+                        }">Details</a>
                       </div>
                     </div>
                   </div>
