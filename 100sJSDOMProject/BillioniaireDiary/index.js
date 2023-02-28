@@ -4,6 +4,7 @@ getId("btn-container").addEventListener("click", (e) => {
   switch (e.target.id) {
     case "10user":
       console.log("hello");
+      getId("card-section").innerHTML = "";
       show10UserOnlyApi();
       break;
     case "addUser":
@@ -13,12 +14,16 @@ getId("btn-container").addEventListener("click", (e) => {
       console.log("Mama DBL money de");
       break;
     case "descSort":
+      getId("card-section").innerHTML = "";
+      showFullUserApiDESC();
       console.log("Sort kore de");
       break;
     case "toalCal":
       console.log("Total valude de amama");
       break;
     case "showAll":
+      getId("card-section").innerHTML = "";
+      showFullUserApi();
       console.log("Show all kor");
       break;
     case "showState":
@@ -44,6 +49,20 @@ const show10UserOnlyApi = async () => {
 };
 
 const showFullUserApi = async () => {
+  getId("progressBar").removeAttribute("hidden");
+  try {
+    const fetchData = await fetch(
+      "https://forbes400.onrender.com/api/forbes400/getAllBillionaires"
+    );
+    const data = await fetchData.json();
+    displayData(data);
+    getId("progressBar").setAttribute("hidden", true);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const showFullUserApiDESC = async () => {
   getId("progressBar").removeAttribute("hidden");
   try {
     const fetchData = await fetch(
