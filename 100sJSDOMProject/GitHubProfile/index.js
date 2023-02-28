@@ -18,7 +18,7 @@ const showDetails = (data, data2) => {
   const container = document.getElementById("container");
   const createDic = document.createElement("div");
   createDic.innerHTML = `
-  <div class="w-1/2 mx-auto my-10 bg-slate-700 rounded-md p-10">
+  <div class="lg:w-1/2 w-full md:mx-auto my-10 bg-slate-700 rounded-md p-10">
           <!-- profile photo and bio section -->
           <div class="flex gap-2">
             <div class="flex-none">
