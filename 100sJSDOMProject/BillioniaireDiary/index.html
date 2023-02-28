@@ -11,6 +11,11 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.2/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- CDN link for font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 
@@ -20,17 +25,97 @@
   <section class="grid h-screen grid-flow-col grid-rows-12">
 
     <!-- drawer Part -->
-    <div class=" bg-red-400 col-span-2 row-span-6">
+    <div class="col-span-1 row-span-6 bg-[#0E1B34] text-white">
+      <h1 class="text-center p-6 uppercase text-3xl mb-10"><span class="font-bold"> BILLIONAIRE</span>
+        <br> DIARY
+      </h1>
+
+      <div class="flex justify-center flex-col px-8 space-y-3">
+        <button class="btn btn-active bg-gray-400 text-2xl">Add a User <span class="font-light">
+            (Randomly)</span></button>
+        <button class="btn btn-active bg-gray-400 text-2xl">Double Money </button>
+        <button class="btn btn-active bg-gray-400 text-2xl">Sort By Rank <span class="font-light"> (Descending)</span>
+        </button>
+        <button class="btn btn-active bg-gray-400 text-2xl">Calculate Entire Wealth</button>
+
+        <!-- line -->
+        <div class="h-1 bg-red-500 mx-10"></div>
+
+
+        <button class="btn btn-active bg-gray-400 text-2xl">Show All Billionaires </button>
+        <button>
+          <select class="select select-ghost w-full">
+            <option selected>Richest By Industry??</option>
+            <option>Technology</option>
+            <option>Fashion</option>
+            <option>Finance</option>
+            <option>Investments </option>
+          </select>
+        </button>
+
+        <button class="btn btn-active bg-gray-400 text-2xl">Richest by States <span class="font-light"> (Texas)</span>
+        </button>
+
+      </div>
     </div>
 
-    <header class="bg-black col-span-10 row-span-1">
-      <div>
+    <header class="col-span-11 auto-rows-auto py-4">
+      <div class="flex justify-between ml-4">
+        <input type="text" placeholder="Search"
+          class="px-6 text-3xl border-b-4 text-black placeholder:text-blac outline-none">
+        <img src="./B-logo.png" class="w-16 mr-10" alt="">
       </div>
     </header>
 
     <!-- main part -->
-    <main class="bg-fuchsia-500 col-span-10 row-span-5">
+    <main class="bg-gray-300 col-span-11">
+      <h1 class=" p-6 uppercase text-xl mb-10"><span class="font-bold"> Hello</span>
+        Ujjal
+      </h1>
 
+      <!-- table -->
+      <div class="overflow-x-auto bg-gray-300">
+        <table class="table bg-gray-300  w-full">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>CitizenShip</th>
+              <th>Industry</th>
+              <th>Rank</th>
+              <th>Wealth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr>
+              <th class="flex items-center gap-2">Elon Musk
+                <label class="swap">
+                  <input type="checkbox" />
+                  <div class="swap-on">
+                    <i class="fa-solid fa-eye"></i>
+                  </div>
+                  <div class="swap-off">
+                    <i class="fa-solid fa-eye-slash"></i>
+                  </div>
+                </label>
+              </th>
+              <td>Huston</td>
+              <td>Technology</td>
+              <td>1</td>
+              <td>$43543655</td>
+            </tr>
+
+            <tr class="border-t-4 border-black">
+              <th class="flex items-center gap-2">Total</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>$43543655</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
   </section>
 
