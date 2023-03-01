@@ -11,12 +11,10 @@ const fetchCategoryAPI = async () => {
 const showCategory = (data) => {
   const categoryContainer = getID("category-container");
   data.forEach((el) => {
-    const categoryDiv = document.createElement("div");
-    categoryDiv.innerHTML = `
+    categoryContainer.innerHTML += `
     <a href="#"
     class=" rounded-lg p-2 hover:shadow-lg hover:p-2  focus:bg-violet-100 font-bold focus:text-violet-600 transition-all">${el.category_name}</a>
     `;
-    categoryContainer.appendChild(categoryDiv);
   });
 };
 
