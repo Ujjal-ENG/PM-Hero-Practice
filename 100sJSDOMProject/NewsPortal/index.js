@@ -1,5 +1,5 @@
 const getID = (id) => document.getElementById(id);
-
+let fetchData = [];
 // for show the all Category
 const fetchCategoryAPI = async () => {
   const fetchCategoryAPIData = await fetch(
@@ -28,15 +28,8 @@ const fetchAllDataAPI = async (id, name) => {
   );
   const categoryData = await fetchCategoryAPIData.json();
   showTheCategoryData(categoryData.data);
-  if (categoryData.data.length === 0) {
-    getID("red-alert").removeAttribute("hidden");
-    getID("success-alert").setAttribute("hidden", true);
-  } else {
-    getID("success-alert").removeAttribute("hidden");
-    getID("red-alert").setAttribute("hidden", true);
-  }
-  document.querySelector(".datafound").innerHTML = categoryData.data.length;
-  document.querySelector(".categoryName").innerHTML = name;
+  fetchData = categoryData.data;
+  showtheAlert(categoryData.data.length, name);
 };
 
 const showTheCategoryData = (data) => {
@@ -137,4 +130,36 @@ const showModal = (data) => {
   `;
 };
 
-getID("todasPick").addEventListener("click", () => {});
+getID("trending").addEventListener("click", () => {
+  let trendingNews = fetchData.filter((singleData) => {
+    if (singleData.others_info.is_trending) {
+      return singleData.others_info.is_trending;
+    }
+    return;
+  });
+  showTheCategoryData(trendingNews);
+  showtheAlert(trendingNews.length, "Trending Now!!!");
+});
+
+getID("todasPick").addEventListener("click", () => {
+  let trendingNews = fetchData.filter((singleData) => {
+    if (singleData.others_info.is_todays_pick) {
+      return singleData.others_info.is_todays_pick;
+    }
+    return;
+  });
+  showTheCategoryData(trendingNews);
+  showtheAlert(trendingNews.length, "Today's Pick!!!");
+});
+
+const showtheAlert = (categoryData, name) => {
+  if (categoryData === 0) {
+    getID("red-alert").removeAttribute("hidden");
+    getID("success-alert").setAttribute("hidden", true);
+  } else {
+    getID("success-alert").removeAttribute("hidden");
+    getID("red-alert").setAttribute("hidden", true);
+  }
+  document.querySelector(".datafound").innerHTML = categoryData;
+  document.querySelector(".categoryName").innerHTML = name;
+};
