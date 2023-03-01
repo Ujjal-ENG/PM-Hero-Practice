@@ -43,6 +43,7 @@ const showTheCategoryData = (data) => {
   const cardContainer = getID("card-container");
   cardContainer.innerHTML = "";
   data.forEach((el) => {
+    const date = new Date(el.published_date).toDateString();
     const containerCard = document.createElement("div");
     containerCard.innerHTML = `
     
@@ -56,7 +57,11 @@ const showTheCategoryData = (data) => {
           <div class="card-body w-full sm:w-[70%]">
             <div class="cardInfo space-y-4">
 
-              <h2 class="card-title">${el.title}</h2>
+              <h2 class="card-title">${
+                el.title
+              } <span class="badge badge-secondary">${
+      el.others_info.is_trending ? "Trending" : "Not Trending"
+    }</span></h2>
               <p>${el.details.slice(0, 400) + "...."}</p>
             </div>
 
@@ -70,15 +75,19 @@ const showTheCategoryData = (data) => {
                 </div>
 
                 <div>
-                  <p class="font-bold">${el.author.name}</p>
-                  <p class="text-gray-500">${el.published_date}</p>
+                  <p class="font-bold">${
+                    el.author.name ? el.author.name : "Name Missing!!"
+                  }</p>
+                  <p class="text-gray-500">${date ? date : "Date Missing!!"}</p>
 
                 </div>
               </div>
 
               <div class="flex items-center justify-center gap-4">
                 <i class="fa-solid fa-eye"></i>
-                <p class="font-bold text-xl">${el.total_view}</p>
+                <p class="font-bold text-xl">${
+                  el.total_view ? el.total_view : "Total View Missing"
+                }</p>
               </div>
 
               <div class="flex justify-center  items-center">
@@ -127,3 +136,5 @@ const showModal = (data) => {
         </div>
   `;
 };
+
+getID("todasPick").addEventListener("click", () => {});
