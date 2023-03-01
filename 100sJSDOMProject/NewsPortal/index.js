@@ -59,9 +59,9 @@ const showTheCategoryData = (data) => {
 
               <h2 class="card-title">${
                 el.title
-              } <span class="badge badge-secondary">${
+              } <div class="badge badge-secondary">${
       el.others_info.is_trending ? "Trending" : "Not Trending"
-    }</span></h2>
+    }</div></h2>
               <p>${el.details.slice(0, 400) + "...."}</p>
             </div>
 
