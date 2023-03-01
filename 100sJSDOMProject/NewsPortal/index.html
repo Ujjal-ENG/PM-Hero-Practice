@@ -89,12 +89,37 @@
         </div>
       </div>
     </section>
-
   </header>
 
   <!-- Main Part -->
   <main>
 
+    <!-- Make the UI -->
+    <section class="px-8 py-7">
+
+      <div class="flex justify-between">
+
+        <div class="flex gap-10 justify-center items-center">
+
+          <h1 class="font-semibold">Sort By View:</h1>
+          <div>
+            <select class="select select-ghost w-full max-w-xs bg-slate-400">
+              <option disabled selected>Default</option>
+              <option>Svelte</option>
+              <option>Vue</option>
+              <option>React</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- right side by select div -->
+        <div>
+          <button class="btn bg-violet-700">Today's Pick</button>
+          <button class="btn bg-white text-violet-700 border-violet-600">Trending</button>
+        </div>
+      </div>
+      <!-- left side by select div-->
+    </section>
   </main>
 
   <!-- Footer Part -->
