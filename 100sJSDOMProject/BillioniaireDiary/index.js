@@ -40,7 +40,7 @@ const show10UserOnlyApi = async () => {
   try {
     const fetchData = await fetch("./API/Richest_People_API.json");
     const data = await fetchData.json();
-    show10UserDetails(data);
+    show10UserDetails(data.slice(0, 10));
     getId("progressBar").setAttribute("hidden", true);
   } catch (err) {
     console.log(err);
@@ -110,8 +110,8 @@ const showIndsutryWise = async (value) => {
 const showData = async (values) => {
   const data = await values.json();
   getId("card-section").innerHTML = "";
-  // displayData(data);
-  console.log(data);
+  displayData(data);
+  // console.log(data);
   getId("progressBar").setAttribute("hidden", true);
 };
 
@@ -129,19 +129,19 @@ const showState = () => {
 const showStateWise = async (value) => {
   getId("progressBar").removeAttribute("hidden");
   try {
-    if (value === "(Texas)") {
+    if (value === "(TEXAS)") {
       const fetchData = await fetch("./API/ByStateTexas.json");
       showData(fetchData);
     }
-    if (value === "(Hawaii)") {
+    if (value === "(HAWAII)") {
       const fetchData = await fetch("./API/ByStateHawaii.json");
       showData(fetchData);
     }
-    if (value === "(Washington)") {
+    if (value === "(WASHINGTON)") {
       const fetchData = await fetch("./API/ByStateWashington.json");
       showData(fetchData);
     }
-    if (value === "(Zhejiang)") {
+    if (value === "(ZHEJIANG)") {
       const fetchData = await fetch("./API/ByStateZhejiang.json");
       showData(fetchData);
     }
@@ -149,6 +149,14 @@ const showStateWise = async (value) => {
     console.log(err);
   }
 };
+
+getId("inputSearch").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    const value = getId("inputSearch").value;
+    getId("state").innerText = value;
+    showStateWise(value);
+  }
+});
 
 const displayData = (data) => {
   const cardContainer = getId("card-section");
