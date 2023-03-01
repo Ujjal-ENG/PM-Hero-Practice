@@ -46,12 +46,12 @@
 
         <button class="btn btn-active bg-gray-400 text-2xl" id="showAll">Show All Billionaires </button>
         <button>
-          <select class="select select-ghost w-full">
-            <option selected>Richest By Industry??</option>
-            <option>Technology</option>
-            <option>Fashion</option>
-            <option>Finance</option>
-            <option>Investments </option>
+          <select class="select select-ghost w-full" id="numberToSelect" onchange="selectNum()">
+            <option disabled selected>Richest By Industry??</option>
+            <option value="Technology">Technology</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Finance">Finance</option>
+            <option value="Investments">Investments</option>
           </select>
         </button>
 

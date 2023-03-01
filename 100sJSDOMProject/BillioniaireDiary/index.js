@@ -37,9 +37,7 @@ getId("btn-container").addEventListener("click", (e) => {
 const show10UserOnlyApi = async () => {
   getId("progressBar").removeAttribute("hidden");
   try {
-    const fetchData = await fetch(
-      "https://forbes400.onrender.com/api/forbes400?limit=10"
-    );
+    const fetchData = await fetch("./API/Richest_People_API.json");
     const data = await fetchData.json();
     show10UserDetails(data);
     getId("progressBar").setAttribute("hidden", true);
@@ -51,9 +49,7 @@ const show10UserOnlyApi = async () => {
 const showFullUserApi = async () => {
   getId("progressBar").removeAttribute("hidden");
   try {
-    const fetchData = await fetch(
-      "https://forbes400.onrender.com/api/forbes400/getAllBillionaires"
-    );
+    const fetchData = await fetch("./API/AllBillionaires.json");
     const data = await fetchData.json();
     displayData(data);
     getId("progressBar").setAttribute("hidden", true);
@@ -85,6 +81,42 @@ const show10UserDetails = (data) => {
     showFullUserApi();
   });
 };
+
+const showIndsutryWise = async (value) => {
+  getId("progressBar").removeAttribute("hidden");
+  try {
+    if (value === "Technology") {
+      const fetchData = await fetch("./API/ByIndustryTechnology.json");
+      showData(fetchData);
+    }
+    if (value === "Technology") {
+      const fetchData = await fetch("./API/ByIndustryFashion.json");
+      showData(fetchData);
+    }
+    if (value === "Finance") {
+      const fetchData = await fetch("./API/ByIndustryFinance.json");
+      showData(fetchData);
+    }
+    if (value === "Investments") {
+      const fetchData = await fetch("./API/ByIndustryInvestment.json");
+      showData(fetchData);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const showData = async (values) => {
+  const data = await values.json();
+  getId("card-section").innerHTML = "";
+  displayData(data);
+  getId("progressBar").setAttribute("hidden", true);
+};
+
+function selectNum() {
+  let strUser = document.getElementById("numberToSelect").value;
+  showIndsutryWise(strUser);
+}
 
 const displayData = (data) => {
   const cardContainer = getId("card-section");
