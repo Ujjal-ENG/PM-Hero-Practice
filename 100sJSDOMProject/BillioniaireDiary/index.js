@@ -11,10 +11,8 @@ getId("btn-container").addEventListener("click", (e) => {
       break;
     case "addUser":
       randomData();
-      console.log("Add Mama");
       break;
     case "dblMoney":
-      console.log("Mama DBL money de");
       break;
     case "descSort":
       getId("card-container").removeAttribute("hidden");
@@ -22,7 +20,6 @@ getId("btn-container").addEventListener("click", (e) => {
       getId("card-section").innerHTML = "";
       getId("inputSearch").value = "";
       showFullUserApiDESC();
-      console.log("Sort kore de");
       break;
     case "toalCal":
       console.log("Total valude de amama");
@@ -33,12 +30,10 @@ getId("btn-container").addEventListener("click", (e) => {
       getId("card-section").innerHTML = "";
       getId("inputSearch").value = "";
       showFullUserApi();
-      console.log("Show all kor");
       break;
     case "showState":
       getId("card-container").removeAttribute("hidden");
       getId("main-secton").setAttribute("hidden", true);
-      console.log("State wise dka");
       showState();
       break;
     default:
