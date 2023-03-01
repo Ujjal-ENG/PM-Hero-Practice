@@ -47,13 +47,13 @@ const showTheCategoryData = (data) => {
     containerCard.innerHTML = `
     
     <div class="card sm:card-side w-full bg-base-100 shadow-2xl mb-10">
-          <div class="w-full sm:w-1/3 h-[300px]">
+          <div class="w-full sm:w-2/5 h-[300px]">
             <img src="${
               el.thumbnail_url ? el.thumbnail_url : "./unsplash_EhTcC9sYXsw.png"
             }" alt="Shoes" class="rounded-xl w-full h-full p-2" />
           </div>
 
-          <div class="card-body">
+          <div class="card-body w-full sm:w-[70%]">
             <div class="cardInfo space-y-4">
 
               <h2 class="card-title">${el.title}</h2>
