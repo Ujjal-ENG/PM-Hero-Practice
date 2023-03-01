@@ -83,15 +83,13 @@ const showTheCategoryData = (data) => {
                 }</p>
               </div>
 
-              <div class="flex justify-center  items-center">
-                <div class="rating rating-sm">
-                  <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked />
-                  <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-                  <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+                <div class="rating rating-sm flex justify-center  items-center">
+              ${generateStars(el.rating.number)}
+                  <p class="text-center font-bold text-lg ">${
+                    el.rating.number
+                  }</p>
                 </div>
-              </div>
+
 
               <div class="flex items-center justify-end">
                <label for="my-modal-5"> <i  class="cursor-pointer fa-solid fa-arrow-right fa-2x text-violet-700" onclick="showModalDetails('${
@@ -162,4 +160,15 @@ const showtheAlert = (categoryData, name) => {
   }
   document.querySelector(".datafound").innerHTML = categoryData;
   document.querySelector(".categoryName").innerHTML = name;
+};
+
+const generateStars = (rating) => {
+  let ratingHTML = "";
+  for (let i = 0; i < Math.floor(rating); i++) {
+    ratingHTML += '<i class="fas fa-star"></i>';
+  }
+  if (rating - Math.floor(rating) > 0) {
+    ratingHTML += '<i class="fas fa-star-half"></i>';
+  }
+  return ratingHTML;
 };
