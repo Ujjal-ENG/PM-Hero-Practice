@@ -28,6 +28,7 @@ getId("btn-container").addEventListener("click", (e) => {
       break;
     case "showState":
       console.log("State wise dka");
+      showState();
       break;
     default:
       break;
@@ -109,7 +110,8 @@ const showIndsutryWise = async (value) => {
 const showData = async (values) => {
   const data = await values.json();
   getId("card-section").innerHTML = "";
-  displayData(data);
+  // displayData(data);
+  console.log(data);
   getId("progressBar").setAttribute("hidden", true);
 };
 
@@ -117,6 +119,36 @@ function selectNum() {
   let strUser = document.getElementById("numberToSelect").value;
   showIndsutryWise(strUser);
 }
+
+const showState = () => {
+  const state = getId("state").innerText;
+  getId("inputSearch").value = state;
+  showStateWise(state);
+};
+
+const showStateWise = async (value) => {
+  getId("progressBar").removeAttribute("hidden");
+  try {
+    if (value === "(Texas)") {
+      const fetchData = await fetch("./API/ByStateTexas.json");
+      showData(fetchData);
+    }
+    if (value === "(Hawaii)") {
+      const fetchData = await fetch("./API/ByStateHawaii.json");
+      showData(fetchData);
+    }
+    if (value === "(Washington)") {
+      const fetchData = await fetch("./API/ByStateWashington.json");
+      showData(fetchData);
+    }
+    if (value === "(Zhejiang)") {
+      const fetchData = await fetch("./API/ByStateZhejiang.json");
+      showData(fetchData);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const displayData = (data) => {
   const cardContainer = getId("card-section");
