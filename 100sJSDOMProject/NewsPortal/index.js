@@ -14,7 +14,7 @@ const showCategory = (data) => {
   data.forEach((el) => {
     categoryContainer.innerHTML += `
     <a href="#"
-    class=" rounded-lg p-2 hover:shadow-lg hover:p-2  focus:bg-violet-100 font-bold focus:text-violet-600 transition-all" onclick="fetchAllDataAPI('${el.category_id}')">${el.category_name}</a>
+    class=" rounded-lg p-2 hover:shadow-lg hover:p-2  focus:bg-violet-100 font-bold focus:text-violet-600 transition-all" onclick="fetchAllDataAPI('${el.category_id}','${el.category_name}')">${el.category_name}</a>
     `;
   });
 };
@@ -22,7 +22,7 @@ const showCategory = (data) => {
 fetchCategoryAPI();
 
 // fetch all data based on the category
-const fetchAllDataAPI = async (id) => {
+const fetchAllDataAPI = async (id, name) => {
   const fetchCategoryAPIData = await fetch(
     `https://openapi.programming-hero.com/api/news/category/${id}`
   );
@@ -35,4 +35,5 @@ const fetchAllDataAPI = async (id) => {
     getID("red-alert").setAttribute("hidden", true);
   }
   document.querySelector(".datafound").innerHTML = categoryData.data.length;
+  document.querySelector(".categoryName").innerHTML = name;
 };
