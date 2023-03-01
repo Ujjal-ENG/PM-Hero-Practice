@@ -188,6 +188,7 @@ const dataFound = (data) => {
   getId("main-secton").removeAttribute("hidden");
   const randomValue = Math.round(Math.random() * data.length + 1);
   showRandomDetails(data[randomValue]);
+  showModalDetails(data[randomValue]);
 };
 
 let wealth = 0;
@@ -214,6 +215,58 @@ const showRandomDetails = (data) => {
   `;
   tableContainer.prepend(createTR);
   getId("totalWealth").innerHTML = wealth;
+};
+
+const showModalDetails = (data) => {
+  const modalContainer = getId("modalContainer");
+  const createDivModal = document.createElement("div");
+  createDivModal.classList.add("modal");
+
+  createDivModal.innerHTML = `
+  <div class="modal-box w-11/12 max-w-3xl">
+  <h3 class="font-bold text-3xl text-center drop-shadow-lg shadow-black">${data.personName}</h3>
+  <h3 class="font-bold text-2xl text-center drop-shadow-lg shadow-black">Biography</h3>
+  <p class="py- text-center">
+    Jeff Bezos founded e-com… chairman in July 2021. He now owns a bit less than 10% of the company. He and his
+    wife MacKenzi…6% Amazon stake to her. Bezos has donated more t… received those shares. Bezos owns The
+    Washingto…ce in one in July 2021. Bezos said in a November…sing specific details
+  </p>
+
+  <div class="flex justify-center pt-5 space-x-6 divide-x-2 divide-white">
+    <div>
+      <img src="" class="w-[200px] h-[250px]" alt="" srcset="">
+      <p class="pt-4"><span class="font-bold">Source: </span>Amazon</p>
+    </div>
+
+    <div class="information">
+      <div class="genralinfo">
+        <h3 class="font-bold text-2xl underline">General Information</h3>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">CitizenShip: </span>Amazon</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">State: </span>Washington DC</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">City: </span>Media</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Birthday: </span>999342</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Gender: </span>$99.5</p>
+      </div>
+      <div class="financialinfo mt-4">
+        <h3 class="font-bold text-2xl underline">Financial Information</h3>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Exchange: </span>NAS</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Ticker: </span>AMZn</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">City: </span>Media</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Total Shares: </span>999342</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Share Price: </span>$99.5</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="modal-action">
+    <label for="my-modal-5" class="btn btn-warning font-bold">Understand!</label>
+  </div>
+</div>
+  `;
+
+  modalContainer.append(createDivModal);
 };
 
 const displayData = (data) => {
