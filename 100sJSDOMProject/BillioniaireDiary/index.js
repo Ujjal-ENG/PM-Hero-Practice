@@ -5,6 +5,7 @@ getId("btn-container").addEventListener("click", (e) => {
     case "10user":
       console.log("hello");
       getId("card-section").innerHTML = "";
+      getId("inputSearch").value = "";
       show10UserOnlyApi();
       break;
     case "addUser":
@@ -15,6 +16,7 @@ getId("btn-container").addEventListener("click", (e) => {
       break;
     case "descSort":
       getId("card-section").innerHTML = "";
+      getId("inputSearch").value = "";
       showFullUserApiDESC();
       console.log("Sort kore de");
       break;
@@ -23,6 +25,7 @@ getId("btn-container").addEventListener("click", (e) => {
       break;
     case "showAll":
       getId("card-section").innerHTML = "";
+      getId("inputSearch").value = "";
       showFullUserApi();
       console.log("Show all kor");
       break;
