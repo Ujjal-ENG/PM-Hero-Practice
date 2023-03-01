@@ -10,7 +10,7 @@ getId("btn-container").addEventListener("click", (e) => {
       show10UserOnlyApi();
       break;
     case "addUser":
-      addRandomUser();
+      randomData();
       console.log("Add Mama");
       break;
     case "dblMoney":
@@ -52,6 +52,18 @@ const show10UserOnlyApi = async () => {
     const fetchData = await fetch("./API/Richest_People_API.json");
     const data = await fetchData.json();
     show10UserDetails(data.slice(0, 10));
+    getId("progressBar").setAttribute("hidden", true);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const randomData = async () => {
+  getId("progressBar").removeAttribute("hidden");
+  try {
+    const fetchData = await fetch("./API/Richest_People_API.json");
+    const data = await fetchData.json();
+    dataFound(data);
     getId("progressBar").setAttribute("hidden", true);
   } catch (err) {
     console.log(err);
@@ -171,10 +183,37 @@ getId("inputSearch").addEventListener("keypress", (e) => {
   }
 });
 
-const addRandomUser = () => {
+const dataFound = (data) => {
   getId("card-container").setAttribute("hidden", true);
   getId("main-secton").removeAttribute("hidden");
-  console.log("Kopa Hello");
+  const randomValue = Math.round(Math.random() * data.length + 1);
+  showRandomDetails(data[randomValue]);
+};
+
+let wealth = 0;
+const showRandomDetails = (data) => {
+  const tableContainer = getId("tableBody");
+  const createTR = document.createElement("tr");
+  wealth += data.archivedWorth;
+  createTR.innerHTML = `
+  <th class="flex items-center gap-2">${data.personName}
+  <label class="swap">
+    <input type="checkbox" />
+    <div class="swap-on">
+      <label for="my-modal-5" class="fa-solid fa-eye cursor-pointer"></label>
+    </div>
+    <div class="swap-off">
+      <i class="fa-solid fa-eye-slash"></i>
+    </div>
+  </label>
+</th>
+<td>${data.countryOfCitizenship}</td>
+<td>${data.industries[0]}</td>
+<td>${data.rank}</td>
+<td>$${data.archivedWorth}</td>
+  `;
+  tableContainer.prepend(createTR);
+  getId("totalWealth").innerHTML = wealth;
 };
 
 const displayData = (data) => {
