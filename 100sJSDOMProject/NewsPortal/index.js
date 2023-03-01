@@ -92,9 +92,9 @@ const showTheCategoryData = (data) => {
               </div>
 
               <div class="flex items-center justify-end">
-                <i class="cursor-pointer fa-solid fa-arrow-right fa-2x text-violet-700" onclick="showModalDetails('${
-                  el._id
-                }')"></i>
+               <label for="my-modal-5"> <i  class="cursor-pointer fa-solid fa-arrow-right fa-2x text-violet-700" onclick="showModalDetails('${
+                 el._id
+               }')"></i> </label>
               </div>
             </div>
           </div>
@@ -102,4 +102,28 @@ const showTheCategoryData = (data) => {
     `;
     cardContainer.appendChild(containerCard);
   });
+};
+
+const showModalDetails = async (id) => {
+  const fetchCategoryAPIData = await fetch(
+    `https://openapi.programming-hero.com/api/news/${id}`
+  );
+  const categoryData = await fetchCategoryAPIData.json();
+  showModal(categoryData.data[0]);
+};
+
+const showModal = (data) => {
+  const modalConainer = getID("modal-body");
+  modalConainer.innerHTML = `
+        <img src="${
+          data.image_url
+            ? data.image_url
+            : "https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png"
+        }" class="w-full h-full p-10" alt="">
+        <h3 class="font-bold text-center text-lg">${data.title}</h3>
+        <p class="py-4">${data.details}</p>
+        <div class="modal-action">
+          <label for="my-modal-5" class="btn font-bold" id="delete">UnderStand!</label>
+        </div>
+  `;
 };
