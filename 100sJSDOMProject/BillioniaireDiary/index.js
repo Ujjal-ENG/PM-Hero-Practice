@@ -184,7 +184,7 @@ const displayData = (data) => {
       : "null";
     createDiv.innerHTML = `
     
-        <div class=" bg-[#0E1B34] text-white p-6 rounded-md">
+        <div class=" bg-[#0E1B34] text-white p-6 rounded-md w-full">
           <h1 class="text-3xl text-center drop-shadow-2xl">${el.personName}</h1>
           <div class="flex pt-5 space-x-6 divide-x-2 divide-white">
             <div>
