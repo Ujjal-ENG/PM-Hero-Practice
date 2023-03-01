@@ -9,6 +9,7 @@ getId("btn-container").addEventListener("click", (e) => {
       show10UserOnlyApi();
       break;
     case "addUser":
+      addRandomUser();
       console.log("Add Mama");
       break;
     case "dblMoney":
@@ -93,7 +94,7 @@ const showIndsutryWise = async (value) => {
       const fetchData = await fetch("./API/ByIndustryTechnology.json");
       showData(fetchData);
     }
-    if (value === "Technology") {
+    if (value === "Fashion") {
       const fetchData = await fetch("./API/ByIndustryFashion.json");
       showData(fetchData);
     }
@@ -160,6 +161,12 @@ getId("inputSearch").addEventListener("keypress", (e) => {
     showStateWise(value);
   }
 });
+
+const addRandomUser = () => {
+  getId("card-section").setAttribute("hidden", true);
+  getId("main-secton").removeAttribute("hidden", true);
+  console.log("Kopa Hello");
+};
 
 const displayData = (data) => {
   const cardContainer = getId("card-section");
