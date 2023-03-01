@@ -3,7 +3,8 @@ const getId = (id) => document.getElementById(id);
 getId("btn-container").addEventListener("click", (e) => {
   switch (e.target.id) {
     case "10user":
-      console.log("hello");
+      getId("card-container").removeAttribute("hidden");
+      getId("main-secton").setAttribute("hidden", true);
       getId("card-section").innerHTML = "";
       getId("inputSearch").value = "";
       show10UserOnlyApi();
@@ -16,6 +17,8 @@ getId("btn-container").addEventListener("click", (e) => {
       console.log("Mama DBL money de");
       break;
     case "descSort":
+      getId("card-container").removeAttribute("hidden");
+      getId("main-secton").setAttribute("hidden", true);
       getId("card-section").innerHTML = "";
       getId("inputSearch").value = "";
       showFullUserApiDESC();
@@ -25,12 +28,16 @@ getId("btn-container").addEventListener("click", (e) => {
       console.log("Total valude de amama");
       break;
     case "showAll":
+      getId("card-container").removeAttribute("hidden");
+      getId("main-secton").setAttribute("hidden", true);
       getId("card-section").innerHTML = "";
       getId("inputSearch").value = "";
       showFullUserApi();
       console.log("Show all kor");
       break;
     case "showState":
+      getId("card-container").removeAttribute("hidden");
+      getId("main-secton").setAttribute("hidden", true);
       console.log("State wise dka");
       showState();
       break;
@@ -114,6 +121,8 @@ const showIndsutryWise = async (value) => {
 const showData = async (values) => {
   const data = await values.json();
   getId("card-section").innerHTML = "";
+  getId("card-container").removeAttribute("hidden");
+  getId("main-secton").setAttribute("hidden", true);
   displayData(data);
   // console.log(data);
   getId("progressBar").setAttribute("hidden", true);
@@ -163,8 +172,8 @@ getId("inputSearch").addEventListener("keypress", (e) => {
 });
 
 const addRandomUser = () => {
-  getId("card-section").setAttribute("hidden", true);
-  getId("main-secton").removeAttribute("hidden", true);
+  getId("card-container").setAttribute("hidden", true);
+  getId("main-secton").removeAttribute("hidden");
   console.log("Kopa Hello");
 };
 
