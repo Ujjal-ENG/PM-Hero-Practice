@@ -108,11 +108,10 @@
 
           <h1 class="font-semibold">Sort By View:</h1>
           <div>
-            <select class="select select-ghost w-full max-w-xs bg-slate-400">
+            <select class="select select-ghost w-full max-w-xs bg-slate-400" id="selecValue">
               <option disabled selected>Default</option>
-              <option>Svelte</option>
-              <option>Vue</option>
-              <option>React</option>
+              <option value="as">Ascending</option>
+              <option value="ds">Descending</option>
             </select>
           </div>
         </div>
@@ -141,7 +140,7 @@
 
       <div class="modal">
         <div class="modal-box w-11/12 max-w-5xl" id="modal-body">
-        
+
         </div>
       </div>
 

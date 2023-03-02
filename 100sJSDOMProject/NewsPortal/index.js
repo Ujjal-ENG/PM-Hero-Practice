@@ -174,3 +174,21 @@ const generateStars = (rating) => {
   }
   return ratingHTML;
 };
+
+getID("selecValue").addEventListener("change", (e) => {
+  if (e.target.value == "as") {
+    console.log(fetchData.sort());
+  }
+  function compare(value) {
+    const name1 = value.number;
+    const name2 = value.number;
+    let comparison = 0;
+    console.log(name1, name2);
+    if (name1 > name2) {
+      comparison = 1;
+    } else if (name1 < name2) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+});
