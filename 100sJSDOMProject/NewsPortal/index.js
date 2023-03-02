@@ -179,10 +179,6 @@ getID("selecValue").addEventListener("change", (e) => {
   compareValue(e.target.value);
 });
 
-getID("selecValue").addEventListener("change", (e) => {
-  compareValue(e.target.value);
-});
-
 const compareValue = (value) => {
   if (value == "as") {
     fetchData.sort((a, b) => {
