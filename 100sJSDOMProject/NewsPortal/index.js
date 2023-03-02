@@ -176,19 +176,24 @@ const generateStars = (rating) => {
 };
 
 getID("selecValue").addEventListener("change", (e) => {
-  if (e.target.value == "as") {
-    console.log(fetchData.sort());
-  }
-  function compare(value) {
-    const name1 = value.number;
-    const name2 = value.number;
-    let comparison = 0;
-    console.log(name1, name2);
-    if (name1 > name2) {
-      comparison = 1;
-    } else if (name1 < name2) {
-      comparison = -1;
-    }
-    return comparison;
-  }
+  compareValue(e.target.value);
 });
+
+getID("selecValue").addEventListener("change", (e) => {
+  compareValue(e.target.value);
+});
+
+const compareValue = (value) => {
+  if (value == "as") {
+    fetchData.sort((a, b) => {
+      return Number(a.total_view) - Number(b.total_view);
+    });
+    showTheCategoryData(fetchData);
+  }
+  if (value == "ds") {
+    fetchData.sort((a, b) => {
+      return Number(b.total_view) - Number(a.total_view);
+    });
+    showTheCategoryData(fetchData);
+  }
+};
