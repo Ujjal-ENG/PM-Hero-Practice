@@ -178,12 +178,14 @@ getId("inputSearch").addEventListener("keypress", (e) => {
   }
 });
 
+let randomDataFound = [];
 const dataFound = (data) => {
   getId("card-container").setAttribute("hidden", true);
   getId("main-secton").removeAttribute("hidden");
   const randomValue = Math.round(Math.random() * data.length + 1);
+  randomDataFound.push(data[randomValue]);
   showRandomDetails(data[randomValue]);
-  showModalDetails(data[randomValue]);
+  showModalDetails();
 };
 
 let wealth = 0;
@@ -192,11 +194,11 @@ const showRandomDetails = (data) => {
   const createTR = document.createElement("tr");
   wealth += data.archivedWorth;
   createTR.innerHTML = `
-  <th class="flex items-center gap-2">${data.personName}
+  <th class="flex items-center gap-2"><span>${data.personName}</span>
   <label class="swap">
     <input type="checkbox" />
     <div class="swap-on">
-      <label for="my-modal-5" class="fa-solid fa-eye cursor-pointer"></label>
+      <label for="my-modal-5" class="fa-solid fa-eye cursor-pointer"id="modalBTN"></label>
     </div>
     <div class="swap-off">
       <i class="fa-solid fa-eye-slash"></i>
@@ -212,42 +214,64 @@ const showRandomDetails = (data) => {
   getId("totalWealth").innerHTML = wealth;
 };
 
-const showModalDetails = (data) => {
-  const modalContainer = getId("modalContainer");
-  const createDivModal = document.createElement("div");
-  createDivModal.classList.add("modal");
+const showModalDetails = () => {
+  getId("modalBTN").addEventListener("click", (e) => {
+    const name =
+      e.target.parentNode.parentNode.parentNode.children[0].innerHTML;
+    const data = randomDataFound.find((el) => el.personName == name);
 
-  createDivModal.innerHTML = `
-  <div class="modal-box w-11/12 max-w-3xl">
-  <h3 class="font-bold text-3xl text-center drop-shadow-lg shadow-black">${data.personName}</h3>
+    const bio = data?.bios.map((el) => {
+      return el + "";
+    });
+    // console.log(bio.join(""));
+    const birthDate = new Date(data.date).toDateString();
+    const modalContainer = getId("modalContainer");
+    modalContainer.innerHTML = `
+  <h3 class="font-bold text-3xl text-center drop-shadow-lg shadow-black">${
+    data.personName ? data.personName : data.uri
+  }</h3>
   <h3 class="font-bold text-2xl text-center drop-shadow-lg shadow-black">Biography</h3>
   <p class="py- text-center">
-    Jeff Bezos founded e-com… chairman in July 2021. He now owns a bit less than 10% of the company. He and his
-    wife MacKenzi…6% Amazon stake to her. Bezos has donated more t… received those shares. Bezos owns The
-    Washingto…ce in one in July 2021. Bezos said in a November…sing specific details
+    ${bio}
   </p>
 
   <div class="flex justify-center pt-5 space-x-6 divide-x-2 divide-white">
     <div>
-      <img src="" class="w-[200px] h-[250px]" alt="" srcset="">
-      <p class="pt-4"><span class="font-bold">Source: </span>Amazon</p>
+      <img src="${
+        data.imageExists ? data.squareImage : "Not Available"
+      }" class="w-[200px] h-[250px]" alt="" srcset="">
+      <p class="pt-4"><span class="font-bold">Source: </span>${data.source}</p>
     </div>
 
     <div class="information">
       <div class="genralinfo">
         <h3 class="font-bold text-2xl underline">General Information</h3>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">CitizenShip: </span>Amazon</p>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">State: </span>Washington DC</p>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">City: </span>Media</p>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Birthday: </span>999342</p>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Gender: </span>$99.5</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">CitizenShip: </span>${
+          data.countryOfCitizenship
+        }</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">State: </span>${
+          data.city
+        }</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">City: </span>${
+          data.city
+        }</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Birthday: </span>${birthDate}</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Gender: </span>${
+          data.gender
+        }</p>
       </div>
       <div class="financialinfo mt-4">
         <h3 class="font-bold text-2xl underline">Financial Information</h3>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Exchange: </span>NAS</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Exchange: </span>${
+          data.archivedWorth
+        }</p>
         <p class="pt-4 pl-4 text-xl"><span class="font-bold">Ticker: </span>AMZn</p>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">City: </span>Media</p>
-        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Total Shares: </span>999342</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">City: </span>${
+          data.city
+        }</p>
+        <p class="pt-4 pl-4 text-xl"><span class="font-bold">Total Shares: </span>${
+          data.privateAssetsWorth
+        }</p>
         <p class="pt-4 pl-4 text-xl"><span class="font-bold">Share Price: </span>$99.5</p>
       </div>
 
@@ -258,10 +282,9 @@ const showModalDetails = (data) => {
   <div class="modal-action">
     <label for="my-modal-5" class="btn btn-warning font-bold">Understand!</label>
   </div>
-</div>
-  `;
 
-  modalContainer.append(createDivModal);
+  `;
+  });
 };
 
 const displayData = (data) => {
