@@ -32,6 +32,8 @@ const fetchAllDataAPI = async (id, name) => {
   showtheAlert(categoryData.data.length, name);
 };
 
+fetchAllDataAPI("08", "Random");
+
 const showTheCategoryData = (data) => {
   const cardContainer = getID("card-container");
   cardContainer.innerHTML = "";
