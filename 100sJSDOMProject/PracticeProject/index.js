@@ -54,3 +54,39 @@ const showData = (data) => {
     cardContainer.appendChild(newDIv);
   });
 };
+
+// fetch data for, apple
+const fetchNewsFromApple = async () => {
+  const fetchNews = await fetch(
+    "https://newsapi.org/v2/everything?q=apple&from=2023-03-02&to=2023-03-02&sortBy=popularity&apiKey=3601eb03194e471682abc95034313040"
+  );
+  const data = await fetchNews.json();
+  showData2(data.articles);
+  console.log(data.articles);
+};
+
+fetchNewsFromApple();
+
+const showData2 = (data) => {
+  const cardContainer = getID("latestContainer");
+  cardContainer.innerHTML = "";
+  data.slice(25, 31).forEach((el) => {
+    const newDIv = document.createElement("div");
+    newDIv.innerHTML += `
+    <div class="card card-compact w-96 bg-base-100 shadow-xl">
+    <div class="h-1/2"><img src="${
+      el.urlToImage ? el.urlToImage : "./images/bike-1.png"
+    }" alt="Shoes" class="h-full"/></div>
+    <div class="card-body">
+      <h2 class="card-title">${el.title}</h2>
+      <p>${el.description.slice(0, 200) + "...."}</p>
+      <div class="flex gap-4 justify-between pt-6 text-black">
+              <p>${new Date(el.publishedAt).toDateString()}</p>
+              <p>${el.source.name ? el.source.name : "Not Found!!!"}</p>
+            </div>
+    </div>
+  </div>
+  `;
+    cardContainer.appendChild(newDIv);
+  });
+};
