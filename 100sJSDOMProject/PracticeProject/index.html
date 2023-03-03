@@ -11,6 +11,17 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <style>
+    .Kopa {
+      background-image: url("./images/bike-1.png"),
+        linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0) 100%);
+      background-blend-mode: overlay;
+    }
+
+    h1 {
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
@@ -84,6 +95,51 @@
     </section>
   </header>
 
+
+  <main>
+
+    <!-- hero section -->
+    <section class="grid grid-cols-12 grid-flow-col-dense px-6 py-3">
+
+      <!-- hero div -->
+      <div class="col-span-10 ">
+        <h1 class="text-4xl font-semibold">Today's HeadLines</h1>
+
+
+        <!-- hero image -->
+        <div class="Kopa w-10/12 h-[400px] rounded-lg mt-10 bg-cover bg-center bg-no-repeat" id="">
+
+          <div class="p-6">
+            <h1 class="text-5xl font-semibold text-white">LIVEPremier League reaction & transfer latest as
+              Chelsea lose again
+            </h1>
+
+            <div class="flex w-1/4 gap-4 justify-center pt-6 text-white">
+              <p>2 hours ago</p>
+              <p>CNN Indonesia</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- card and button div -->
+
+      <div class="col-span-2 " id="container">
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <button class="btn">Button</button>
+          <button class="btn">Button</button>
+        </div>
+
+        <!-- card section -->
+
+
+
+      </div>
+    </section>
+  </main>
   <!-- My Script -->
   <script src="./index.js"></script>
 </body>
