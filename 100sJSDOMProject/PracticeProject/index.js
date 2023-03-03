@@ -62,7 +62,7 @@ const fetchNewsFromApple = async () => {
   );
   const data = await fetchNews.json();
   showData2(data.articles);
-  console.log(data.articles);
+  showData3(data.articles);
 };
 
 fetchNewsFromApple();
@@ -86,6 +86,25 @@ const showData2 = (data) => {
             </div>
     </div>
   </div>
+  `;
+    cardContainer.appendChild(newDIv);
+  });
+};
+
+const showData3 = (data) => {
+  const cardContainer = getID("cards");
+  cardContainer.innerHTML = "";
+  data.slice(9, 12).forEach((el) => {
+    const newDIv = document.createElement("div");
+    newDIv.innerHTML += `
+    <div class="card w-96 bg-base-100 shadow-xl image-full">
+          <figure class="h-[250px]"><img src="${
+            el.urlToImage ? el.urlToImage : "./images/bike-1.png"
+          }" alt="Shoes" /></figure>
+          <div class="card-body">
+            <h2 class="card-title">${el.title}</h2>
+          </div>
+        </div>
   `;
     cardContainer.appendChild(newDIv);
   });
