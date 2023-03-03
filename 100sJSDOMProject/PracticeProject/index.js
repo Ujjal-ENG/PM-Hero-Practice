@@ -74,9 +74,9 @@ const showData2 = (data) => {
     const newDIv = document.createElement("div");
     newDIv.innerHTML += `
     <div class="card card-compact w-96 bg-base-100 shadow-xl">
-    <div class="h-1/2"><img src="${
+    <figure class="h-[250px] w-full"><img src="${
       el.urlToImage ? el.urlToImage : "./images/bike-1.png"
-    }" alt="Shoes" class="h-full"/></div>
+    }" alt="Shoes" class="h-full"/></figure>
     <div class="card-body">
       <h2 class="card-title">${el.title}</h2>
       <p>${el.description.slice(0, 200) + "...."}</p>
