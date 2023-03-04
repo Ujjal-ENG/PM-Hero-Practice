@@ -15,24 +15,29 @@
 
 <body>
 
-  <div class="flex justify-center items-center h-screen gap-10">
-    <div class="flex flex-col p-4 bg-neutral rounded-box text-neutral-content">
-      <span class="countdown font-mono text-5xl">
-        <span id="hour">00</span>
-      </span>
-      hours
+  <div class="stats shadow-lg flex justify-center items-center h-screen gap-10">
+
+    <div class="stats shadow bg-slate-400">
+      <div class="stat text-black">
+        <p class="stat-title text-black">Hour</p>
+        <h1 class="stat-value" id="hour">89,400</h1>
+      </div>
     </div>
-    <div class="flex flex-col p-4 bg-neutral rounded-box text-neutral-content">
-      <span class="countdown font-mono text-5xl">
-        <span id="min">00</span>
-      </span>
-      min
+
+
+    <div class="stats shadow bg-slate-400">
+      <div class="stat text-black">
+        <p class="stat-title text-black">Minutes</p>
+        <h1 class="stat-value" id="min">89,400</h1>
+      </div>
     </div>
-    <div class="flex flex-col p-4 bg-neutral rounded-box text-neutral-content">
-      <span class="countdown font-mono text-5xl">
-        <span id="sec">00</span>
-      </span>
-      sec
+
+
+    <div class="stats shadow bg-slate-400">
+      <div class="stat text-black">
+        <p class="stat-title text-black">Seconds</p>
+        <h1 class="stat-value" id="sec">89,400</h1>
+      </div>
     </div>
   </div>
   <script src="./index.js"></script>
