@@ -14,6 +14,7 @@ loadProducts("https://fakestoreapi.com/products");
 // show all product in UI
 const showProducts = (products) => {
   setInnerText("total_products", products.length);
+
   document.getElementById("all-products").innerHTML = "";
 
   for (const product of products) {
@@ -21,18 +22,18 @@ const showProducts = (products) => {
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
-     <div>
-   <img class="product-image" src=${image}></img>
-     </div>
-     <h3>${product.title}</h3>
-     <p>Category: ${product.category}</p>
-     <h2>Price: $ ${product.price}</h2>
+      <div>
+    <img class="product-image" src=${image}></img>
+      </div>
+      <h3>${product.title}</h3>
+      <p>Category: ${product.category}</p>
+      <h2>Price: $ ${product.price}</h2>
 
-     <button onclick="showProductDetails(${product.id})" id="details-btn"    data-bs-toggle="modal"
-     data-bs-target="#exampleModal" class="btn btn-outline-secondary mb-2 rounded-1 mt-1">Details</button>
-
-     <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success border-0 w-100 rounded-0 bg-main py-2">Add to cart</button>
-     `;
+      <button onclick="showProductDetails(${product.id})" id="details-btn"    data-bs-toggle="modal"
+      data-bs-target="#exampleModal" class="btn btn-outline-secondary mb-2 rounded-1 mt-1">Details</button>
+      
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success border-0 w-100 rounded-0 bg-main py-2">Add to cart</button>
+      `;
     document.getElementById("all-products").appendChild(div);
   }
 };
@@ -45,15 +46,18 @@ const addToCart = (id, price) => {
 
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
+  updateTotal();
 };
 
 const showProductDetails = (product_id) => {
+  console.log(product_id);
   fetch(`https://fakestoreapi.com/products/${product_id}`)
     .then((res) => res.json())
     .then((data) => showProductDetailsInModal(data));
 };
 
 const showProductDetailsInModal = (product_details) => {
+  console.log(product_details);
   setInnerText("exampleModalLabel", product_details.title);
   setInnerText("productId", product_details.id);
   setInnerText("modal_body", product_details.description);
@@ -71,31 +75,26 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = Number(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = total;
-  updateTotal();
+  document.getElementById(id).innerText = Math.ceil(total);
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = isNaN(value)
-    ? value
-    : Math.round(value);
+  document.getElementById(id).innerText = value;
 };
 
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
-  if (priceConverted > 200) {
-    setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", priceConverted * 0.2);
-  }
-  if (priceConverted > 400) {
-    setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", priceConverted * 0.3);
-  }
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
     setInnerText("total-tax", priceConverted * 0.4);
+  } else if (priceConverted > 400) {
+    setInnerText("delivery-charge", 50);
+    setInnerText("total-tax", priceConverted * 0.3);
+  } else if (priceConverted > 200) {
+    setInnerText("delivery-charge", 30);
+    setInnerText("total-tax", priceConverted * 0.2);
   }
 };
 
@@ -105,7 +104,7 @@ const updateTotal = () => {
     getInputValue("price") +
     getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  document.getElementById("total").innerText = Math.ceil(grandTotal);
+  document.getElementById("total").innerText = grandTotal;
 };
 
 // search by category
