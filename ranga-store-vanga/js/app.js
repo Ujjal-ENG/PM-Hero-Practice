@@ -14,10 +14,9 @@ loadProducts("https://fakestoreapi.com/products");
 // show all product in UI
 const showProducts = (products) => {
   setInnerText("total_products", products.length);
-
   document.getElementById("all-products").innerHTML = "";
-  const allProducts = products.slice(0, 10).map((pd) => pd);
-  for (const product of allProducts) {
+
+  for (const product of products) {
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
@@ -106,14 +105,14 @@ const updateTotal = () => {
     getInputValue("price") +
     getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  document.getElementById("total").innerText = grandTotal;
+  document.getElementById("total").innerText = Math.ceil(grandTotal);
 };
 
 // search by category
 document.getElementById("search-btn").addEventListener("click", function () {
   const inputField = document.getElementById("input-value").value;
-  const searchedProduct = arr[0].find((p) =>
+  const searchedProduct = arr[0].filter((p) =>
     p.category.startsWith(`${inputField}`)
   );
-  showProducts(searchedProduct, 1);
+  showProducts(searchedProduct);
 });
