@@ -14,6 +14,12 @@ const KEY = "34315771-f4a3cd501119bab11eba9fc41";
 
 // show images
 const showImages = (images) => {
+  if (images.length === 0) {
+    alert(
+      "Your Search value is not matched,please provide a valid serach value"
+    );
+    return;
+  }
   imagesArea.style.display = "block";
   gallery.innerHTML = "";
   // show gallery title
@@ -122,6 +128,11 @@ const changeSlide = (index) => {
 };
 
 searchBtn.addEventListener("click", function () {
+  if (document.getElementById("search").value == "") {
+    alert("Please Provide a valid search keyword");
+    return;
+  }
+  console.log();
   document.querySelector(".main").style.display = "none";
   clearInterval(timer);
   const search = document.getElementById("search");
@@ -132,7 +143,10 @@ searchBtn.addEventListener("click", function () {
 
 document.getElementById("search").addEventListener("keyup", (e) => {
   e.preventDefault();
-
+  if (document.getElementById("search").value == "") {
+    alert("Please Provide a valid search keyword");
+    return;
+  }
   if (e.key === "Enter") {
     const search = document.getElementById("search");
     getImages(search.value);
