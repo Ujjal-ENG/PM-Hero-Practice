@@ -139,6 +139,7 @@ document.getElementById("search").addEventListener("keyup", (e) => {
     sliders.length = 0;
     search.value = "";
   }
+  return;
 });
 
 sliderBtn.addEventListener("click", function () {
