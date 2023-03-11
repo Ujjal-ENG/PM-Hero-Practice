@@ -130,6 +130,17 @@ searchBtn.addEventListener("click", function () {
   search.value = "";
 });
 
+document.getElementById("search").addEventListener("keyup", (e) => {
+  e.preventDefault();
+
+  if (e.key === "Enter") {
+    const search = document.getElementById("search");
+    getImages(search.value);
+    sliders.length = 0;
+    search.value = "";
+  }
+});
+
 sliderBtn.addEventListener("click", function () {
   createSlider();
 });
