@@ -32,3 +32,9 @@ const setILocalStore = (key, item) => {
   const cartStringFy = JSON.stringify(cart);
   localStorage.setItem("cart", cartStringFy);
 };
+
+document.getElementById("count").addEventListener("click", () => {
+  const value = document.getElementById("countValue").value
+  let values = Number(value)
+  document.getElementById("countValue") +=values
+})

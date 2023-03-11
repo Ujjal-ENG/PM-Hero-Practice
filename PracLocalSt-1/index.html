@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Task LocalStorage-1</title>
+</head>
+
+<body>
+
+  <button type="button" id="clearStorage">Clear the Local Storage items</button>
+
+  <div id="addItem">
+    <label for="name">Name: </label>
+    <input type="text" id="nameInput">
+    <button id="addName" class="btn">SendName</button>
+    <button id="deleteName" class="btn">DeleteName</button>
+    <br>
+    <label for="age">Age: </label>
+    <button id="addAge" class="btn">SendAge</button>
+    <button id="deleteAge" class="btn">DeleteAge</button>
+    <input type="number" id="ageInput">
+  </div>
+
+  <div id="showItem">
+    <ol id="itemContainer">
+
+    </ol>
+  </div>
+
+  <div>
+    <p>Count <span id="countValue">0</span></p>
+    <button id="count">Increse Counter</button>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
