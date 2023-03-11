@@ -48,21 +48,6 @@ const deleteIssue = (id) => {
   fetchIssues();
 };
 
-const deleteAge = (key, value) => {
-  let ages = JSON.parse(localStorage.getItem(key));
-
-  // find the index of the item you want to delete
-  let index = ages.findIndex(function (age) {
-    return age.age === value;
-  });
-
-  // remove the item at that index using splice()
-  ages.splice(index, 1);
-
-  // store the modified array back to local storage under the same key
-  localStorage.setItem(key, JSON.stringify(ages));
-};
-
 const fetchIssues = () => {
   const issues = JSON.parse(localStorage.getItem("issues"));
   const issuesList = document.getElementById("issuesList");
