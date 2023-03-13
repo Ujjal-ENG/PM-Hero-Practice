@@ -57,7 +57,6 @@ const displayDetails = (mealItemDetails) => {
     const imgUrl = document.createElement("img");
     imgUrl.src = items.strMealThumb;
     mealItemsInformations.appendChild(imgUrl);
-    const lis = [];
 
     for (let key in items) {
       if (key.includes("strIngredient")) {
@@ -66,10 +65,6 @@ const displayDetails = (mealItemDetails) => {
         }
       }
     }
-
-    // lis.forEach((el) => {
-    //   ul.innerHTML;
-    // });
 
     mealItemsInformations.appendChild(itemsName);
     mealItemsInformations.appendChild(ingredients);
