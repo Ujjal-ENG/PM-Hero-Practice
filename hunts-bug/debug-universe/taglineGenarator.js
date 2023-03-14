@@ -24,18 +24,18 @@ generateTag(tagLines, 3000);
 document
   .getElementById("random-room-btn")
   .addEventListener("click", async function () {
-    console.log("hello world");
     const data = await fetch(`ROOMS.json`);
     const result = await data.json();
     const randomIndex = Math.floor(Math.random() * 10);
     const modalBody = document.getElementById("random-room-info-modal-body");
-    const { name, summary, property_type, images, review_scores } = result[9];
-
+    const { name, summary, property_type, images, review_scores } =
+      result[randomIndex];
     const reviews = document.createElement("ol");
     if (review_scores.scores) {
       reviews.setAttribute("class", "list-group");
 
-      object.keys(review_scores.scores).forEach((key) => {
+      Object.keys(review_scores.scores).forEach((key) => {
+        console.log(review_scores.scores[key]);
         reviews.innerHTML += `
         <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
         ${key} : 
@@ -50,7 +50,9 @@ document
     modalBody.innerHTML = `
     <div class="col">
     <div class="card h-100">
-      <img src=${images.picture_url} class="card-img-top " alt="..." style=" height: 300px;
+      <img src=${
+        images.picture_url
+      } class="card-img-top " alt="..." style=" height: 300px;
       object-fit: fill;">
       <div class="card-body">
         <h5 class="card-title">${name}</h5>
@@ -58,7 +60,7 @@ document
         <p class="card-text">${summary}</p>
         <div id='review-score'>
       Review Scores :
-      ${review_scores.scores.review_scores_accuracy}
+      ${review_scores.scores ? review_scores.scores.review_scores_accuracy : 0}
     </div>
       </div>
       <button class="btn btn-info btn-lg"  role="button"
