@@ -33,7 +33,6 @@ document
     const reviews = document.createElement("ol");
     if (review_scores.scores) {
       reviews.setAttribute("class", "list-group");
-
       Object.keys(review_scores.scores).forEach((key) => {
         reviews.innerHTML += `
         <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
@@ -45,21 +44,18 @@ document
     } else {
       reviews.innerHTML = "No reviews found";
     }
-
     modalBody.innerHTML = `
     <div class="col">
     <div class="card h-100">
-      <img src=${
-        images.picture_url
-      } class="card-img-top " alt="..." style=" height: 300px;
+      <img src=${images.picture_url} class="card-img-top " alt="..." style=" height: 300px;
       object-fit: fill;">
       <div class="card-body">
         <h5 class="card-title">${name}</h5>
         <p class="card-text">${property_type}</p>
         <p class="card-text">${summary}</p>
         <div id='review-score'>
-      Review Scores :
-      ${review_scores.scores ? review_scores.scores.review_scores_accuracy : 0}
+      Review Scores :</br>
+     <div id="reviews"></div>
     </div>
       </div>
       <button class="btn btn-info btn-lg"  role="button"
@@ -67,4 +63,5 @@ document
     </div>
    </div>
     `;
+    document.getElementById("reviews").appendChild(reviews);
   });
