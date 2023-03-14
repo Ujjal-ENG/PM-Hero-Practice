@@ -11,18 +11,24 @@ const addToCart = async (id) => {
     _id,
   } = result.find((item) => item._id == id);
   const cartItems = getItemsFromStorage();
-  cartItems.push({
-    name,
-    summary,
-    property_type,
-    images,
-    number_of_reviews,
-    price,
-    _id,
-  });
+  if (cartItems.some((item) => item._id === _id)) {
+    alert("Product is already in cart");
+  } else {
+    // Add the item to the cart
+    cartItems.push({
+      name,
+      summary,
+      property_type,
+      images,
+      number_of_reviews,
+      price,
+      _id,
+    });
+  }
 
   localStorage.setItem("saved-Cart", JSON.stringify(cartItems));
   //const cartItemsContainer = document.getElementById("cart-items");
+  displayCartItems();
 };
 
 const getItemsFromStorage = () => {
@@ -54,13 +60,10 @@ const displayCartItems = () => {
         `;
   });
 };
-displayCartItems();
 
 const deleteItemFromCart = (id) => {
-  console.log(id);
   const cartItems = getItemsFromStorage();
   const filteredItems = cartItems.filter((item) => item._id != id);
-  console.log(filteredItems);
   localStorage.setItem("saved-Cart", JSON.stringify(filteredItems));
   displayCartItems();
 };
