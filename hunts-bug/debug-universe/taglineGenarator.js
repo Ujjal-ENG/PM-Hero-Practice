@@ -15,11 +15,11 @@ function generateTag(arr, interval) {
   setInterval(() => {
     const randomIndex = Math.floor(Math.random() * arr.length);
     const randomTagLine = tagLines[randomIndex];
-    document.getElementById("taglines").innerText = randomTagLine;
+    document.getElementById("tagline").innerText = randomTagLine;
   }, interval);
 }
 
-generateTag(tagLines, 2000);
+generateTag(tagLines, 3000);
 
 document
   .getElementById("random-room-btn")
@@ -30,12 +30,10 @@ document
     const randomIndex = Math.floor(Math.random() * 10);
     const modalBody = document.getElementById("random-room-info-modal-body");
     const { name, summary, property_type, images, review_scores } = result[9];
-    
-    
 
     const reviews = document.createElement("ol");
     if (review_scores.scores) {
-      reviews.setAttribute('class',"list-group")
+      reviews.setAttribute("class", "list-group");
 
       object.keys(review_scores.scores).forEach((key) => {
         reviews.innerHTML += `
@@ -49,7 +47,6 @@ document
       reviews.innerHTML = "No reviews found";
     }
 
-    
     modalBody.innerHTML = `
     <div class="col">
     <div class="card h-100">
@@ -69,9 +66,4 @@ document
     </div>
    </div>
     `;
-    
   });
-
-
-
- 
