@@ -22,7 +22,6 @@ const displayRoomsData = async (rooms) => {
       price,
       _id,
     } = room;
-    console.log(images);
     roomsContainer.innerHTML += `
  <div class="col">
  <div class="card h-100">

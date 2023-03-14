@@ -35,7 +35,6 @@ document
       reviews.setAttribute("class", "list-group");
 
       Object.keys(review_scores.scores).forEach((key) => {
-        console.log(review_scores.scores[key]);
         reviews.innerHTML += `
         <li class="list-group-item list-group-item-info d-flex justify-content-between align-items-center">
         ${key} : 
